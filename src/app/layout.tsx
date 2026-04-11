@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Mankha — On-Demand Tow Truck Service",
   description:
     "Connect with verified tow truck drivers near you. Get instant offers, track arrival in real-time, and pay seamlessly.",
-  keywords: ["tow truck", "roadside assistance", "towing service", "Saudi Arabia", "سطحة", "منخه"],
+  keywords: ["tow truck", "roadside assistance", "towing service", "Saudi Arabia", "سطحة", "منخى"],
 };
 
 export default function RootLayout({

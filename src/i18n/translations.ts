@@ -11,8 +11,10 @@ export const translations = {
     navDownload: "Download App",
 
     // Hero
+    heroBadge: "Available now across Saudi Arabia",
     heroHeadline: "Roadside rescue,\non demand.",
     heroSub: "Connect with verified tow truck drivers near you. Get instant offers, track arrival in real-time, and pay — all from your phone.",
+    heroTrust: "from 2,000+ rescues",
     heroCtaCustomer: "Request a Tow",
     heroCtaDriver: "Drive with Mankha",
     heroStat1Value: "3",
@@ -90,7 +92,11 @@ export const translations = {
     testimonial4Text: "My car broke down with my kids in the backseat. Mankha had a verified driver to us in under 5 minutes. The peace of mind is worth everything.",
 
     // Footer
-    footerTagline: "Roadside rescue, reimagined.",
+    footerCtaTitle: "Stranded? Not for long.",
+    footerCtaSub: "Download Mankha and get connected to a verified tow truck driver in minutes — anytime, anywhere in Saudi Arabia.",
+    footerCtaDownload: "Get the App",
+    footerCtaDriver: "Become a Driver",
+    footerTagline: "The fastest way to get roadside help in Saudi Arabia. Verified drivers, transparent pricing, real-time tracking.",
     footerProduct: "Product",
     footerHowItWorks: "How It Works",
     footerForDrivers: "For Drivers",
@@ -112,20 +118,22 @@ export const translations = {
   },
   ar: {
     // General
-    appName: "منخه",
+    appName: "منخى",
     language: "English",
 
     // Nav
     navHowItWorks: "كيف يشتغل",
-    navWhyMankha: "ليه منخه",
+    navWhyMankha: "ليه منخى",
     navForDrivers: "للسواقين",
     navDownload: "نزّل التطبيق",
 
     // Hero
-    heroHeadline: "نجدة على الطريق،\nوقت ما تبي.",
+    heroBadge: "متوفر الحين في كل السعودية",
+    heroHeadline: "سطحة على الطريق،\nوقت ما تبي.",
     heroSub: "تواصل مع سواقين سطحات موثقين قريبين منك. خذ عروض فورية، تابع وصوله لحظة بلحظة، وادفع — كله من جوالك.",
+    heroTrust: "من أكثر من 2,000 عملية إنقاذ",
     heroCtaCustomer: "اطلب سطحة",
-    heroCtaDriver: "سوق مع منخه",
+    heroCtaDriver: "سوق مع منخى",
     heroStat1Value: "3",
     heroStat1Unit: "دقايق",
     heroStat1Label: "متوسط الرد",
@@ -148,7 +156,7 @@ export const translations = {
     howStep3Tag: "03",
 
     // Why Mankha
-    whyTitle: "ليه منخه",
+    whyTitle: "ليه منخى",
     whySub: "مصمم لوقت ما تحتاجه بجد",
     whyFast: "رد سريع",
     whyFastDesc: "متوسط رد السايق أقل من 3 دقايق. بدون انتظار على الخط، بدون وسطاء.",
@@ -163,7 +171,7 @@ export const translations = {
 
     // For Drivers
     driversTitle: "سطحتك.\nجدولك.\nأرباحك.",
-    driversSub: "انضم لشبكة سواقين منخه وابدأ تربح بشروطك. بدون مدير، بدون ورديات — بس افتح التطبيق لما تكون فاضي.",
+    driversSub: "انضم لشبكة سواقين منخى وابدأ تربح بشروطك. بدون مدير، بدون ورديات — بس افتح التطبيق لما تكون فاضي.",
     driversBenefit1: "جدول مرن",
     driversBenefit1Desc: "اشتغل وقت ما تبي. قبل بس الرحلات اللي تناسبك.",
     driversBenefit2: "دخل ثابت",
@@ -195,19 +203,23 @@ export const translations = {
     testimonial2Text: "اللي يعجبني هو الوضوح. ثلاث سواقين أرسلوا عروض، قارنت الأسعار، واخترت الأنسب. بدون رسوم مخفية، بدون أسعار طوارئ مبالغ فيها.",
     testimonial3Name: "محمد الغامدي",
     testimonial3Role: "سايق",
-    testimonial3Text: "أسوق مع منخه من 8 شهور. التطبيق يوفر لي شغل ثابت بدون ضغط مركز التوزيع. أحدد ساعاتي ومنطقتي بنفسي.",
+    testimonial3Text: "أسوق مع منخى من 8 شهور. التطبيق يوفر لي شغل ثابت بدون ضغط مركز التوزيع. أحدد ساعاتي ومنطقتي بنفسي.",
     testimonial4Name: "فاطمة الحربي",
     testimonial4Role: "عميلة",
-    testimonial4Text: "سيارتي خربت وعيالي ورا. منخه وفرت لنا سايق موثق في أقل من 5 دقايق. راحة البال ما لها سعر.",
+    testimonial4Text: "سيارتي خربت وعيالي ورا. منخى وفرت لنا سايق موثق في أقل من 5 دقايق. راحة البال ما لها سعر.",
 
     // Footer
-    footerTagline: "نجدة على الطريق، بشكل جديد.",
+    footerCtaTitle: "عطلان؟ مو لوقت طويل.",
+    footerCtaSub: "نزّل منخى وتواصل مع سايق سطحة موثق في دقايق — أي وقت، أي مكان في السعودية.",
+    footerCtaDownload: "نزّل التطبيق",
+    footerCtaDriver: "سجّل كسايق",
+    footerTagline: "أسرع طريقة تحصل مساعدة على الطريق في السعودية. سواقين موثقين، أسعار واضحة، تتبع مباشر.",
     footerProduct: "المنتج",
     footerHowItWorks: "كيف يشتغل",
     footerForDrivers: "للسواقين",
     footerPricing: "الأسعار",
     footerCompany: "الشركة",
-    footerAbout: "عن منخه",
+    footerAbout: "عن منخى",
     footerCareers: "الوظائف",
     footerBlog: "المدونة",
     footerSupport: "الدعم",
@@ -218,7 +230,7 @@ export const translations = {
     footerPrivacy: "سياسة الخصوصية",
     footerTerms: "شروط الخدمة",
     footerCookies: "سياسة الكوكيز",
-    footerCopyright: "منخه. جميع الحقوق محفوظة.",
+    footerCopyright: "منخى. جميع الحقوق محفوظة.",
     footerMadeIn: "صنع في السعودية",
   },
 } as const;

@@ -2,95 +2,100 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { MapPin, MessageSquare, Navigation } from "lucide-react";
+
+const stepIcons = [
+  // Location pin
+  <svg key="1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>,
+  // Compare / list
+  <svg key="2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 3h5v5" />
+    <path d="M8 3H3v5" />
+    <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+    <path d="m15 9 6-6" />
+  </svg>,
+  // Checkmark / done
+  <svg key="3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+    <polyline points="22 4 12 14.01 9 11.01" />
+  </svg>,
+];
 
 export function HowItWorks() {
-  const { t, locale } = useI18n();
+  const { t, locale, dir } = useI18n();
   const sectionRef = useScrollReveal();
+  const isRtl = dir === "rtl";
 
   const steps = [
-    {
-      tag: t("howStep1Tag"),
-      title: t("howStep1Title"),
-      desc: t("howStep1Desc"),
-      icon: MapPin,
-      color: "bg-primary",
-    },
-    {
-      tag: t("howStep2Tag"),
-      title: t("howStep2Title"),
-      desc: t("howStep2Desc"),
-      icon: MessageSquare,
-      color: "bg-cta",
-    },
-    {
-      tag: t("howStep3Tag"),
-      title: t("howStep3Title"),
-      desc: t("howStep3Desc"),
-      icon: Navigation,
-      color: "bg-primary",
-    },
+    { num: "1", title: t("howStep1Title"), desc: t("howStep1Desc") },
+    { num: "2", title: t("howStep2Title"), desc: t("howStep2Desc") },
+    { num: "3", title: t("howStep3Title"), desc: t("howStep3Desc") },
   ];
 
   return (
     <section
       id="how-it-works"
-      className="relative bg-bg-light py-24 lg:py-32 overflow-hidden"
+      className="bg-bg-muted py-20 lg:py-28"
       ref={sectionRef}
     >
-      {/* Subtle stripe pattern */}
-      <div className="absolute inset-0 stripe-pattern" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section header — left-aligned, not centered */}
-        <div className="max-w-2xl mb-16 lg:mb-24">
-          <span className="text-primary text-sm font-bold uppercase tracking-[0.2em] reveal">
-            {t("howStep1Tag")}&mdash;{t("howStep3Tag")}
-          </span>
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-text-light mt-4 tracking-tight reveal" style={{ transitionDelay: "100ms" }}>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center max-w-lg mx-auto mb-16 reveal">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text tracking-tight">
             {t("howTitle")}
           </h2>
-          <p className="text-text-muted-light text-lg mt-4 font-light reveal" style={{ transitionDelay: "200ms" }}>
+          <p className="text-text-secondary mt-3">
             {t("howSub")}
           </p>
         </div>
 
-        {/* Steps — staggered layout, not a simple grid */}
-        <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 relative">
+          {/* Connector line (desktop only) */}
+          <div className="hidden md:block absolute top-14 start-[calc(16.67%+24px)] end-[calc(16.67%+24px)] h-px border-t-2 border-dashed border-primary/20" />
+
           {steps.map((step, i) => (
             <div
-              key={step.tag}
-              className={`reveal lg:col-span-4 ${
-                i === 1 ? "lg:translate-y-12" : i === 2 ? "lg:translate-y-24" : ""
-              }`}
-              style={{ transitionDelay: `${300 + i * 150}ms` }}
+              key={step.num}
+              className="reveal relative"
+              style={{ transitionDelay: `${i * 120}ms` }}
             >
-              <div className="group relative bg-surface-light border border-border-light p-8 lg:p-10 rounded-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
-                {/* Step number — large, faded */}
-                <span className="absolute top-6 end-6 text-6xl font-extrabold text-text-light/[0.04] select-none leading-none">
-                  {step.tag}
-                </span>
-
-                {/* Icon */}
-                <div className={`w-12 h-12 ${step.color} rounded-sm flex items-center justify-center mb-6`}>
-                  <step.icon className="w-6 h-6 text-white" />
+              <div className="bg-bg rounded-2xl border border-border p-6 hover:shadow-lg transition-shadow relative">
+                {/* Step number badge */}
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-5 relative z-10">
+                  {stepIcons[i]}
                 </div>
 
-                {/* Tag */}
-                <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">
-                  {locale === "ar" ? `خطوة ${step.tag}` : `Step ${step.tag}`}
+                <span className="inline-block text-xs font-bold text-primary bg-primary/8 px-2.5 py-1 rounded-full mb-3">
+                  {locale === "ar" ? `خطوة ${step.num}` : `Step ${step.num}`}
                 </span>
 
-                <h3 className="text-xl lg:text-2xl font-bold text-text-light mt-2 mb-3">
+                <h3 className="text-lg font-bold text-text mb-2">
                   {step.title}
                 </h3>
-                <p className="text-text-muted-light font-light leading-relaxed">
+                <p className="text-text-secondary text-sm leading-relaxed">
                   {step.desc}
                 </p>
-
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 inset-x-0 h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-start rounded-b-sm" />
               </div>
+
+              {/* Arrow between cards (desktop, not last) */}
+              {i < 2 && (
+                <div className={`hidden md:flex absolute top-14 ${isRtl ? "-start-4" : "-end-4"} z-10 w-8 h-8 rounded-full bg-primary text-white items-center justify-center`}>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={isRtl ? "rotate-180" : ""}
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </div>
+              )}
             </div>
           ))}
         </div>

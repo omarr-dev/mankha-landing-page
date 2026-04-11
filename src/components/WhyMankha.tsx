@@ -2,79 +2,88 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Zap, DollarSign, Locate, ShieldCheck, Clock } from "lucide-react";
+import { type ReactNode } from "react";
+
+const icons: ReactNode[] = [
+  <svg key="0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+  </svg>,
+  <svg key="1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="1" x2="12" y2="23" />
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+  </svg>,
+  <svg key="2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 12h3" /><path d="M19 12h3" /><path d="M12 2v3" /><path d="M12 19v3" />
+    <circle cx="12" cy="12" r="7" /><circle cx="12" cy="12" r="3" />
+  </svg>,
+  <svg key="3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <polyline points="9 12 11 14 15 10" />
+  </svg>,
+  <svg key="4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </svg>,
+];
 
 export function WhyMankha() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const sectionRef = useScrollReveal();
 
   const features = [
-    { icon: Zap, title: t("whyFast"), desc: t("whyFastDesc"), accent: true },
-    { icon: DollarSign, title: t("whyPrice"), desc: t("whyPriceDesc"), accent: false },
-    { icon: Locate, title: t("whyTracking"), desc: t("whyTrackingDesc"), accent: false },
-    { icon: ShieldCheck, title: t("whyVerified"), desc: t("whyVerifiedDesc"), accent: false },
-    { icon: Clock, title: t("whyAvailable"), desc: t("whyAvailableDesc"), accent: true },
+    { title: t("whyFast"), desc: t("whyFastDesc") },
+    { title: t("whyPrice"), desc: t("whyPriceDesc") },
+    { title: t("whyTracking"), desc: t("whyTrackingDesc") },
+    { title: t("whyVerified"), desc: t("whyVerifiedDesc") },
+    { title: t("whyAvailable"), desc: t("whyAvailableDesc") },
   ];
 
   return (
     <section
       id="why-mankha"
-      className="relative bg-bg-dark py-24 lg:py-32 noise-overlay overflow-hidden"
+      className="bg-bg py-20 lg:py-28"
       ref={sectionRef}
     >
-      {/* Gradient blob */}
-      <div className="absolute bottom-0 start-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header — right-aligned on desktop for variety */}
-        <div className="lg:ms-auto max-w-2xl lg:text-end mb-16 lg:mb-24">
-          <span className="text-primary text-sm font-bold uppercase tracking-[0.2em] reveal">
-            {locale === "ar" ? "المميزات" : "Features"}
-          </span>
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-text-dark mt-4 tracking-tight reveal" style={{ transitionDelay: "100ms" }}>
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header — left aligned */}
+        <div className="max-w-md mb-14 reveal">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text tracking-tight">
             {t("whyTitle")}
           </h2>
-          <p className="text-text-muted-dark text-lg mt-4 font-light reveal" style={{ transitionDelay: "200ms" }}>
+          <p className="text-text-secondary mt-3">
             {t("whySub")}
           </p>
         </div>
 
-        {/* Feature layout — 2+3 asymmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
-          {features.map((feat, i) => {
-            const isWide = feat.accent;
-            return (
-              <div
-                key={i}
-                className={`reveal ${isWide ? "lg:col-span-6" : "lg:col-span-4"}`}
-                style={{ transitionDelay: `${300 + i * 100}ms` }}
-              >
-                <div
-                  className={`group relative h-full p-8 rounded-sm border transition-all duration-300 hover:-translate-y-1 ${
-                    feat.accent
-                      ? "bg-primary/10 border-primary/20 hover:border-primary/40"
-                      : "bg-surface-dark border-border-dark hover:border-primary/30"
-                  }`}
-                >
-                  <div className="flex items-start gap-5">
-                    <div className={`shrink-0 w-11 h-11 rounded-sm flex items-center justify-center ${
-                      feat.accent ? "bg-primary" : "bg-surface-dark border border-border-dark group-hover:border-primary/40"
-                    } transition-colors`}>
-                      <feat.icon className={`w-5 h-5 ${feat.accent ? "text-white" : "text-primary"}`} />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-text-dark mb-2">
-                        {feat.title}
-                      </h3>
-                      <p className="text-text-muted-dark font-light leading-relaxed text-sm">
-                        {feat.desc}
-                      </p>
-                    </div>
-                  </div>
+        {/* Feature list — clean rows */}
+        <div className="space-y-0 border-t border-border">
+          {features.map((feat, i) => (
+            <div
+              key={i}
+              className="reveal group grid grid-cols-1 sm:grid-cols-[auto_1fr_1fr] items-start sm:items-center gap-4 sm:gap-8 py-7 border-b border-border hover:bg-bg-muted/50 transition-colors px-2 sm:px-4 -mx-2 sm:-mx-4 rounded-lg"
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              {/* Number + icon */}
+              <div className="flex items-center gap-4">
+                <span className="text-xs font-bold text-text-tertiary tabular-nums w-5">
+                  0{i + 1}
+                </span>
+                <div className="w-11 h-11 rounded-xl bg-primary/8 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  {icons[i]}
                 </div>
               </div>
-            );
-          })}
+
+              {/* Title */}
+              <h3 className="text-base font-bold text-text">
+                {feat.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-text-secondary text-sm leading-relaxed">
+                {feat.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
