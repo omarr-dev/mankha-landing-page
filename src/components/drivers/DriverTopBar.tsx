@@ -13,7 +13,7 @@ export function DriverTopBar({ registerHref }: Props) {
       <nav className="max-w-6xl mx-auto px-5 sm:px-6 flex items-center justify-between h-[64px]">
         <a href="/" className="flex items-center gap-2.5 group">
           <img
-            src="/logo.png"
+            src="/logo.svg"
             alt={BRAND_NAME_EN}
             className="w-7 h-7 shrink-0 group-hover:scale-105 transition-transform"
           />

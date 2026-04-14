@@ -41,7 +41,7 @@ export function LegalLayout({ en, ar }: Props) {
               aria-label={BRAND_NAME_EN}
             >
               <img
-                src="/logo.png"
+                src="/logo.svg"
                 alt=""
                 className="w-7 h-7 group-hover:scale-105 transition-transform"
               />

@@ -45,7 +45,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src="/logo.png" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0" />
+              <img src="/logo.svg" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0" />
               <span
                 className={
                   locale === "ar"

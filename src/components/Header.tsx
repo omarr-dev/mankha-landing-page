@@ -40,7 +40,7 @@ export function Header() {
       <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2.5 group">
-          <img src="/logo.png" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0 group-hover:scale-105 transition-transform" />
+          <img src="/logo.svg" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0 group-hover:scale-105 transition-transform" />
           <span
             className={
               locale === "ar"
