@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ClientProviders } from "@/components/ClientProviders";
+import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
 
 export const metadata: Metadata = {
-  title: "Mankha — On-Demand Tow Truck Service",
+  title: `${BRAND_NAME_EN} — On-Demand Tow Truck Service`,
   description:
     "Connect with verified tow truck drivers near you. Get instant offers, track arrival in real-time, and pay seamlessly.",
-  keywords: ["tow truck", "roadside assistance", "towing service", "Saudi Arabia", "سطحة", "منخى"],
+  keywords: ["tow truck", "roadside assistance", "towing service", "Saudi Arabia", "سطحة", BRAND_NAME_AR],
 };
 
 export default function RootLayout({

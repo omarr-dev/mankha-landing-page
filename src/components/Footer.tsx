@@ -7,9 +7,10 @@ import {
   SOCIAL_LINKEDIN_URL,
   SOCIAL_X_URL,
 } from "@/lib/links";
+import { BRAND_NAME_EN } from "@/brand";
 
 export function Footer() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const linkGroups = [
     {
@@ -44,8 +45,14 @@ export function Footer() {
           {/* Brand column */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src="/logo.svg" alt="Mankha" className="w-8 h-8 shrink-0" />
-              <span className="font-serif text-ivory text-[22px] font-medium">
+              <img src="/logo.png" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0" />
+              <span
+                className={
+                  locale === "ar"
+                    ? "font-arabic text-ivory text-[26px] font-semibold leading-none"
+                    : "font-serif text-ivory text-[22px] font-medium"
+                }
+              >
                 {t("appName")}
               </span>
             </div>

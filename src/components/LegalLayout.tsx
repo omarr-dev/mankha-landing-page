@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { LegalContent } from "@/content/legal";
 import { LEGAL_LAST_UPDATED, LEGAL_CONTACT_EMAIL } from "@/content/legal";
+import { BRAND_NAME_EN } from "@/brand";
 
 type Props = {
   en: LegalContent;
@@ -37,10 +38,10 @@ export function LegalLayout({ en, ar }: Props) {
             <Link
               href="/"
               className="flex items-center gap-2 group"
-              aria-label="Mankha"
+              aria-label={BRAND_NAME_EN}
             >
               <img
-                src="/logo.svg"
+                src="/logo.png"
                 alt=""
                 className="w-7 h-7 group-hover:scale-105 transition-transform"
               />

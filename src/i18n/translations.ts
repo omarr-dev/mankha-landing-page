@@ -1,7 +1,9 @@
+import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
+
 export const translations = {
   en: {
     // General
-    appName: "Mankha",
+    appName: BRAND_NAME_EN,
     language: "العربية",
 
     // Nav
@@ -15,7 +17,7 @@ export const translations = {
     heroHeadline: "Roadside rescue,\non demand.",
     heroSub: "Connect with verified tow truck drivers near you. Get instant offers, track arrival in real-time, and pay — all from your phone.",
     heroCtaCustomer: "Request a Tow",
-    heroCtaDriver: "Drive with Mankha",
+    heroCtaDriver: `Drive with ${BRAND_NAME_EN}`,
     // Hero promise pills (forward commitments, not claimed history)
     heroPromise1: "Dispatch in minutes",
     heroPromise2: "Licensed drivers",
@@ -44,7 +46,7 @@ export const translations = {
 
     // For Drivers
     driversTitle: "Your truck.\nYour schedule.\nYour earnings.",
-    driversSub: "Join the Mankha driver network and start earning on your own terms. No boss, no shifts — just open the app when you're ready.",
+    driversSub: `Join the ${BRAND_NAME_EN} driver network and start earning on your own terms. No boss, no shifts — just open the app when you're ready.`,
     driversBenefit1: "Flexible schedule",
     driversBenefit1Desc: "Work when you want. Accept only the trips that make sense for you.",
     driversBenefit2: "Steady income",
@@ -100,7 +102,7 @@ export const translations = {
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
     footerCookies: "Cookie Policy",
-    footerCopyright: "Mankha. All rights reserved.",
+    footerCopyright: `${BRAND_NAME_EN}. All rights reserved.`,
     footerMadeIn: "Made in Saudi Arabia",
 
     // Driver Page (/drivers)
@@ -108,7 +110,7 @@ export const translations = {
     dpHeadlineLead: "Keep",
     dpHeadlineHighlight: "100%",
     dpHeadlineTail: "of every trip.",
-    dpSub: "Join Mankha. New trip requests come straight to your WhatsApp. No fees. No commission. Ever.",
+    dpSub: `Join ${BRAND_NAME_EN}. New trip requests come straight to your WhatsApp. No fees. No commission. Ever.`,
     dpCtaRegister: "Register now",
     dpTrustFree: "Free to join",
     dpTrustApproval: "24h approval",
@@ -117,7 +119,7 @@ export const translations = {
     dpNotifTime: "just now",
     dpNotifBody: "Pickup 2 km away — Al Olaya, Riyadh",
     dpNotifOffer: "Send your offer",
-    dpBenefitsEyebrow: "Why drivers choose Mankha",
+    dpBenefitsEyebrow: `Why drivers choose ${BRAND_NAME_EN}`,
     dpBenefitsTitle: "The platform that doesn't take a cut.",
     dpB1Stat: "0",
     dpB1Unit: "SAR fees",
@@ -142,7 +144,7 @@ export const translations = {
   },
   ar: {
     // General
-    appName: "منخى",
+    appName: BRAND_NAME_AR,
     language: "English",
 
     // Nav
@@ -185,7 +187,7 @@ export const translations = {
 
     // For Drivers
     driversTitle: "سطحتك.\nجدولك.\nأرباحك.",
-    driversSub: "انضم لشبكة سواقين منخى وابدأ تربح بشروطك. بدون مدير، بدون ورديات — بس افتح التطبيق لما تكون فاضي.",
+    driversSub: `انضم لشبكة سواقين ${BRAND_NAME_AR} وابدأ تربح بشروطك. بدون مدير، بدون ورديات — بس افتح التطبيق لما تكون فاضي.`,
     driversBenefit1: "جدول مرن",
     driversBenefit1Desc: "اشتغل وقت ما تبي. قبل بس الرحلات اللي تناسبك.",
     driversBenefit2: "دخل ثابت",
@@ -230,7 +232,7 @@ export const translations = {
     footerForDrivers: "للسواقين",
     footerPricing: "الأسعار",
     footerCompany: "الشركة",
-    footerAbout: "عن منخى",
+    footerAbout: `عن ${BRAND_NAME_AR}`,
     footerCareers: "الوظائف",
     footerBlog: "المدونة",
     footerSupport: "الدعم",
@@ -241,7 +243,7 @@ export const translations = {
     footerPrivacy: "سياسة الخصوصية",
     footerTerms: "شروط الخدمة",
     footerCookies: "سياسة الكوكيز",
-    footerCopyright: "منخى. جميع الحقوق محفوظة.",
+    footerCopyright: `${BRAND_NAME_AR}. جميع الحقوق محفوظة.`,
     footerMadeIn: "صنع في السعودية",
 
     // Driver Page (/drivers)
@@ -249,7 +251,7 @@ export const translations = {
     dpHeadlineLead: "خذ",
     dpHeadlineHighlight: "100%",
     dpHeadlineTail: "من كل رحلة.",
-    dpSub: "انضم لمنخى. الطلبات الجديدة توصلك على واتساب مباشرة. بدون رسوم، بدون عمولة. أبد.",
+    dpSub: `انضم لـ${BRAND_NAME_AR}. الطلبات الجديدة توصلك على واتساب مباشرة. بدون رسوم، بدون عمولة. أبد.`,
     dpCtaRegister: "سجّل الآن",
     dpTrustFree: "تسجيل مجاني",
     dpTrustApproval: "موافقة خلال 24 ساعة",
@@ -258,7 +260,7 @@ export const translations = {
     dpNotifTime: "الحين",
     dpNotifBody: "نقطة الاستلام على بعد 2 كم — العليا، الرياض",
     dpNotifOffer: "أرسل عرضك",
-    dpBenefitsEyebrow: "ليه السواقين يختارون منخى",
+    dpBenefitsEyebrow: `ليه السواقين يختارون ${BRAND_NAME_AR}`,
     dpBenefitsTitle: "المنصة اللي ما تاخذ شي من أرباحك.",
     dpB1Stat: "0",
     dpB1Unit: "ريال رسوم",

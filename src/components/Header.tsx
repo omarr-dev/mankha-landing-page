@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useI18n } from "@/i18n/context";
 import { DOWNLOAD_URL } from "@/lib/links";
+import { BRAND_NAME_EN } from "@/brand";
 
 export function Header() {
   const { t, toggleLocale, locale } = useI18n();
@@ -39,8 +40,14 @@ export function Header() {
       <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2.5 group">
-          <img src="/logo.svg" alt="Mankha" className="w-8 h-8 shrink-0 group-hover:scale-105 transition-transform" />
-          <span className="font-serif text-near-black text-[22px] font-medium tracking-tight">
+          <img src="/logo.png" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0 group-hover:scale-105 transition-transform" />
+          <span
+            className={
+              locale === "ar"
+                ? "font-arabic text-near-black text-[26px] font-semibold leading-none"
+                : "font-serif text-near-black text-[22px] font-medium tracking-tight"
+            }
+          >
             {t("appName")}
           </span>
         </a>

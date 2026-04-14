@@ -1,6 +1,7 @@
 "use client";
 
 import { useI18n } from "@/i18n/context";
+import { BRAND_NAME_EN } from "@/brand";
 
 type Props = { registerHref: string };
 
@@ -12,11 +13,17 @@ export function DriverTopBar({ registerHref }: Props) {
       <nav className="max-w-6xl mx-auto px-5 sm:px-6 flex items-center justify-between h-[64px]">
         <a href="/" className="flex items-center gap-2.5 group">
           <img
-            src="/logo.svg"
-            alt="Mankha"
+            src="/logo.png"
+            alt={BRAND_NAME_EN}
             className="w-7 h-7 shrink-0 group-hover:scale-105 transition-transform"
           />
-          <span className="text-text font-bold text-base tracking-tight">
+          <span
+            className={
+              locale === "ar"
+                ? "font-arabic text-text font-semibold text-[20px] leading-none"
+                : "text-text font-bold text-base tracking-tight"
+            }
+          >
             {t("appName")}
           </span>
         </a>
