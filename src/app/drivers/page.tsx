@@ -1,6 +1,5 @@
 import { DriverBenefits } from "@/components/drivers/DriverBenefits";
 import { DriverFinalCta } from "@/components/drivers/DriverFinalCta";
-// import { DriverFooter } from "@/components/drivers/DriverFooter";
 import { DriverHero } from "@/components/drivers/DriverHero";
 import { DriverTopBar } from "@/components/drivers/DriverTopBar";
 import { Footer } from "@/components/Footer";
