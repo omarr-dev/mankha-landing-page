@@ -2,13 +2,13 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Button } from "@/components/ui/Button";
 
 type Props = { registerHref: string };
 
 export function DriverFinalCta({ registerHref }: Props) {
-  const { t, dir } = useI18n();
+  const { t } = useI18n();
   const ref = useScrollReveal();
-  const isRtl = dir === "rtl";
 
   return (
     <section ref={ref} className="py-20 lg:py-24">
@@ -27,7 +27,7 @@ export function DriverFinalCta({ registerHref }: Props) {
           />
 
           <div className="relative flex flex-col items-center text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
               {t("dpFinalTitle")}
             </h2>
             <p className="mt-4 text-white/85 text-base sm:text-lg max-w-xl leading-relaxed">
@@ -35,27 +35,9 @@ export function DriverFinalCta({ registerHref }: Props) {
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a
-                href={registerHref}
-                className="group inline-flex items-center gap-2.5 bg-white text-primary hover:bg-white/95 font-bold text-[15px] px-8 py-4 rounded-full transition-all hover:shadow-2xl hover:shadow-black/20"
-              >
+              <Button href={registerHref} variant="inverse" size="lg" showArrow>
                 {t("dpFinalCta")}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={`transition-transform group-hover:translate-x-0.5 ${isRtl ? "rotate-180 group-hover:-translate-x-0.5" : ""}`}
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-
+              </Button>
             </div>
           </div>
         </div>

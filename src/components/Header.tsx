@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useI18n } from "@/i18n/context";
 import { DOWNLOAD_URL } from "@/lib/links";
 import { BRAND_NAME_EN } from "@/brand";
+import { Button } from "@/components/ui/Button";
 
 export function Header() {
   const { t, toggleLocale, locale } = useI18n();
@@ -40,12 +41,12 @@ export function Header() {
       <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2.5 group">
-          <img src="/logo.svg" alt={BRAND_NAME_EN} className="w-8 h-8 shrink-0 group-hover:scale-105 transition-transform" />
+          <img src="/logo.svg" alt={BRAND_NAME_EN} className="w-7 h-7 shrink-0 group-hover:scale-105 transition-transform" />
           <span
             className={
               locale === "ar"
-                ? "font-arabic text-near-black text-[26px] font-semibold leading-none"
-                : "font-serif text-near-black text-[22px] font-medium tracking-tight"
+                ? "font-arabic text-near-black font-semibold text-[20px] leading-none"
+                : "text-near-black font-bold text-base tracking-tight"
             }
           >
             {t("appName")}
@@ -79,27 +80,9 @@ export function Header() {
             </svg>
             {t("language")}
           </button>
-          <a
-            href={DOWNLOAD_URL}
-            className="bg-terracotta hover:bg-terracotta-hover text-ivory text-[14px] font-medium px-5 py-2.5 rounded-[10px] transition-colors flex items-center gap-2 ring-warm"
-            style={{ boxShadow: "0 0 0 1px #c96442" }}
-          >
+          <Button href={DOWNLOAD_URL} size="sm" showArrow>
             {t("navDownload")}
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={locale === "ar" ? "rotate-180" : ""}
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </a>
+          </Button>
         </div>
 
         {/* Mobile menu button */}
@@ -175,27 +158,15 @@ export function Header() {
             {t("language")}
           </button>
 
-          <a
+          <Button
             href={DOWNLOAD_URL}
             onClick={closeMobile}
-            className="bg-terracotta hover:bg-terracotta-hover text-ivory text-center font-medium py-3 rounded-[10px] mt-2 transition-colors flex items-center justify-center gap-2"
+            size="md"
+            showArrow
+            className="w-full mt-2"
           >
             {t("navDownload")}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={locale === "ar" ? "rotate-180" : ""}
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </a>
+          </Button>
         </div>
       </div>
     </header>

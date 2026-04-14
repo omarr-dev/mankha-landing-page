@@ -108,7 +108,7 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="md:col-span-7 grid grid-cols-3 gap-6">
+          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
             {linkGroups.map((group) => (
               <div key={group.title}>
                 <p className="font-sans text-warm-silver/70 text-[11px] font-medium uppercase tracking-[0.12em] mb-5">

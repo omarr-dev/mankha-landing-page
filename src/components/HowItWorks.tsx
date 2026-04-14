@@ -42,10 +42,10 @@ export function HowItWorks() {
               {locale === "ar" ? "الطريقة" : "The flow"}
             </span>
           </div>
-          <h2 className="font-serif text-near-black text-[40px] lg:text-[52px] font-medium leading-[1.1] tracking-[-0.01em]">
+          <h2 className="font-serif text-near-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-[-0.01em]">
             {t("howTitle")}
           </h2>
-          <p className="font-sans text-olive text-[18px] mt-5 leading-[1.6] max-w-lg">
+          <p className="font-sans text-olive text-base sm:text-lg mt-5 leading-relaxed max-w-lg">
             {t("howSub")}
           </p>
         </div>

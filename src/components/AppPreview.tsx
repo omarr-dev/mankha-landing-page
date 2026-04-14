@@ -3,11 +3,11 @@
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { DOWNLOAD_URL } from "@/lib/links";
+import { Button } from "@/components/ui/Button";
 
 export function AppPreview() {
-  const { t, dir, locale } = useI18n();
+  const { t, locale } = useI18n();
   const sectionRef = useScrollReveal();
-  const isRtl = dir === "rtl";
 
   const features = [
     {
@@ -42,22 +42,22 @@ export function AppPreview() {
   return (
     <section
       id="app-preview"
-      className="bg-parchment py-24 lg:py-32 relative overflow-hidden"
+      className="bg-bg-muted py-24 lg:py-32 relative overflow-hidden"
       ref={sectionRef}
     >
       <div className="relative max-w-[1200px] mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2.5 mb-6 reveal">
             <span className="w-6 h-px bg-terracotta/70" />
-            <span className="font-sans text-[11px] font-medium tracking-[0.14em] uppercase text-terracotta">
+            <span className="text-terracotta text-xs font-semibold uppercase tracking-[0.14em]">
               {locale === "ar" ? "التطبيق" : "The app"}
             </span>
             <span className="w-6 h-px bg-terracotta/70" />
           </div>
-          <h2 className="font-serif text-near-black text-[40px] lg:text-[52px] font-medium tracking-[-0.01em] whitespace-pre-line leading-[1.08] reveal" style={{ transitionDelay: "60ms" }}>
+          <h2 className="font-serif text-near-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.01em] whitespace-pre-line leading-[1.08] reveal" style={{ transitionDelay: "60ms" }}>
             {t("appPreviewTitle")}
           </h2>
-          <p className="font-sans text-olive text-[18px] lg:text-[19px] mt-6 max-w-lg mx-auto leading-[1.6] reveal" style={{ transitionDelay: "120ms" }}>
+          <p className="text-olive text-base sm:text-lg mt-5 max-w-lg mx-auto leading-relaxed reveal" style={{ transitionDelay: "120ms" }}>
             {t("appPreviewSub")}
           </p>
 
@@ -76,12 +76,12 @@ export function AppPreview() {
 
           {/* Phone mockup inside a warm "stage" */}
           <div className="mt-14 reveal relative" style={{ transitionDelay: "240ms" }}>
-            <div className="mx-auto w-full max-w-[520px] bg-ivory rounded-[32px] py-14 px-6 border border-border-cream whisper-shadow relative overflow-hidden">
+            <div className="mx-auto w-full max-w-[520px] bg-ivory rounded-[32px] py-10 px-4 sm:py-14 sm:px-6 border border-border-cream whisper-shadow relative overflow-hidden">
               {/* Decorative warm rings */}
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-sand/40 pointer-events-none" />
               <div className="absolute -bottom-24 -left-16 w-56 h-56 rounded-full bg-sand/30 pointer-events-none" />
 
-              <div className="relative mx-auto w-[280px] h-[560px] bg-near-black rounded-[44px] p-3 shadow-[0_30px_60px_-20px_rgba(20,20,19,0.25)]">
+              <div className="relative mx-auto w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] bg-near-black rounded-[44px] p-3 shadow-[0_30px_60px_-20px_rgba(20,20,19,0.25)]">
                 {/* Preview label */}
                 <div className="absolute -top-3 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 z-10 bg-terracotta text-ivory text-[10px] font-medium px-3 py-1 rounded-full tracking-[0.14em] uppercase">
                   {t("appPreviewLabel")}
@@ -204,27 +204,9 @@ export function AppPreview() {
 
           {/* CTA */}
           <div className="flex justify-center mt-12 reveal" style={{ transitionDelay: "300ms" }}>
-            <a
-              href={DOWNLOAD_URL}
-              className="group inline-flex items-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory font-sans font-medium text-[15px] px-6 py-3.5 rounded-[12px] transition-colors"
-              style={{ boxShadow: "0 0 0 1px #c96442" }}
-            >
+            <Button href={DOWNLOAD_URL} showArrow>
               {t("heroCtaCustomer")}
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={`transition-transform group-hover:translate-x-0.5 ${isRtl ? "rotate-180 group-hover:-translate-x-0.5" : ""}`}
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
+            </Button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Button } from "@/components/ui/Button";
 
 type Props = { registerHref: string };
 
@@ -42,40 +43,22 @@ export function DriverHero({ registerHref }: Props) {
             </div>
 
             {/* Headline */}
-            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-text tracking-tight leading-[1.05]">
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text tracking-tight leading-[1.05]">
               {t("dpHeadlineLead")}{" "}
               <span className="text-primary">{t("dpHeadlineHighlight")}</span>{" "}
               {t("dpHeadlineTail")}
             </h1>
 
             {/* Sub */}
-            <p className="mt-5 text-text-secondary text-base sm:text-lg leading-relaxed max-w-[520px]">
+            <p className="mt-5 text-text-secondary text-lg sm:text-xl leading-relaxed max-w-[520px]">
               {t("dpSub")}
             </p>
 
             {/* CTAs */}
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <a
-                href={registerHref}
-                className="group inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-semibold text-[15px] px-7 py-3.5 rounded-full transition-all hover:shadow-lg hover:shadow-primary/25"
-              >
+              <Button href={registerHref} size="lg" showArrow>
                 {t("dpCtaRegister")}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={`transition-transform group-hover:translate-x-0.5 ${isRtl ? "rotate-180 group-hover:-translate-x-0.5" : ""}`}
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-
+              </Button>
             </div>
 
             {/* Trust strip */}

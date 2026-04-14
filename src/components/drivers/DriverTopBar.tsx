@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/i18n/context";
 import { BRAND_NAME_EN } from "@/brand";
+import { Button } from "@/components/ui/Button";
 
 type Props = { registerHref: string };
 
@@ -42,12 +43,9 @@ export function DriverTopBar({ registerHref }: Props) {
             <span className="hidden sm:inline">{t("language")}</span>
           </button>
 
-          <a
-            href={registerHref}
-            className="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition-colors"
-          >
+          <Button href={registerHref} size="sm">
             {t("dpCtaRegister")}
-          </a>
+          </Button>
         </div>
       </nav>
     </header>

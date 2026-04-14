@@ -73,7 +73,7 @@ export function DriverBenefits() {
           <div className="text-primary text-xs font-semibold uppercase tracking-wider">
             {t("dpBenefitsEyebrow")}
           </div>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[40px] font-bold text-text tracking-tight leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text tracking-tight leading-tight">
             {t("dpBenefitsTitle")}
           </h2>
         </div>
