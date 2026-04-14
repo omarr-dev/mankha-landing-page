@@ -4,11 +4,9 @@ import { DriverHero } from "@/components/drivers/DriverHero";
 import { DriverBenefits } from "@/components/drivers/DriverBenefits";
 import { DriverFinalCta } from "@/components/drivers/DriverFinalCta";
 import { DriverFooter } from "@/components/drivers/DriverFooter";
+import { DRIVER_REGISTER_URL } from "@/lib/links";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001";
-const REGISTER_HREF = `${APP_URL}/driver`;
-// TODO: replace with real WhatsApp business number
-const WHATSAPP_HREF = "https://wa.me/966500000000";
+const REGISTER_HREF = DRIVER_REGISTER_URL;
 
 export const metadata: Metadata = {
   title: "Drive with Mankha — Keep 100% of every trip",
@@ -26,9 +24,9 @@ export default function DriversPage() {
   return (
     <main className="min-h-screen bg-bg">
       <DriverTopBar registerHref={REGISTER_HREF} />
-      <DriverHero registerHref={REGISTER_HREF} whatsappHref={WHATSAPP_HREF} />
+      <DriverHero registerHref={REGISTER_HREF} />
       <DriverBenefits />
-      <DriverFinalCta registerHref={REGISTER_HREF} whatsappHref={WHATSAPP_HREF} />
+      <DriverFinalCta registerHref={REGISTER_HREF} />
       <DriverFooter />
     </main>
   );

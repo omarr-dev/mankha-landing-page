@@ -3,9 +3,9 @@
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-type Props = { registerHref: string; whatsappHref: string };
+type Props = { registerHref: string };
 
-export function DriverHero({ registerHref, whatsappHref }: Props) {
+export function DriverHero({ registerHref }: Props) {
   const { t, dir } = useI18n();
   const ref = useScrollReveal();
   const isRtl = dir === "rtl";
@@ -76,17 +76,6 @@ export function DriverHero({ registerHref, whatsappHref }: Props) {
                 </svg>
               </a>
 
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-text hover:text-primary text-[15px] font-semibold px-5 py-3.5 rounded-full border border-border hover:border-primary/30 transition-all"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13 1.6 5.93L0 24l6.35-1.66a11.86 11.86 0 0 0 5.7 1.45h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.24-6.15-3.41-8.44zM12.06 21.6h-.01a9.7 9.7 0 0 1-4.95-1.36l-.35-.21-3.77.99 1-3.67-.23-.38a9.67 9.67 0 0 1-1.48-5.1c0-5.37 4.37-9.74 9.74-9.74 2.6 0 5.04 1.01 6.88 2.85a9.66 9.66 0 0 1 2.85 6.89c0 5.37-4.37 9.73-9.68 9.73zm5.6-7.28c-.3-.15-1.81-.9-2.09-1-.28-.1-.48-.15-.69.15s-.79 1-.97 1.2c-.18.2-.36.23-.66.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.36.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.69-1.66-.95-2.27-.25-.6-.5-.52-.69-.53-.18-.01-.38-.01-.59-.01-.2 0-.53.08-.81.38-.28.3-1.07 1.04-1.07 2.54s1.09 2.94 1.24 3.14c.15.2 2.15 3.28 5.2 4.6.73.31 1.3.5 1.74.64.73.23 1.39.2 1.91.12.58-.09 1.81-.74 2.07-1.45.25-.72.25-1.33.18-1.46-.08-.13-.28-.2-.58-.35z" />
-                </svg>
-                {t("dpCtaWhatsapp")}
-              </a>
             </div>
 
             {/* Trust strip */}

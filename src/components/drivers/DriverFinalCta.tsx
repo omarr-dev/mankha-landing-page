@@ -3,9 +3,9 @@
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-type Props = { registerHref: string; whatsappHref: string };
+type Props = { registerHref: string };
 
-export function DriverFinalCta({ registerHref, whatsappHref }: Props) {
+export function DriverFinalCta({ registerHref }: Props) {
   const { t, dir } = useI18n();
   const ref = useScrollReveal();
   const isRtl = dir === "rtl";
@@ -56,17 +56,6 @@ export function DriverFinalCta({ registerHref, whatsappHref }: Props) {
                 </svg>
               </a>
 
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white hover:bg-white/10 border border-white/30 text-[15px] font-semibold px-6 py-4 rounded-full transition-all"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13 1.6 5.93L0 24l6.35-1.66a11.86 11.86 0 0 0 5.7 1.45h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.24-6.15-3.41-8.44z" />
-                </svg>
-                {t("dpCtaWhatsapp")}
-              </a>
             </div>
           </div>
         </div>

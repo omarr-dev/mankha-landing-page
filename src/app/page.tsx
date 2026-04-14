@@ -4,7 +4,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { WhyMankha } from "@/components/WhyMankha";
 import { ForDrivers } from "@/components/ForDrivers";
 import { AppPreview } from "@/components/AppPreview";
-import { Testimonials } from "@/components/Testimonials";
+import { TrustBlock } from "@/components/TrustBlock";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <WhyMankha />
       <ForDrivers />
       <AppPreview />
-      <Testimonials />
+      <TrustBlock />
       <Footer />
     </main>
   );

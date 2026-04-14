@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { DRIVER_REGISTER_URL } from "@/lib/links";
 
 const benefitIcons = [
   // Calendar / schedule
@@ -56,7 +57,7 @@ export function ForDrivers() {
 
             <div className="flex flex-wrap gap-3 mt-8">
               <a
-                href="#download"
+                href={DRIVER_REGISTER_URL}
                 className="group inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-all hover:shadow-lg hover:shadow-primary/25"
               >
                 {t("driversCtaRegister")}
@@ -76,7 +77,7 @@ export function ForDrivers() {
                 </svg>
               </a>
               <a
-                href="#how-it-works"
+                href="/drivers"
                 className="inline-flex items-center text-text hover:text-primary text-sm font-semibold px-5 py-3.5 rounded-full border border-border hover:border-primary/30 transition-all"
               >
                 {t("driversCtaLearn")}
