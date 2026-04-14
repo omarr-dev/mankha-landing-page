@@ -6,8 +6,8 @@ export const translations = {
 
     // Nav
     navHowItWorks: "How It Works",
-    navWhyMankha: "Why Mankha",
     navForDrivers: "For Drivers",
+    navApp: "The App",
     navDownload: "Request a Tow",
 
     // Hero
@@ -41,20 +41,6 @@ export const translations = {
     howStep1Tag: "01",
     howStep2Tag: "02",
     howStep3Tag: "03",
-
-    // Why Mankha
-    whyTitle: "Why Mankha",
-    whySub: "Built for when you need it most",
-    whyFast: "Fast Response",
-    whyFastDesc: "Average driver response in under 3 minutes. No waiting on hold, no dispatch middlemen.",
-    whyPrice: "Transparent Pricing",
-    whyPriceDesc: "Compare multiple offers side-by-side. You choose the price — we never add hidden fees.",
-    whyTracking: "Live GPS Tracking",
-    whyTrackingDesc: "Watch your driver's exact location as they head to you. Know exactly when help arrives.",
-    whyVerified: "Verified Drivers",
-    whyVerifiedDesc: "Every driver is background-checked, licensed, and rated by real customers.",
-    whyAvailable: "Always On",
-    whyAvailableDesc: "24/7 availability across the network. Breakdowns don't keep office hours — neither do we.",
 
     // For Drivers
     driversTitle: "Your truck.\nYour schedule.\nYour earnings.",
@@ -90,6 +76,7 @@ export const translations = {
     trustPill3: "Dispatch in minutes",
     trustPill4: "Compare before you commit",
     trustCta: "Request a tow now",
+    trustCtaDriver: "Tow truck owner?",
 
     // Footer
     footerCtaTitle: "Stranded? Not for long.",
@@ -160,16 +147,16 @@ export const translations = {
 
     // Nav
     navHowItWorks: "كيف يشتغل",
-    navWhyMankha: "ليه منخى",
     navForDrivers: "للسواقين",
+    navApp: "التطبيق",
     navDownload: "اطلب سطحة",
 
     // Hero
     heroBadge: "متوفر الحين في كل السعودية",
-    heroHeadline: "أقرررب سطحة،\nوقت ما تبي.",
+    heroHeadline: "أقرب سطحة،\nوقت ما تبي.",
     heroSub: "تواصل مع سواقين سطحات موثقين قريبين منك. خذ عروض فورية، تابع وصوله لحظة بلحظة، وادفع — كله من جوالك.",
     heroCtaCustomer: "اطلب سطحة",
-    heroCtaDriver: "سوق مع منخى",
+    heroCtaDriver: "اعرف اكثر",
     // Hero promise pills
     heroPromise1: "وصول في دقايق",
     heroPromise2: "سواقين مرخّصين",
@@ -195,20 +182,6 @@ export const translations = {
     howStep1Tag: "01",
     howStep2Tag: "02",
     howStep3Tag: "03",
-
-    // Why Mankha
-    whyTitle: "ليه منخى",
-    whySub: "مصمم لوقت ما تحتاجه بجد",
-    whyFast: "رد سريع",
-    whyFastDesc: "متوسط رد السايق أقل من 3 دقايق. بدون انتظار على الخط، بدون وسطاء.",
-    whyPrice: "أسعار واضحة",
-    whyPriceDesc: "قارن كذا عرض جنب بعض. انت تختار السعر — ما في رسوم مخفية أبد.",
-    whyTracking: "تتبع GPS مباشر",
-    whyTrackingDesc: "شف مكان سايقك بالضبط وهو جاي لك. تعرف بالضبط متى توصل المساعدة.",
-    whyVerified: "سواقين موثقين",
-    whyVerifiedDesc: "كل سايق متحقق منه، مرخّص، ومقيّم من ناس جربوه.",
-    whyAvailable: "متوفر دايم",
-    whyAvailableDesc: "متوفر 24/7 على الشبكة. الأعطال ما تلتزم بدوام — وحنا كذلك.",
 
     // For Drivers
     driversTitle: "سطحتك.\nجدولك.\nأرباحك.",
@@ -244,6 +217,7 @@ export const translations = {
     trustPill3: "وصول في دقايق",
     trustPill4: "قارن قبل ما تقبل",
     trustCta: "اطلب سطحة الحين",
+    trustCtaDriver: "راعي سطحة ؟",
 
     // Footer
     footerCtaTitle: "عطلان؟ مو لوقت طويل.",

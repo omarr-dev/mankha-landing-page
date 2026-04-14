@@ -4,98 +4,77 @@ import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stepIcons = [
-  // Location pin
-  <svg key="1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg key="1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
     <circle cx="12" cy="10" r="3" />
   </svg>,
-  // Compare / list
-  <svg key="2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 3h5v5" />
-    <path d="M8 3H3v5" />
-    <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
-    <path d="m15 9 6-6" />
+  <svg key="2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10h-7" /><path d="M21 6h-7" /><path d="M21 14h-7" /><path d="M21 18h-7" />
+    <rect x="3" y="5" width="7" height="14" rx="1.5" />
   </svg>,
-  // Checkmark / done
-  <svg key="3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg key="3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
     <polyline points="22 4 12 14.01 9 11.01" />
   </svg>,
 ];
 
 export function HowItWorks() {
-  const { t, locale, dir } = useI18n();
+  const { t, locale } = useI18n();
   const sectionRef = useScrollReveal();
-  const isRtl = dir === "rtl";
 
   const steps = [
-    { num: "1", title: t("howStep1Title"), desc: t("howStep1Desc") },
-    { num: "2", title: t("howStep2Title"), desc: t("howStep2Desc") },
-    { num: "3", title: t("howStep3Title"), desc: t("howStep3Desc") },
+    { num: "01", title: t("howStep1Title"), desc: t("howStep1Desc") },
+    { num: "02", title: t("howStep2Title"), desc: t("howStep2Desc") },
+    { num: "03", title: t("howStep3Title"), desc: t("howStep3Desc") },
   ];
 
   return (
     <section
       id="how-it-works"
-      className="bg-bg-muted py-20 lg:py-28"
+      className="bg-parchment py-24 lg:py-32"
       ref={sectionRef}
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center max-w-lg mx-auto mb-16 reveal">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text tracking-tight">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-2xl mb-16 lg:mb-20 reveal">
+          <div className="inline-flex items-center gap-2.5 mb-5">
+            <span className="w-6 h-px bg-terracotta/70" />
+            <span className="font-sans text-[11px] font-medium tracking-[0.14em] uppercase text-terracotta">
+              {locale === "ar" ? "الطريقة" : "The flow"}
+            </span>
+          </div>
+          <h2 className="font-serif text-near-black text-[40px] lg:text-[52px] font-medium leading-[1.1] tracking-[-0.01em]">
             {t("howTitle")}
           </h2>
-          <p className="text-text-secondary mt-3">
+          <p className="font-sans text-olive text-[18px] mt-5 leading-[1.6] max-w-lg">
             {t("howSub")}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 relative">
-          {/* Connector line (desktop only) */}
-          <div className="hidden md:block absolute top-14 start-[calc(16.67%+24px)] end-[calc(16.67%+24px)] h-px border-t-2 border-dashed border-primary/20" />
-
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {steps.map((step, i) => (
             <div
               key={step.num}
-              className="reveal relative"
+              className="reveal"
               style={{ transitionDelay: `${i * 120}ms` }}
             >
-              <div className="bg-bg rounded-2xl border border-border p-6 hover:shadow-lg transition-shadow relative">
-                {/* Step number badge */}
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-5 relative z-10">
-                  {stepIcons[i]}
+              <article className="h-full bg-ivory rounded-[16px] p-7 lg:p-8 border border-border-warm hover:border-terracotta/30 transition-colors">
+                {/* Icon + number row */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-11 h-11 rounded-[10px] bg-parchment text-terracotta flex items-center justify-center border border-border-cream">
+                    {stepIcons[i]}
+                  </div>
+                  <span className="font-serif text-[28px] text-stone tabular-nums">
+                    {step.num}
+                  </span>
                 </div>
 
-                <span className="inline-block text-xs font-bold text-primary bg-primary/8 px-2.5 py-1 rounded-full mb-3">
-                  {locale === "ar" ? `خطوة ${step.num}` : `Step ${step.num}`}
-                </span>
-
-                <h3 className="text-lg font-bold text-text mb-2">
+                <h3 className="font-serif text-near-black text-[24px] font-medium leading-[1.2] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-text-secondary text-sm leading-relaxed">
+                <p className="font-sans text-olive text-[15px] leading-[1.6]">
                   {step.desc}
                 </p>
-              </div>
-
-              {/* Arrow between cards (desktop, not last) */}
-              {i < 2 && (
-                <div className={`hidden md:flex absolute top-14 ${isRtl ? "-start-4" : "-end-4"} z-10 w-8 h-8 rounded-full bg-primary text-white items-center justify-center`}>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={isRtl ? "rotate-180" : ""}
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              )}
+              </article>
             </div>
           ))}
         </div>

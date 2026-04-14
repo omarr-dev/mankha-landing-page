@@ -10,84 +10,89 @@ export function TrustBlock() {
   const isRtl = dir === "rtl";
 
   const pills = [
-    {
-      label: t("trustPill1"),
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg>
-      ),
-    },
-    {
-      label: t("trustPill2"),
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-      ),
-    },
-    {
-      label: t("trustPill3"),
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-        </svg>
-      ),
-    },
-    {
-      label: t("trustPill4"),
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2v20" />
-          <path d="M5 9l7-7 7 7" />
-          <path d="M5 15l7 7 7-7" />
-        </svg>
-      ),
-    },
+    t("trustPill1"),
+    t("trustPill2"),
+    t("trustPill3"),
+    t("trustPill4"),
   ];
 
   return (
-    <section className="bg-bg-muted py-20 lg:py-28" ref={sectionRef}>
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="reveal relative bg-primary text-white rounded-2xl p-8 sm:p-12 overflow-hidden">
-          <div className="absolute top-0 end-0 w-56 h-56 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 rtl:-translate-x-1/2" />
-          <div className="absolute bottom-0 start-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 rtl:translate-x-1/2" />
+    <section className="bg-parchment py-20 lg:py-28" ref={sectionRef}>
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="reveal relative bg-near-black text-ivory rounded-[24px] lg:rounded-[32px] px-8 py-14 lg:px-16 lg:py-20 overflow-hidden border border-border-dark">
+          {/* Organic warm accent — no gradients, just a terracotta shape */}
+          <svg
+            className="absolute top-0 end-0 w-[420px] h-[420px] opacity-[0.12] pointer-events-none"
+            viewBox="0 0 400 400"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M 300 40 C 340 60 370 110 360 170 C 350 220 320 260 270 280 C 220 300 170 290 150 250 C 130 210 150 160 180 130 C 210 100 260 20 300 40 Z"
+              fill="#c96442"
+            />
+          </svg>
 
-          <div className="relative text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold tracking-tight leading-snug">
+          <div className="relative max-w-2xl">
+            <div className="inline-flex items-center gap-2.5 mb-6">
+              <span className="w-6 h-px bg-coral/70" />
+              <span className="font-sans text-[11px] font-medium tracking-[0.14em] uppercase text-coral">
+                {t("trustPill2")}
+              </span>
+            </div>
+            <h2 className="font-serif text-[40px] lg:text-[52px] font-medium tracking-[-0.01em] leading-[1.1]">
               {t("trustTitle")}
             </h2>
-            <p className="text-white/80 mt-4 max-w-xl mx-auto leading-relaxed">
+            <p className="font-sans text-warm-silver text-[18px] mt-6 leading-[1.6] max-w-xl">
               {t("trustSub")}
             </p>
 
-            <div className="flex flex-wrap justify-center gap-2.5 mt-8">
-              {pills.map((p, i) => (
+            <div className="flex flex-wrap gap-2 mt-8">
+              {pills.map((label, i) => (
                 <div
                   key={i}
-                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-2 text-sm font-medium border border-white/15"
+                  className="inline-flex items-center gap-2 bg-dark-surface rounded-full px-4 py-1.5 font-sans text-[13px] text-warm-silver border border-border-dark"
                 >
-                  <span className="text-white/90">{p.icon}</span>
-                  {p.label}
+                  <span className="w-1.5 h-1.5 rounded-full bg-coral" />
+                  {label}
                 </div>
               ))}
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
                 href={DOWNLOAD_URL}
-                className="group inline-flex items-center justify-center gap-2.5 bg-white text-primary hover:bg-white/95 font-semibold text-sm px-7 py-3.5 rounded-full transition-all"
+                className="group inline-flex items-center justify-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory font-sans font-medium text-[15px] px-6 py-3.5 rounded-[12px] transition-colors"
+                style={{ boxShadow: "0 0 0 1px #c96442" }}
               >
                 {t("trustCta")}
                 <svg
-                  width="16"
-                  height="16"
+                  width="15"
+                  height="15"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2.5"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`transition-transform group-hover:translate-x-0.5 ${isRtl ? "rotate-180 group-hover:-translate-x-0.5" : ""}`}
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+              <a
+                href="/drivers"
+                className="group inline-flex items-center justify-center gap-2.5 bg-transparent hover:bg-ivory/[0.06] text-ivory font-sans font-medium text-[15px] px-6 py-3.5 rounded-[12px] border border-ivory/25 hover:border-ivory/50 transition-colors"
+              >
+                {t("trustCtaDriver")}
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className={`transition-transform group-hover:translate-x-0.5 ${isRtl ? "rotate-180 group-hover:-translate-x-0.5" : ""}`}

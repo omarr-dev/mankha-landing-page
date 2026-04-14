@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
-import { DriverTopBar } from "@/components/drivers/DriverTopBar";
-import { DriverHero } from "@/components/drivers/DriverHero";
 import { DriverBenefits } from "@/components/drivers/DriverBenefits";
 import { DriverFinalCta } from "@/components/drivers/DriverFinalCta";
-import { DriverFooter } from "@/components/drivers/DriverFooter";
+// import { DriverFooter } from "@/components/drivers/DriverFooter";
+import { DriverHero } from "@/components/drivers/DriverHero";
+import { DriverTopBar } from "@/components/drivers/DriverTopBar";
+import { Footer } from "@/components/Footer";
 import { DRIVER_REGISTER_URL } from "@/lib/links";
+import type { Metadata } from "next";
 
 const REGISTER_HREF = DRIVER_REGISTER_URL;
 
@@ -27,7 +28,7 @@ export default function DriversPage() {
       <DriverHero registerHref={REGISTER_HREF} />
       <DriverBenefits />
       <DriverFinalCta registerHref={REGISTER_HREF} />
-      <DriverFooter />
+      <Footer />
     </main>
   );
 }

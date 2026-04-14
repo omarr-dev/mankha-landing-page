@@ -2,25 +2,56 @@
 @import "tw-animate-css";
 
 @theme inline {
-  --color-primary: #0A7B6F;
-  --color-primary-dark: #065F56;
-  --color-cta: #0A7B6F;
-  --color-cta-hover: #065F56;
+  /* Brand */
+  --color-terracotta: #c96442;
+  --color-terracotta-hover: #b8583a;
+  --color-coral: #d97757;
 
-  --color-bg: #FFFFFF;
-  --color-bg-muted: #F8F8F8;
-  --color-surface: #FFFFFF;
-  --color-text: #111111;
-  --color-text-secondary: #555555;
-  --color-text-tertiary: #888888;
-  --color-border: #E8E8E8;
-  --color-border-hover: #D0D0D0;
+  /* Surfaces */
+  --color-parchment: #f5f4ed;
+  --color-ivory: #faf9f5;
+  --color-sand: #e8e6dc;
+  --color-sand-deep: #dedcd0;
+  --color-dark: #141413;
+  --color-dark-surface: #30302e;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  /* Text */
+  --color-near-black: #141413;
+  --color-charcoal: #4d4c48;
+  --color-olive: #5e5d59;
+  --color-stone: #87867f;
+  --color-dark-warm: #3d3d3a;
+  --color-warm-silver: #b0aea5;
+
+  /* Borders & rings */
+  --color-border-cream: #f0eee6;
+  --color-border-warm: #e8e6dc;
+  --color-border-dark: #30302e;
+  --color-ring-warm: #d1cfc5;
+  --color-ring-deep: #c2c0b6;
+
+  /* Back-compat aliases (still used in some components) */
+  --color-primary: #c96442;
+  --color-primary-dark: #b8583a;
+  --color-cta: #c96442;
+  --color-cta-hover: #b8583a;
+  --color-bg: #f5f4ed;
+  --color-bg-muted: #faf9f5;
+  --color-surface: #faf9f5;
+  --color-text: #141413;
+  --color-text-secondary: #5e5d59;
+  --color-text-tertiary: #87867f;
+  --color-border: #f0eee6;
+  --color-border-hover: #e8e6dc;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
 
-  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-sans: 'Inter', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-serif: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
 }
 
@@ -29,35 +60,46 @@ html {
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--color-parchment);
+  color: var(--color-near-black);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02";
 }
 
 ::selection {
-  background: var(--color-primary);
-  color: #FFFFFF;
+  background: var(--color-terracotta);
+  color: var(--color-ivory);
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-parchment);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CCC;
-  border-radius: 3px;
+  background: var(--color-sand-deep);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ring-deep);
 }
 
 /* Scroll reveal — single subtle fade */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
@@ -68,7 +110,7 @@ body {
 .reveal-left {
   opacity: 0;
   transform: translateX(-20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-left.visible {
@@ -79,7 +121,7 @@ body {
 .reveal-right {
   opacity: 0;
   transform: translateX(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-right.visible {
@@ -121,6 +163,20 @@ body {
 .animate-marker-pulse { animation: marker-pulse 2s ease-out infinite; transform-origin: center; }
 .animate-live-dot     { animation: live-dot 1.2s ease-in-out infinite; }
 .animate-truck-drift  { animation: truck-drift 4s ease-in-out infinite; }
+
+/* Warm ring shadows — signature Claude treatment */
+.ring-warm {
+  box-shadow: 0 0 0 1px var(--color-ring-warm);
+}
+.ring-warm-deep {
+  box-shadow: 0 0 0 1px var(--color-ring-deep);
+}
+.whisper-shadow {
+  box-shadow: 0 4px 24px rgba(20, 20, 19, 0.05);
+}
+.whisper-shadow-lg {
+  box-shadow: 0 12px 48px rgba(20, 20, 19, 0.08), 0 0 0 1px var(--color-border-cream);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

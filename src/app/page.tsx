@@ -1,21 +1,18 @@
+import { AppPreview } from "@/components/AppPreview";
+import { Footer } from "@/components/Footer";
+// import { ForDrivers } from "@/components/ForDrivers";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { HowItWorks } from "@/components/HowItWorks";
-import { WhyMankha } from "@/components/WhyMankha";
-import { ForDrivers } from "@/components/ForDrivers";
-import { AppPreview } from "@/components/AppPreview";
+// import { HowItWorks } from "@/components/HowItWorks";
 import { TrustBlock } from "@/components/TrustBlock";
-import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <main>
       <Header />
       <Hero />
-      <HowItWorks />
-      <WhyMankha />
-      <ForDrivers />
       <AppPreview />
+      {/* <ForDrivers /> */}
       <TrustBlock />
       <Footer />
     </main>
