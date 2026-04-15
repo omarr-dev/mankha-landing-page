@@ -4,19 +4,29 @@ import { DriverHero } from "@/components/drivers/DriverHero";
 import { DriverTopBar } from "@/components/drivers/DriverTopBar";
 import { Footer } from "@/components/Footer";
 import { DRIVER_REGISTER_URL } from "@/lib/links";
-import { BRAND_NAME_EN } from "@/brand";
+import { BRAND_NAME_AR } from "@/brand";
 import type { Metadata } from "next";
 
 const REGISTER_HREF = DRIVER_REGISTER_URL;
 
 export const metadata: Metadata = {
-  title: `Drive with ${BRAND_NAME_EN} — Keep 100% of every trip`,
-  description: `Join ${BRAND_NAME_EN} as a tow truck driver. No registration fees, 0% commission, easy onboarding, and new requests delivered straight to your WhatsApp.`,
+  title: `قُد مع ${BRAND_NAME_AR} — احتفظ بـ 100% من كل رحلة`,
+  description: `انضم إلى ${BRAND_NAME_AR} كسائق سطحة. بدون رسوم تسجيل، عمولة 0%، تسجيل سهل، وطلبات جديدة تصلك مباشرة على واتساب.`,
   openGraph: {
-    title: `Drive with ${BRAND_NAME_EN} — Keep 100% of every trip`,
+    title: `قُد مع ${BRAND_NAME_AR} — احتفظ بـ 100% من كل رحلة`,
     description:
-      "No registration fees. 0% commission. Trip requests on WhatsApp. Join hundreds of drivers earning on their own terms.",
+      "بدون رسوم تسجيل. عمولة 0%. طلبات الرحلات عبر واتساب. انضم إلى مئات السائقين الذين يكسبون بشروطهم.",
     type: "website",
+    locale: "ar_SA",
+    siteName: BRAND_NAME_AR,
+    images: [
+      {
+        url: "/logo.png",
+        width: 864,
+        height: 1210,
+        alt: BRAND_NAME_AR,
+      },
+    ],
   },
 };
 
