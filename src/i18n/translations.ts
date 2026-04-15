@@ -156,7 +156,7 @@ export const translations = {
     navDownload: "اطلب سطحة",
 
     // Hero
-    heroBadge: "متوفر الحين في كل السعودية",
+    heroBadge: "حولك حواليك سطحتك بين يديك",
     heroHeadlineLead: "أقررب",
     heroHeadlineHighlight: "سطحة",
     heroHeadlineTail: "وقت ما تبي.",
