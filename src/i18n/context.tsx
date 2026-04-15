@@ -13,12 +13,12 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | null>(null);
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocale] = useState<Locale>("ar");
 
   useEffect(() => {
     const stored = localStorage.getItem("mankha_locale");
-    if (stored === "ar") {
-      setLocale("ar");
+    if (stored === "en") {
+      setLocale("en");
     }
   }, []);
 
