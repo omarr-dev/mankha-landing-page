@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClientProviders } from "@/components/ClientProviders";
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: `${BRAND_NAME_EN} — On-Demand Tow Truck Service`,
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased bg-parchment text-near-black">
         <ClientProviders>{children}</ClientProviders>
+        <Analytics />
       </body>
     </html>
   );
