@@ -14,7 +14,9 @@ export const translations = {
 
     // Hero
     heroBadge: "Available now across Saudi Arabia",
-    heroHeadline: "Roadside rescue,\non demand.",
+    heroHeadlineLead: "Nearest",
+    heroHeadlineHighlight: "tow truck,",
+    heroHeadlineTail: "on demand.",
     heroSub: "Connect with verified tow truck drivers near you. Get instant offers, track arrival in real-time, and pay — all from your phone.",
     heroCtaCustomer: "Request a Tow",
     heroCtaDriver: `Drive with ${BRAND_NAME_EN}`,
@@ -155,7 +157,9 @@ export const translations = {
 
     // Hero
     heroBadge: "متوفر الحين في كل السعودية",
-    heroHeadline: "أقرب سطحة،\nوقت ما تبي.",
+    heroHeadlineLead: "أقررب",
+    heroHeadlineHighlight: "سطحة",
+    heroHeadlineTail: "وقت ما تبي.",
     heroSub: "تواصل مع سواقين سطحات موثقين قريبين منك. خذ عروض فورية، تابع وصوله لحظة بلحظة، وادفع — كله من جوالك.",
     heroCtaCustomer: "اطلب سطحة",
     heroCtaDriver: "اعرف اكثر",

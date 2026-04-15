@@ -26,12 +26,19 @@ export function Hero() {
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20 items-center">
           {/* Left content */}
           <div className="reveal">
-            <h1 className="font-serif text-near-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.02em]">
-              {t("heroHeadline").split("\n").map((line, i) => (
-                <span key={i} className="block">
-                  {line}
-                </span>
-              ))}
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta text-xs font-semibold px-3 py-1.5 rounded-full">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              {t("heroBadge")}
+            </div>
+
+            <h1 className="mt-5 font-serif text-near-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.02em]">
+              {t("heroHeadlineLead")}{" "}
+              <span className="text-terracotta">{t("heroHeadlineHighlight")}</span>{" "}
+              {t("heroHeadlineTail")}
             </h1>
 
             <p className="text-olive text-lg sm:text-xl mt-5 leading-relaxed max-w-[520px]">
