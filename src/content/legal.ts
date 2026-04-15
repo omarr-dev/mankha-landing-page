@@ -6,7 +6,7 @@ import { BRAND_NAME_EN } from "@/brand";
 
 export const LEGAL_LAST_UPDATED = "2026-04-14";
 export const LEGAL_COMPANY_DISPLAY = BRAND_NAME_EN;
-export const LEGAL_CONTACT_EMAIL = "support@mankha.sa";
+export const LEGAL_CONTACT_EMAIL = "support@Sathtak.app";
 
 export type LegalSection = {
   id: string;

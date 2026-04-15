@@ -4,8 +4,8 @@ export const DOWNLOAD_URL = APP_URL;
 export const DRIVER_REGISTER_URL = `${APP_URL}/driver`;
 
 // TODO: replace placeholders with real business destinations
-export const CONTACT_EMAIL = "support@mankha.sa";
-export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
-export const SOCIAL_X_URL = "https://x.com/mankha";
-export const SOCIAL_INSTAGRAM_URL = "https://instagram.com/mankha";
-export const SOCIAL_LINKEDIN_URL = "https://linkedin.com/company/mankha";
+export const CONTACT_EMAIL = "sathtek.app@gmail.com";
+export const CONTACT_MAILTO = CONTACT_EMAIL;
+export const SOCIAL_X_URL = APP_URL;
+export const SOCIAL_INSTAGRAM_URL = APP_URL;
+export const SOCIAL_LINKEDIN_URL = APP_URL;
