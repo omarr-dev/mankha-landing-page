@@ -3,6 +3,7 @@
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { DOWNLOAD_URL } from "@/lib/links";
+import { trackOrderClick } from "@/lib/gtag";
 import { Button } from "@/components/ui/Button";
 
 export function TrustBlock() {
@@ -60,7 +61,7 @@ export function TrustBlock() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Button href={DOWNLOAD_URL} size="lg" showArrow>
+              <Button href={DOWNLOAD_URL} size="lg" showArrow onClick={() => trackOrderClick()}>
                 {t("trustCta")}
               </Button>
               <Button href="/drivers" variant="ghost" size="lg" showArrow>

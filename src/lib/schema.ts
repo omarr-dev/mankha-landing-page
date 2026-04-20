@@ -1,5 +1,5 @@
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
-import { CONTACT_EMAIL } from "@/lib/links";
+import { CONTACT_EMAIL, CONTACT_PHONE_E164 } from "@/lib/links";
 
 const SITE_URL = "https://sathtek.app";
 const ORG_ID = `${SITE_URL}/#organization`;
@@ -14,6 +14,7 @@ export const organizationSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   email: CONTACT_EMAIL,
+  telephone: CONTACT_PHONE_E164,
   areaServed: {
     "@type": "Country",
     name: "Saudi Arabia",
@@ -40,6 +41,7 @@ export const localBusinessSchema = {
   image: `${SITE_URL}/og-image.png`,
   logo: `${SITE_URL}/logo.png`,
   email: CONTACT_EMAIL,
+  telephone: CONTACT_PHONE_E164,
   priceRange: "﷼﷼",
   areaServed: {
     "@type": "Country",
