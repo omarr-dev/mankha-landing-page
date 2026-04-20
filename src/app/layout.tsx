@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { ClientProviders } from "@/components/ClientProviders";
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
+import { Analytics } from "@vercel/analytics/next";
 
 const GOOGLE_ADS_ID = "AW-18095601957";
 
@@ -109,6 +110,7 @@ gtag('js', new Date());
 gtag('config', '${GOOGLE_ADS_ID}');`}
         </Script>
         <ClientProviders>{children}</ClientProviders>
+        <Analytics />
       </body>
     </html>
   );
