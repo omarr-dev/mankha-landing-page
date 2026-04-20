@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ClientProviders } from "@/components/ClientProviders";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
 
 const SITE_URL = "https://sathtek.app";
@@ -88,7 +87,6 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
-        <GoogleAnalytics />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

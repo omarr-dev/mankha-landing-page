@@ -3,7 +3,6 @@
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { DOWNLOAD_URL } from "@/lib/links";
-import { trackOrderClick } from "@/lib/gtag";
 import { HeroMapMockup } from "./HeroMapMockup";
 import { Button } from "@/components/ui/Button";
 
@@ -47,7 +46,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mt-10">
-              <Button href={DOWNLOAD_URL} size="lg" showArrow onClick={() => trackOrderClick()}>
+              <Button href={DOWNLOAD_URL} size="lg" showArrow>
                 {t("heroCtaCustomer")}
               </Button>
               <Button href="#for-drivers" variant="secondary" size="lg">
