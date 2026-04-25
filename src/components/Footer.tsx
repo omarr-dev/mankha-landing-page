@@ -1,18 +1,27 @@
 "use client";
 
+import { useState } from "react";
 import { useI18n } from "@/i18n/context";
 import {
-  CONTACT_MAILTO,
   SOCIAL_INSTAGRAM_URL,
   SOCIAL_LINKEDIN_URL,
   SOCIAL_X_URL,
 } from "@/lib/links";
 import { BRAND_NAME_EN } from "@/brand";
+import { ContactChoiceDialog } from "./ContactChoiceDialog";
+
+type FooterLink =
+  | { label: string; href: string }
+  | { label: string; onClick: () => void };
 
 export function Footer() {
   const { t, locale } = useI18n();
+  const [contact, setContact] = useState<{ title: string; topic: string } | null>(null);
 
-  const linkGroups = [
+  const openContact = (title: string, topic: string) =>
+    setContact({ title, topic });
+
+  const linkGroups: { title: string; links: FooterLink[] }[] = [
     {
       title: t("footerProduct"),
       links: [
@@ -24,9 +33,16 @@ export function Footer() {
     {
       title: t("footerSupport"),
       links: [
-        { label: t("footerHelpCenter"), href: CONTACT_MAILTO },
-        { label: t("footerContact"), href: CONTACT_MAILTO },
-        { label: t("footerSafety"), href: CONTACT_MAILTO },
+        {
+          label: t("footerHelpCenter"),
+          onClick: () =>
+            openContact(t("footerHelpCenter"), t("contactTopicHelp")),
+        },
+        {
+          label: t("footerContact"),
+          onClick: () =>
+            openContact(t("footerContact"), t("contactTopicContact")),
+        },
       ],
     },
     {
@@ -117,12 +133,22 @@ export function Footer() {
                 <ul className="space-y-3">
                   {group.links.map((link) => (
                     <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="font-sans text-warm-silver hover:text-ivory text-[15px] transition-colors"
-                      >
-                        {link.label}
-                      </a>
+                      {"href" in link ? (
+                        <a
+                          href={link.href}
+                          className="font-sans text-warm-silver hover:text-ivory text-[15px] transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={link.onClick}
+                          className="font-sans text-warm-silver hover:text-ivory text-[15px] transition-colors text-start cursor-pointer"
+                        >
+                          {link.label}
+                        </button>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -145,6 +171,12 @@ export function Footer() {
           </p>
         </div>
       </div>
+      <ContactChoiceDialog
+        open={contact !== null}
+        onClose={() => setContact(null)}
+        title={contact?.title ?? ""}
+        topic={contact?.topic ?? ""}
+      />
     </footer>
   );
 }

@@ -6,7 +6,6 @@ import { BRAND_NAME_EN } from "@/brand";
 
 export const LEGAL_LAST_UPDATED = "2026-04-14";
 export const LEGAL_COMPANY_DISPLAY = BRAND_NAME_EN;
-export const LEGAL_CONTACT_EMAIL = "support@Sathtak.app";
 
 export type LegalSection = {
   id: string;
@@ -34,7 +33,7 @@ export const TERMS_EN: LegalContent = {
   backToHome: "Back to home",
   contactHeading: "Contact us",
   contactBody:
-    "Questions about these Terms can be directed to support@mankha.sa. We will respond within a reasonable time.",
+    "Questions about these Terms can be directed to Support@sathtek.app. We will respond within a reasonable time.",
   sections: [
     {
       id: "platform-role",
@@ -160,7 +159,7 @@ export const TERMS_EN: LegalContent = {
       id: "termination",
       heading: "15. Suspension and Termination",
       body: [
-        "Sathtak may suspend or terminate your access to the Platform at any time, with or without notice, where we reasonably believe you have breached these Terms, created a safety risk, or engaged in fraud. You may close your account at any time through the app or by writing to support@mankha.sa.",
+        "Sathtak may suspend or terminate your access to the Platform at any time, with or without notice, where we reasonably believe you have breached these Terms, created a safety risk, or engaged in fraud. You may close your account at any time through the app or by writing to Support@sathtek.app.",
         "Termination does not release either party from obligations already accrued, including payment of any amounts owed.",
       ],
     },
@@ -198,7 +197,7 @@ export const TERMS_AR: LegalContent = {
   backToHome: "رجوع للرئيسية",
   contactHeading: "تواصل معنا",
   contactBody:
-    "لأي استفسار عن هذه الشروط راسلنا على support@mankha.sa وسنرد خلال مدة معقولة.",
+    "لأي استفسار عن هذه الشروط راسلنا على Support@sathtek.app وسنرد خلال مدة معقولة.",
   sections: [
     {
       id: "platform-role",
@@ -324,7 +323,7 @@ export const TERMS_AR: LegalContent = {
       id: "termination",
       heading: "١٥. الإيقاف والإنهاء",
       body: [
-        "يحق لسطحتك إيقاف وصولك للمنصة أو إنهاؤه في أي وقت، بإشعار أو دونه، إذا رأت بشكل معقول أنك أخللت بالشروط أو أحدثت خطرًا على السلامة أو مارست احتيالًا. ويحق لك إغلاق حسابك في أي وقت من داخل التطبيق أو بمراسلة support@mankha.sa.",
+        "يحق لسطحتك إيقاف وصولك للمنصة أو إنهاؤه في أي وقت، بإشعار أو دونه، إذا رأت بشكل معقول أنك أخللت بالشروط أو أحدثت خطرًا على السلامة أو مارست احتيالًا. ويحق لك إغلاق حسابك في أي وقت من داخل التطبيق أو بمراسلة Support@sathtek.app.",
         "لا يُعفي الإنهاء أيًا من الطرفين من الالتزامات القائمة، بما فيها أي مبالغ مستحقة.",
       ],
     },
@@ -364,7 +363,7 @@ export const PRIVACY_EN: LegalContent = {
   backToHome: "Back to home",
   contactHeading: "Contact the Data Controller",
   contactBody:
-    "For questions about your personal data or to exercise your rights, email support@mankha.sa. We reply within the statutory period set by the PDPL.",
+    "For questions about your personal data or to exercise your rights, email Support@sathtek.app. We reply within the statutory period set by the PDPL.",
   sections: [
     {
       id: "controller",
@@ -440,7 +439,7 @@ export const PRIVACY_EN: LegalContent = {
       heading: "8. Your rights",
       body: [
         "Subject to the PDPL you have the right to: be informed of how your data is processed; access your data; request correction of inaccurate data; request deletion where processing is no longer necessary and no other lawful ground applies; and object to processing for specific purposes.",
-        "To exercise a right, write to support@mankha.sa from the phone number or email linked to your account. We may ask you to verify your identity. We respond within the period required by the PDPL.",
+        "To exercise a right, write to Support@sathtek.app from the phone number or email linked to your account. We may ask you to verify your identity. We respond within the period required by the PDPL.",
         "You also have the right to file a complaint with the competent Saudi authority supervising personal data protection.",
       ],
     },
@@ -483,7 +482,7 @@ export const PRIVACY_AR: LegalContent = {
   backToHome: "رجوع للرئيسية",
   contactHeading: "التواصل مع صاحب الصلاحية على البيانات",
   contactBody:
-    "لأي استفسار حول بياناتك الشخصية أو لممارسة حقوقك راسلنا على support@mankha.sa وسنرد خلال المدة التي يحددها النظام.",
+    "لأي استفسار حول بياناتك الشخصية أو لممارسة حقوقك راسلنا على Support@sathtek.app وسنرد خلال المدة التي يحددها النظام.",
   sections: [
     {
       id: "controller",
@@ -559,7 +558,7 @@ export const PRIVACY_AR: LegalContent = {
       heading: "٨. حقوقك",
       body: [
         "وفق نظام حماية البيانات الشخصية يحق لك: معرفة كيفية معالجة بياناتك، والاطلاع عليها، وطلب تصحيح غير الصحيح منها، وطلب حذفها عند عدم الحاجة لمعالجتها وعدم وجود أساس نظامي آخر، والاعتراض على المعالجة لأغراض معينة.",
-        "لممارسة أي حق راسلنا على support@mankha.sa من رقم الجوال أو البريد المرتبط بحسابك. قد نطلب التحقق من هويتك، ونرد خلال المدة التي يحددها النظام.",
+        "لممارسة أي حق راسلنا على Support@sathtek.app من رقم الجوال أو البريد المرتبط بحسابك. قد نطلب التحقق من هويتك، ونرد خلال المدة التي يحددها النظام.",
         "كما يحق لك تقديم شكوى للجهة المختصة في المملكة بالإشراف على حماية البيانات الشخصية.",
       ],
     },

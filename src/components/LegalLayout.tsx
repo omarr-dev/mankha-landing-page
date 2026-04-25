@@ -4,7 +4,8 @@ import { useI18n } from "@/i18n/context";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { LegalContent } from "@/content/legal";
-import { LEGAL_LAST_UPDATED, LEGAL_CONTACT_EMAIL } from "@/content/legal";
+import { LEGAL_LAST_UPDATED } from "@/content/legal";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/links";
 import { BRAND_NAME_EN } from "@/brand";
 
 type Props = {
@@ -112,10 +113,10 @@ export function LegalLayout({ en, ar }: Props) {
             {content.contactBody}
           </p>
           <a
-            href={`mailto:${LEGAL_CONTACT_EMAIL}`}
+            href={CONTACT_MAILTO}
             className="text-primary hover:text-primary-dark font-medium"
           >
-            {LEGAL_CONTACT_EMAIL}
+            {CONTACT_EMAIL}
           </a>
         </section>
       </article>

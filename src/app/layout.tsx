@@ -1,9 +1,9 @@
+import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
+import { ClientProviders } from "@/components/ClientProviders";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { ClientProviders } from "@/components/ClientProviders";
-import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
-import { Analytics } from "@vercel/analytics/next";
 
 const GOOGLE_ADS_ID = "AW-18095601957";
 
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   category: "transportation",
   keywords: [
     "سطحة",
+    "سطحه",
     "سطحتك",
     "سطحة الرياض",
     "سطحة جدة",
@@ -66,20 +67,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ar_SA",
     siteName: BRAND_NAME_AR,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: BRAND_NAME_AR,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: ["/og-image.png"],
   },
 };
 
@@ -92,7 +84,11 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
