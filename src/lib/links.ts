@@ -1,6 +1,8 @@
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001";
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001";
 
-export const DOWNLOAD_URL = APP_URL;
+// Customer "request tow" CTAs route through the same-origin /record page so
+// Google Ads page-view conversion tags fire before redirecting to the app.
+export const DOWNLOAD_URL = "/record";
 export const DRIVER_REGISTER_URL = `${APP_URL}/driver`;
 
 // TODO: replace placeholders with real business destinations
