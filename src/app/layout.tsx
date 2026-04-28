@@ -6,12 +6,12 @@ import Script from "next/script";
 import "./globals.css";
 
 const GOOGLE_ADS_ID = "AW-18095601957";
+const GOOGLE_ANALYTICS_ID = "G-JNXD8CLCR1";
 
 const SITE_URL = "https://sathtek.app";
-const DEFAULT_TITLE = `${BRAND_NAME_AR} — سطحة 24 ساعة في السعودية | خدمة سطحات عند الطلب`;
+const DEFAULT_TITLE = `${BRAND_NAME_AR} — أقرب سطحة بين يديك | خدمة سطحات عند الطلب`;
 const DEFAULT_DESCRIPTION =
-  "تواصل مع سائقي سطحات موثوقين بالقرب منك. استقبل عروضاً فورية، تتبّع وصول السطحة مباشرة، وادفع بسهولة. خدمة 24 ساعة في الرياض وجدة والدمام.";
-
+  "اطلب سطحة من جوالك واستقبل عروضاً فورية من سائقين موثوقين. قارن، تتبّع، وادفع — كل شيء في مكان واحد.";
 export const viewport: Viewport = {
   themeColor: "#C96442",
   width: "device-width",
@@ -103,7 +103,8 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GOOGLE_ADS_ID}');`}
+gtag('config', '${GOOGLE_ADS_ID}');
+gtag('config', '${GOOGLE_ANALYTICS_ID}');`}
         </Script>
         <ClientProviders>{children}</ClientProviders>
         <Analytics />
