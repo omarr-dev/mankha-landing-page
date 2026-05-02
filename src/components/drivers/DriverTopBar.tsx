@@ -3,11 +3,13 @@
 import { useI18n } from "@/i18n/context";
 import { BRAND_NAME_EN } from "@/brand";
 import { Button } from "@/components/ui/Button";
+import { withLocale } from "@/lib/links";
 
 type Props = { registerHref: string };
 
 export function DriverTopBar({ registerHref }: Props) {
   const { t, toggleLocale, locale } = useI18n();
+  const href = withLocale(registerHref, locale);
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border/60">
@@ -43,7 +45,7 @@ export function DriverTopBar({ registerHref }: Props) {
             <span className="hidden sm:inline">{t("language")}</span>
           </button>
 
-          <Button href={registerHref} size="sm">
+          <Button href={href} size="sm">
             {t("dpCtaRegister")}
           </Button>
         </div>

@@ -1,5 +1,11 @@
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001";
 
+export function withLocale(url: string, locale: string) {
+  if (locale !== "en" && locale !== "ar") return url;
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}lang=${locale}`;
+}
+
 // Customer "request tow" CTAs route through the same-origin /record page so
 // Google Ads page-view conversion tags fire before redirecting to the app.
 export const DOWNLOAD_URL = "/record";

@@ -3,11 +3,13 @@
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/Button";
+import { withLocale } from "@/lib/links";
 
 type Props = { registerHref: string };
 
 export function DriverFinalCta({ registerHref }: Props) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const href = withLocale(registerHref, locale);
   const ref = useScrollReveal();
 
   return (
@@ -35,7 +37,7 @@ export function DriverFinalCta({ registerHref }: Props) {
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button href={registerHref} variant="inverse" size="lg" showArrow>
+              <Button href={href} variant="inverse" size="lg" showArrow>
                 {t("dpFinalCta")}
               </Button>
             </div>

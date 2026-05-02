@@ -2,7 +2,7 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DRIVER_REGISTER_URL } from "@/lib/links";
+import { DRIVER_REGISTER_URL, withLocale } from "@/lib/links";
 
 const benefitIcons = [
   <svg key="1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -60,7 +60,7 @@ export function ForDrivers() {
 
             <div className="flex flex-wrap gap-3 mt-10">
               <a
-                href={DRIVER_REGISTER_URL}
+                href={withLocale(DRIVER_REGISTER_URL, locale)}
                 className="group inline-flex items-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory font-sans font-medium text-[15px] px-6 py-3.5 rounded-[12px] transition-colors"
                 style={{ boxShadow: "0 0 0 1px #c96442" }}
               >

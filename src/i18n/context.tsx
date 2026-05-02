@@ -16,6 +16,12 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>("ar");
 
   useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("lang");
+    if (fromUrl === "en" || fromUrl === "ar") {
+      setLocale(fromUrl);
+      localStorage.setItem("mankha_locale", fromUrl);
+      return;
+    }
     const stored = localStorage.getItem("mankha_locale");
     if (stored === "en") {
       setLocale("en");
