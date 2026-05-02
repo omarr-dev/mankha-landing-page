@@ -103,6 +103,7 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
+gtag('set', 'linker', { domains: ['sathtek.app','order.sathtek.app'], accept_incoming: true });
 gtag('config', '${GOOGLE_ADS_ID}');
 gtag('config', '${GOOGLE_ANALYTICS_ID}');`}
         </Script>
