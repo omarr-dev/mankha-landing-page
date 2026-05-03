@@ -21,9 +21,9 @@ export const translations = {
     heroCtaCustomer: "Request a Tow",
     heroCtaDriver: `Drive with ${BRAND_NAME_EN}`,
     // Hero promise pills (forward commitments, not claimed history)
-    heroPromise1: "Dispatch in minutes",
-    heroPromise2: "Licensed drivers",
-    heroPromise3: "Compare before you commit",
+    heroPromise1: "Electronic payment",
+    heroPromise2: "Live tracking",
+    heroPromise3: "Every moment documented",
     heroPromise4: "Saudi-operated",
     // Hero map mockup
     heroMapEta: "Arriving in 12 min",
@@ -164,13 +164,13 @@ export const translations = {
     heroHeadlineLead: "أقررب",
     heroHeadlineHighlight: "سطحة",
     heroHeadlineTail: "وقت ما تبي.",
-    heroSub: "تواصل مع سواقين سطحات موثقين قريبين منك. خذ عروض فورية، تابع وصوله لحظة بلحظة، وادفع — كله من جوالك.",
+    heroSub: "بدل ما تدق على ١٠ سطحات تدور الأنسب، اطلب من التطبيق، وطلبك بيوصل لكل الكباتن الي حولك، تجيك عروض أسعار منهم، تختار الأقرب والأنسب لك، وتتابع رحلتك لحظة بلحظة.",
     heroCtaCustomer: "اطلب سطحة",
     heroCtaDriver: "اعرف اكثر",
     // Hero promise pills
-    heroPromise1: "وصول في دقايق",
-    heroPromise2: "سواقين مرخّصين",
-    heroPromise3: "قارن قبل ما تقبل",
+    heroPromise1: "دفع إلكتروني",
+    heroPromise2: "تتبع مباشر",
+    heroPromise3: "توثيق لكل لحظة",
     heroPromise4: "سعودي 100%",
     // Hero map mockup
     heroMapEta: "وصول خلال ١٢ دقيقة",
