@@ -9,6 +9,7 @@ const PARCHMENT = "#f5f4ed";
 const NEAR_BLACK = "#141413";
 const BRAND_ORANGE = "#C45520";
 const BRAND_GOLD = "#E29D2A";
+const MUTED = "#8a8780";
 
 async function loadArabicFont(weight: 400 | 600 | 700): Promise<ArrayBuffer> {
   const cssUrl = `https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@${weight}&display=swap`;
@@ -52,14 +53,14 @@ export default async function Image() {
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "row-reverse",
             alignItems: "center",
-            gap: 36,
+            gap: 32,
           }}
         >
           <svg
-            width="180"
-            height="252"
+            width="170"
+            height="238"
             viewBox="0 0 500 700"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -75,7 +76,7 @@ export default async function Image() {
           </svg>
           <div
             style={{
-              fontSize: 200,
+              fontSize: 184,
               fontWeight: 700,
               lineHeight: 1,
               color: NEAR_BLACK,
@@ -84,6 +85,18 @@ export default async function Image() {
           >
             {BRAND_NAME_AR}
           </div>
+        </div>
+        <div
+          style={{
+            marginTop: 56,
+            fontSize: 26,
+            fontWeight: 500,
+            color: MUTED,
+            letterSpacing: "0.22em",
+            display: "flex",
+          }}
+        >
+          SATHTEK.APP
         </div>
       </div>
     ),
