@@ -17,7 +17,7 @@ export const translations = {
     heroHeadlineLead: "Nearest",
     heroHeadlineHighlight: "tow truck,",
     heroHeadlineTail: "on demand.",
-    heroSub: "Connect with verified tow truck drivers near you. Get instant offers, track arrival in real-time, and pay — all from your phone.",
+    heroSub: "Skip calling ten tow trucks — one request reaches every nearby driver. Pick the best fit and track your ride in real time.",
     heroCtaCustomer: "Request a Tow",
     heroCtaDriver: `Drive with ${BRAND_NAME_EN}`,
     // Hero promise pills (forward commitments, not claimed history)
@@ -164,7 +164,7 @@ export const translations = {
     heroHeadlineLead: "أقررب",
     heroHeadlineHighlight: "سطحة",
     heroHeadlineTail: "وقت ما تبي.",
-    heroSub: "بدل ما تدق على ١٠ سطحات تدور الأنسب، اطلب من التطبيق، وطلبك بيوصل لكل الكباتن الي حولك، تجيك عروض أسعار منهم، تختار الأقرب والأنسب لك، وتتابع رحلتك لحظة بلحظة.",
+    heroSub: "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
     heroCtaCustomer: "اطلب سطحة",
     heroCtaDriver: "اعرف اكثر",
     // Hero promise pills
