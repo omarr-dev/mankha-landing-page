@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "سطحتك — خدمة سطحات عند الطلب",
+    name: "سطحتك — أقرب سطحة وقت ما تبي",
     short_name: "سطحتك",
     description:
-      "تواصل مع سائقي سطحات موثوقين بالقرب منك. استقبل عروضاً فورية، تتبّع وصول السطحة مباشرة، وادفع بسهولة.",
+      "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
     start_url: "/",
     display: "standalone",
     dir: "rtl",

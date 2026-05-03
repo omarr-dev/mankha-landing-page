@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { BRAND_NAME_AR } from "@/brand";
 
-export const alt = `${BRAND_NAME_AR} — سطحة 24 ساعة في السعودية`;
+export const alt = `${BRAND_NAME_AR} — أقرب سطحة وقت ما تبي`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -9,6 +9,7 @@ const PARCHMENT = "#f5f4ed";
 const NEAR_BLACK = "#141413";
 const BRAND_ORANGE = "#C45520";
 const BRAND_GOLD = "#E29D2A";
+const MUTED = "#8a8780";
 
 async function loadArabicFont(weight: 400 | 600 | 700): Promise<ArrayBuffer> {
   const cssUrl = `https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@${weight}&display=swap`;
@@ -41,37 +42,25 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "row-reverse",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           background: PARCHMENT,
           color: NEAR_BLACK,
-          padding: "72px 88px",
           fontFamily: "IBM Plex Sans Arabic",
-          position: "relative",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            bottom: 0,
-            height: 14,
-            background: BRAND_ORANGE,
             display: "flex",
-          }}
-        />
-        <div
-          style={{
-            display: "flex",
+            flexDirection: "row",
             alignItems: "center",
-            justifyContent: "center",
-            width: 360,
-            height: 360,
+            gap: 36,
           }}
         >
           <svg
-            width="320"
-            height="448"
+            width="180"
+            height="252"
             viewBox="0 0 500 700"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -85,21 +74,9 @@ export default async function Image() {
             />
             <circle cx="250" cy="250" r="35" fill={BRAND_GOLD} />
           </svg>
-        </div>
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "flex-end",
-            textAlign: "right",
-            paddingLeft: 48,
-          }}
-        >
           <div
             style={{
-              fontSize: 132,
+              fontSize: 200,
               fontWeight: 700,
               lineHeight: 1,
               color: NEAR_BLACK,
@@ -108,52 +85,18 @@ export default async function Image() {
           >
             {BRAND_NAME_AR}
           </div>
-          <div
-            style={{
-              marginTop: 32,
-              fontSize: 44,
-              fontWeight: 700,
-              color: BRAND_ORANGE,
-              display: "flex",
-            }}
-          >
-            سطحة 24 ساعة عند الطلب
-          </div>
-          <div
-            style={{
-              marginTop: 24,
-              fontSize: 30,
-              fontWeight: 400,
-              color: NEAR_BLACK,
-              opacity: 0.78,
-              maxWidth: 720,
-              lineHeight: 1.35,
-              display: "flex",
-            }}
-          >
-            أقرب سائق سطحة موثوق، أسعار واضحة، وتتبّع مباشر في الرياض وجدة والدمام.
-          </div>
-          <div
-            style={{
-              marginTop: 40,
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-            }}
-          >
-            <div
-              style={{
-                width: 16,
-                height: 16,
-                borderRadius: 999,
-                background: BRAND_GOLD,
-                display: "flex",
-              }}
-            />
-            <div style={{ fontSize: 26, fontWeight: 600, display: "flex" }}>
-              sathtek.app
-            </div>
-          </div>
+        </div>
+        <div
+          style={{
+            marginTop: 48,
+            fontSize: 32,
+            fontWeight: 400,
+            color: MUTED,
+            letterSpacing: "0.08em",
+            display: "flex",
+          }}
+        >
+          سحب سيارات في السعودية
         </div>
       </div>
     ),

@@ -9,9 +9,9 @@ const GOOGLE_ADS_ID = "AW-18095601957";
 const GOOGLE_ANALYTICS_ID = "G-JNXD8CLCR1";
 
 const SITE_URL = "https://sathtek.app";
-const DEFAULT_TITLE = `${BRAND_NAME_AR} — أقرب سطحة بين يديك | خدمة سطحات عند الطلب`;
+const DEFAULT_TITLE = `${BRAND_NAME_AR} — أقرب سطحة وقت ما تبي`;
 const DEFAULT_DESCRIPTION =
-  "اطلب سطحة من جوالك واستقبل عروضاً فورية من سائقين موثوقين. قارن، تتبّع، وادفع — كل شيء في مكان واحد.";
+  "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك — اختر الأنسب وتابع رحلتك لحظة بلحظة.";
 export const viewport: Viewport = {
   themeColor: "#C96442",
   width: "device-width",
