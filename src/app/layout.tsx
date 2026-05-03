@@ -11,7 +11,7 @@ const GOOGLE_ANALYTICS_ID = "G-JNXD8CLCR1";
 const SITE_URL = "https://sathtek.app";
 const DEFAULT_TITLE = `${BRAND_NAME_AR} — أقرب سطحة وقت ما تبي`;
 const DEFAULT_DESCRIPTION =
-  "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك — اختر الأنسب وتابع رحلتك لحظة بلحظة.";
+  "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك، تجيك عروضهم — اختر الأنسب وتابع رحلتك لحظة بلحظة.";
 export const viewport: Viewport = {
   themeColor: "#C96442",
   width: "device-width",

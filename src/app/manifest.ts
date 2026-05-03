@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "سطحتك — أقرب سطحة وقت ما تبي",
     short_name: "سطحتك",
     description:
-      "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
+      "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك، تجيك عروضهم — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
     start_url: "/",
     display: "standalone",
     dir: "rtl",
