@@ -9,7 +9,7 @@ const PARCHMENT = "#f5f4ed";
 const NEAR_BLACK = "#141413";
 const BRAND_ORANGE = "#C45520";
 const BRAND_GOLD = "#E29D2A";
-const MUTED = "#8a8780";
+const SUBTITLE = "#3a3833";
 
 async function loadArabicFont(weight: 400 | 600 | 700): Promise<ArrayBuffer> {
   const cssUrl = `https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@${weight}&display=swap`;
@@ -55,7 +55,7 @@ export default async function Image() {
             display: "flex",
             flexDirection: "row-reverse",
             alignItems: "center",
-            gap: 32,
+            gap: 12,
           }}
         >
           <svg
@@ -88,10 +88,10 @@ export default async function Image() {
         </div>
         <div
           style={{
-            marginTop: 56,
-            fontSize: 26,
-            fontWeight: 500,
-            color: MUTED,
+            marginTop: 110,
+            fontSize: 28,
+            fontWeight: 600,
+            color: SUBTITLE,
             letterSpacing: "0.22em",
             display: "flex",
           }}
