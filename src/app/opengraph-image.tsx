@@ -55,13 +55,14 @@ export default async function Image() {
             display: "flex",
             flexDirection: "row-reverse",
             alignItems: "center",
-            gap: 12,
+            justifyContent: "center",
+            gap: 0,
           }}
         >
           <svg
-            width="170"
+            width="142"
             height="238"
-            viewBox="0 0 500 700"
+            viewBox="40 0 420 700"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
