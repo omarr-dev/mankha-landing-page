@@ -9,7 +9,6 @@ const PARCHMENT = "#f5f4ed";
 const NEAR_BLACK = "#141413";
 const BRAND_ORANGE = "#C45520";
 const BRAND_GOLD = "#E29D2A";
-const MUTED = "#8a8780";
 
 async function loadArabicFont(weight: 400 | 600 | 700): Promise<ArrayBuffer> {
   const cssUrl = `https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@${weight}&display=swap`;
@@ -85,18 +84,6 @@ export default async function Image() {
           >
             {BRAND_NAME_AR}
           </div>
-        </div>
-        <div
-          style={{
-            marginTop: 48,
-            fontSize: 32,
-            fontWeight: 400,
-            color: MUTED,
-            letterSpacing: "0.08em",
-            display: "flex",
-          }}
-        >
-          سحب سيارات في السعودية
         </div>
       </div>
     ),
