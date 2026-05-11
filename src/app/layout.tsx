@@ -6,6 +6,7 @@ import Script from "next/script";
 import "./globals.css";
 
 const GOOGLE_ADS_ID = "AW-18095601957";
+const GOOGLE_ADS_ID_SECONDARY = "AW-18124546435";
 const GOOGLE_ANALYTICS_ID = "G-JNXD8CLCR1";
 
 const SITE_URL = "https://sathtek.app";
@@ -105,6 +106,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('set', 'linker', { domains: ['sathtek.app','order.sathtek.app'], accept_incoming: true });
 gtag('config', '${GOOGLE_ADS_ID}');
+gtag('config', '${GOOGLE_ADS_ID_SECONDARY}');
 gtag('config', '${GOOGLE_ANALYTICS_ID}');`}
         </Script>
         <ClientProviders>{children}</ClientProviders>
