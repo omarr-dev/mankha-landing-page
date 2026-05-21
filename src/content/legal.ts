@@ -4,7 +4,7 @@
 
 import { BRAND_NAME_EN } from "@/brand";
 
-export const LEGAL_LAST_UPDATED = "2026-04-14";
+export const LEGAL_LAST_UPDATED = "2026-05-21";
 export const LEGAL_COMPANY_DISPLAY = BRAND_NAME_EN;
 
 export type LegalSection = {
@@ -74,7 +74,7 @@ export const TERMS_EN: LegalContent = {
       heading: "5. Payments, Authorization and Capture",
       body: [
         "Payments are processed by Tap Payments, our third-party payment service provider. Sathtak does not store card details.",
-        "When a customer accepts an offer, the total price shown at acceptance is authorized (held) on the customer's card. This total is inclusive of the driver's fare and Sathtak's platform service fee (see Section 7). No further amount will be charged for the trip. No funds are transferred at authorization; capture occurs only when the trip is completed. The amount captured is always exactly equal to the total price shown at acceptance.",
+        "When a customer accepts an offer, the price shown at acceptance — which is the driver's quoted fare — is authorized (held) on the customer's card. No platform service fee is added on top of this price; Sathtak's fee is deducted from the driver's fare (see Section 7). No further amount will be charged for the trip. No funds are transferred at authorization; capture occurs only when the trip is completed. The amount captured is always exactly equal to the price shown at acceptance.",
         "If the trip is cancelled before capture, the authorization is voided and the held amount is released by the customer's bank. Release timing depends on the bank and is typically 1–10 business days.",
         "Customers are responsible for any fees their own bank or card issuer may charge (e.g. foreign-currency conversion). Sathtak does not add surcharges to the price shown at acceptance.",
       ],
@@ -92,7 +92,7 @@ export const TERMS_EN: LegalContent = {
       heading: "7. Driver Obligations, Supplier Identity and Platform Fee",
       body: [
         "The driver is the supplier of the towing services to the customer. Sathtak acts as the driver's limited agent solely for the purpose of matching, invoicing, and collecting the trip price through the Platform, and remitting the driver's fare to the driver. Sathtak is not a party to the contract of carriage between the customer and the driver.",
-        "Sathtak charges a platform service fee equal to ten per cent (10%) of the driver's quoted fare. This fee is paid by the customer in addition to the driver's quoted fare. The total price shown to the customer at offer acceptance is the driver's fare plus the platform service fee. The driver receives one hundred per cent (100%) of the driver's quoted fare; Sathtak does not deduct any amount from the driver's fare. Value added tax on the platform service fee is borne by Sathtak in accordance with Saudi tax law. The platform service fee rate may change from time to time; any change will be communicated in advance and will not apply to trips already booked.",
+        "Sathtak charges a platform service fee equal to fifteen per cent (15%) of the driver's quoted fare. This fee is deducted from the driver's fare; the driver receives eighty-five per cent (85%) of the driver's quoted fare. The price shown to and paid by the customer at offer acceptance is the driver's quoted fare; no platform service fee is added on top of it. Value added tax on the platform service fee is borne by Sathtak in accordance with Saudi tax law and is not deducted from the driver in addition to the fee. The platform service fee rate may change from time to time; any change will be communicated in advance and will not apply to trips already booked.",
         "Sathtak does not charge drivers a monthly subscription, a registration fee, or any other fee beyond the platform service fee described above.",
         "Drivers are solely responsible for: maintaining their vehicle in safe working order, holding valid third-party liability insurance, complying with traffic and loading regulations, and delivering the towed vehicle to the customer's stated destination without unreasonable deviation.",
         "Drivers must not solicit payment outside the Platform, offer a lower off-platform price to complete a Platform-originated request, or share customer contact details with third parties.",
@@ -103,7 +103,7 @@ export const TERMS_EN: LegalContent = {
       heading: "8. Taxes",
       body: [
         "Each party is responsible for its own taxes. The driver is solely liable for Value Added Tax (VAT), Zakat, and income tax on the trip fare, including any obligation to register for VAT once the driver's taxable supplies exceed the ZATCA registration threshold.",
-        "Any service fee that Sathtak charges the driver (including any future commission) will be stated separately and is subject to VAT per Saudi law. VAT on the Sathtak service fee is charged on that fee only, not on the full trip fare.",
+        "The platform service fee that Sathtak charges the driver (fifteen per cent (15%) of the driver's quoted fare; see Section 7) is a service supplied by Sathtak to the driver and is subject to VAT per Saudi law. VAT on the Sathtak service fee is charged on that fee only, not on the full trip fare, and is borne by Sathtak.",
         "Sathtak does not collect or remit VAT on behalf of the driver unless a separate written collection-and-remittance agreement is entered into with that driver. Invoices and receipts issued through the Platform identify the driver as the supplier of the towing service.",
         "If a tax authority reclassifies the supply for any reason and issues an assessment against Sathtak for tax that is economically owed by the driver, the driver will indemnify Sathtak for that amount and any related penalties.",
       ],
@@ -238,7 +238,7 @@ export const TERMS_AR: LegalContent = {
       heading: "٥. الدفع والتفويض والاستقطاع",
       body: [
         "تُعالج المدفوعات عبر مزود خدمة الدفع Tap Payments. لا تُخزّن سطحتك بيانات البطاقات.",
-        "عند قبول العرض يُحجز السعر الإجمالي الظاهر عند القبول على بطاقة العميل. يشمل هذا الإجمالي أجرة السائق ورسم خدمة سطحتك (انظر المادة ٧)، ولن يُستحصل أي مبلغ إضافي مقابل الرحلة. لا يتم أي تحويل فعلي عند التفويض، ويتم الاستقطاع الفعلي فقط عند إتمام الرحلة. والمبلغ المستقطَع يساوي تمامًا السعر الإجمالي الظاهر عند القبول.",
+        "عند قبول العرض يُحجز السعر الظاهر عند القبول — وهو الأجرة التي عرضها السائق — على بطاقة العميل. ولا يُضاف أي رسم خدمة على هذا السعر؛ بل يُقتطع رسم سطحتك من أجرة السائق (انظر المادة ٧)، ولن يُستحصل أي مبلغ إضافي مقابل الرحلة. لا يتم أي تحويل فعلي عند التفويض، ويتم الاستقطاع الفعلي فقط عند إتمام الرحلة. والمبلغ المستقطَع يساوي تمامًا السعر الظاهر عند القبول.",
         "إذا أُلغيت الرحلة قبل الاستقطاع فإن التفويض يُلغى ويُفرَج عن المبلغ المحجوز عبر بنك العميل. توقيت الإفراج يعتمد على البنك ويكون عادةً بين ١ و١٠ أيام عمل.",
         "يتحمل العميل أي رسوم يفرضها بنكه أو مُصدِر بطاقته (كرسوم تحويل العملة). لا تُضيف سطحتك أي رسوم على السعر الظاهر عند القبول.",
       ],
@@ -256,7 +256,7 @@ export const TERMS_AR: LegalContent = {
       heading: "٧. التزامات السائق وتحديد مُقدِّم الخدمة ورسم المنصة",
       body: [
         "السائق هو مُقدِّم خدمة السحب للعميل. وتعمل سطحتك بصفتها وكيلًا محدود الصلاحيات عن السائق لغرض وحيد هو المطابقة وإصدار الفواتير وتحصيل ثمن الرحلة عبر المنصة وتحويل أجرة السائق إليه. وسطحتك ليست طرفًا في عقد النقل بين العميل والسائق.",
-        "تفرض سطحتك رسم خدمة منصة يعادل عشرة بالمئة (١٠٪) من الأجرة التي يعرضها السائق. يُسدّد هذا الرسم من العميل علاوة على أجرة السائق. ويمثّل السعر الإجمالي الظاهر للعميل عند قبول العرض مجموع أجرة السائق ورسم خدمة المنصة. ويستلم السائق مئة بالمئة (١٠٠٪) من الأجرة التي عرضها، ولا تقتطع سطحتك أي مبلغ منها. وتتحمّل سطحتك ضريبة القيمة المضافة على رسم خدمة المنصة وفق النظام السعودي. وقد يتغيّر رسم الخدمة من وقت لآخر؛ ويُبلَّغ عن أي تغيير مسبقًا ولا يسري على الرحلات المحجوزة.",
+        "تفرض سطحتك رسم خدمة منصة يعادل خمسة عشر بالمئة (١٥٪) من الأجرة التي يعرضها السائق. يُقتطع هذا الرسم من أجرة السائق؛ ويستلم السائق خمسة وثمانين بالمئة (٨٥٪) من الأجرة التي عرضها. ويمثّل السعر الظاهر للعميل والمدفوع منه عند قبول العرض أجرة السائق المعروضة؛ ولا يُضاف عليه أي رسم خدمة منصة. وتتحمّل سطحتك ضريبة القيمة المضافة على رسم خدمة المنصة وفق النظام السعودي، ولا تُقتطع من السائق إضافةً إلى الرسم. وقد يتغيّر رسم الخدمة من وقت لآخر؛ ويُبلَّغ عن أي تغيير مسبقًا ولا يسري على الرحلات المحجوزة.",
         "لا تفرض سطحتك على السائق اشتراكًا شهريًا ولا رسوم تسجيل ولا أي رسم آخر يتجاوز رسم خدمة المنصة المذكور أعلاه.",
         "السائق وحده مسؤول عن: سلامة مركبته، وحمل تأمين ضد الغير ساري، والالتزام بأنظمة المرور والحمولة، وإيصال المركبة المسحوبة إلى الوجهة المحددة دون انحراف غير مبرر.",
         "يُمنع على السائق طلب أي دفعة خارج المنصة أو عرض سعر أقل خارجها لإتمام طلب صادر عبرها أو مشاركة بيانات العميل مع أي طرف ثالث.",
@@ -267,7 +267,7 @@ export const TERMS_AR: LegalContent = {
       heading: "٨. الضرائب والزكاة",
       body: [
         "كل طرف مسؤول عن ضرائبه. السائق وحده مسؤول عن ضريبة القيمة المضافة والزكاة وضريبة الدخل على أجرة الرحلة، بما في ذلك التزامه بالتسجيل في ضريبة القيمة المضافة متى تجاوزت مبيعاته الخاضعة للضريبة الحد المقرر من هيئة الزكاة والضريبة والجمارك.",
-        "أي رسم خدمة تفرضه سطحتك على السائق (بما في ذلك أي عمولة مستقبلية) يُبيَّن بشكل منفصل ويخضع لضريبة القيمة المضافة وفق النظام السعودي. وتُحتسب ضريبة القيمة المضافة على رسم خدمة سطحتك فقط، لا على كامل أجرة الرحلة.",
+        "رسم خدمة المنصة الذي تفرضه سطحتك على السائق (خمسة عشر بالمئة (١٥٪) من الأجرة التي يعرضها السائق؛ انظر المادة ٧) هو خدمة تُقدّمها سطحتك للسائق ويخضع لضريبة القيمة المضافة وفق النظام السعودي. وتُحتسب ضريبة القيمة المضافة على رسم خدمة سطحتك فقط، لا على كامل أجرة الرحلة، وتتحمّلها سطحتك.",
         "لا تُحصّل سطحتك ضريبة القيمة المضافة ولا تُورّدها نيابةً عن السائق ما لم يُبرَم اتفاق خطي مستقل للتحصيل والتوريد مع ذلك السائق. وتُصدر الفواتير والإيصالات عبر المنصة مبينةً السائق بوصفه مُقدِّم خدمة السحب.",
         "إذا أعادت أي جهة ضريبية تصنيف التوريد لأي سبب وأصدرت ربطًا ضريبيًا على سطحتك عن ضريبة يتحملها السائق اقتصاديًا، فإن السائق يُعوّض سطحتك عن ذلك المبلغ وأي غرامات مرتبطة به.",
       ],

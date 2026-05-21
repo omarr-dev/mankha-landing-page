@@ -11,8 +11,8 @@ import type { Metadata } from "next";
 
 const REGISTER_HREF = DRIVER_REGISTER_URL;
 
-const DRIVERS_TITLE = `انضم سائق سطحة — اكسب مع ${BRAND_NAME_AR} بدون عمولة`;
-const DRIVERS_DESCRIPTION = `انضم إلى ${BRAND_NAME_AR} كسائق سطحة في السعودية. بدون رسوم تسجيل، عمولة 0%، طلبات مباشرة عبر واتساب، واحتفظ بـ 100% من كل رحلة سطحة.`;
+const DRIVERS_TITLE = `انضم سائق سطحة — طلبات أكثر ودخل أعلى مع ${BRAND_NAME_AR}`;
+const DRIVERS_DESCRIPTION = `انضم إلى ${BRAND_NAME_AR} كسائق سطحة في السعودية. تسجيل مجاني، طلبات مباشرة عبر واتساب، وأنت تحدد سعرك على كل رحلة.`;
 
 export const metadata: Metadata = {
   title: DRIVERS_TITLE,
