@@ -12,7 +12,7 @@ export const organizationSchema = {
   name: BRAND_NAME_AR,
   alternateName: [BRAND_NAME_EN, "Satha"],
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/logo.svg`,
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE_E164,
   areaServed: {
@@ -39,7 +39,7 @@ export const localBusinessSchema = {
   name: BRAND_NAME_AR,
   url: SITE_URL,
   image: `${SITE_URL}/og-image.png`,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/logo.svg`,
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE_E164,
   priceRange: "﷼﷼",
