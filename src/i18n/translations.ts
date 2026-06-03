@@ -161,7 +161,7 @@ export const translations = {
 
     // Hero
     heroBadge: "حولك حواليك سطحتك بين يديك",
-    heroHeadlineLead: "أقررب",
+    heroHeadlineLead: "أقرب",
     heroHeadlineHighlight: "سطحة",
     heroHeadlineTail: "وقت ما تبي.",
     heroSub: "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك، تجيك عروضهم — اختر الأنسب وتابع رحلتك لحظة بلحظة.",

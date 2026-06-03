@@ -1,13 +1,18 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { useI18n } from "@/i18n/context";
-import { DOWNLOAD_URL } from "@/lib/links";
+import { useLocaleSwitchHref } from "@/i18n/useLocaleSwitch";
+import { DOWNLOAD_URL, withLocale } from "@/lib/links";
+import { localePath } from "@/lib/seo";
 import { BRAND_NAME_EN } from "@/brand";
 import { Button } from "@/components/ui/Button";
 
 export function Header() {
-  const { t, toggleLocale, locale } = useI18n();
+  const { t, locale } = useI18n();
+  const switchHref = useLocaleSwitchHref();
+  const downloadHref = withLocale(DOWNLOAD_URL, locale);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -40,7 +45,7 @@ export function Header() {
     >
       <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5 group">
+        <Link href={localePath(locale, "/")} className="flex items-center gap-2.5 group">
           <img src="/logo.svg" alt={BRAND_NAME_EN} className="w-7 h-7 shrink-0 group-hover:scale-105 transition-transform" />
           <span
             className={
@@ -51,7 +56,7 @@ export function Header() {
           >
             {t("appName")}
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav — editorial inline links */}
         <div className="hidden lg:flex items-center gap-8">
@@ -68,10 +73,11 @@ export function Header() {
 
         {/* Desktop actions */}
         <div className="hidden lg:flex items-center gap-2">
-          <button
-            onClick={toggleLocale}
+          <Link
+            href={switchHref}
             className="flex items-center gap-1.5 text-olive hover:text-near-black text-[14px] px-3 py-2 rounded-lg transition-colors cursor-pointer"
             aria-label={locale === "ar" ? "Switch to English" : "حوّل للعربي"}
+            hrefLang={locale === "ar" ? "en" : "ar"}
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
@@ -79,8 +85,8 @@ export function Header() {
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
             {t("language")}
-          </button>
-          <Button href={DOWNLOAD_URL} size="sm" showArrow>
+          </Link>
+          <Button href={downloadHref} size="sm" showArrow>
             {t("navDownload")}
           </Button>
         </div>
@@ -143,11 +149,10 @@ export function Header() {
 
           <div className="h-px bg-border-cream my-2" />
 
-          <button
-            onClick={() => {
-              toggleLocale();
-              closeMobile();
-            }}
+          <Link
+            href={switchHref}
+            onClick={closeMobile}
+            hrefLang={locale === "ar" ? "en" : "ar"}
             className="flex items-center gap-2 text-olive text-[16px] py-3 px-3 rounded-xl hover:bg-sand transition-colors cursor-pointer"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -156,10 +161,10 @@ export function Header() {
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
             {t("language")}
-          </button>
+          </Link>
 
           <Button
-            href={DOWNLOAD_URL}
+            href={downloadHref}
             onClick={closeMobile}
             size="md"
             showArrow

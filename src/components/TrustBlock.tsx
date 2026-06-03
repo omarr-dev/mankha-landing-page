@@ -2,11 +2,12 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DOWNLOAD_URL } from "@/lib/links";
+import { DOWNLOAD_URL, withLocale } from "@/lib/links";
+import { localePath } from "@/lib/seo";
 import { Button } from "@/components/ui/Button";
 
 export function TrustBlock() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const sectionRef = useScrollReveal();
 
   const pills = [
@@ -60,10 +61,10 @@ export function TrustBlock() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Button href={DOWNLOAD_URL} size="lg" showArrow>
+              <Button href={withLocale(DOWNLOAD_URL, locale)} size="lg" showArrow>
                 {t("trustCta")}
               </Button>
-              <Button href="/drivers" variant="ghost" size="lg" showArrow>
+              <Button href={localePath(locale, "/drivers")} variant="ghost" size="lg" showArrow>
                 {t("trustCtaDriver")}
               </Button>
             </div>

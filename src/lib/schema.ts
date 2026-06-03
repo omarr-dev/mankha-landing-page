@@ -38,7 +38,7 @@ export const localBusinessSchema = {
   "@id": `${SITE_URL}/#business`,
   name: BRAND_NAME_AR,
   url: SITE_URL,
-  image: `${SITE_URL}/og-image.png`,
+  image: `${SITE_URL}/icon-512.png`,
   logo: `${SITE_URL}/logo.svg`,
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE_E164,
@@ -124,7 +124,7 @@ export const serviceSchema = {
   },
 };
 
-export function breadcrumbSchema(path: string, labelAr: string) {
+export function breadcrumbSchema(locale: string, path: string, label: string) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -133,14 +133,26 @@ export function breadcrumbSchema(path: string, labelAr: string) {
         "@type": "ListItem",
         position: 1,
         name: BRAND_NAME_AR,
-        item: SITE_URL,
+        item: `${SITE_URL}/${locale}`,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: labelAr,
-        item: `${SITE_URL}${path}`,
+        name: label,
+        item: `${SITE_URL}/${locale}${path}`,
       },
     ],
+  };
+}
+
+export function faqSchema(items: ReadonlyArray<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
   };
 }

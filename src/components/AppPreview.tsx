@@ -2,7 +2,7 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DOWNLOAD_URL } from "@/lib/links";
+import { DOWNLOAD_URL, withLocale } from "@/lib/links";
 import { Button } from "@/components/ui/Button";
 
 export function AppPreview() {
@@ -204,7 +204,7 @@ export function AppPreview() {
 
           {/* CTA */}
           <div className="flex justify-center mt-12 reveal" style={{ transitionDelay: "300ms" }}>
-            <Button href={DOWNLOAD_URL} showArrow>
+            <Button href={withLocale(DOWNLOAD_URL, locale)} showArrow>
               {t("heroCtaCustomer")}
             </Button>
           </div>

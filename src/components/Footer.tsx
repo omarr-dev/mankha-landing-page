@@ -7,6 +7,7 @@ import {
   SOCIAL_LINKEDIN_URL,
   SOCIAL_X_URL,
 } from "@/lib/links";
+import { localePath } from "@/lib/seo";
 import { BRAND_NAME_EN } from "@/brand";
 import { ContactChoiceDialog } from "./ContactChoiceDialog";
 
@@ -48,8 +49,8 @@ export function Footer() {
     {
       title: t("footerLegal"),
       links: [
-        { label: t("footerPrivacy"), href: "/privacy" },
-        { label: t("footerTerms"), href: "/terms" },
+        { label: t("footerPrivacy"), href: localePath(locale, "/privacy") },
+        { label: t("footerTerms"), href: localePath(locale, "/terms") },
       ],
     },
   ];

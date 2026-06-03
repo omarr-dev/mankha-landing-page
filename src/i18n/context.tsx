@@ -1,58 +1,36 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback, useEffect, useMemo } from "react";
+import React, { createContext, useContext, useCallback, useMemo } from "react";
 import { translations, type Locale, type TranslationKey } from "./translations";
 
 interface I18nContextType {
   locale: Locale;
   t: (key: TranslationKey) => string;
-  toggleLocale: () => void;
   dir: "ltr" | "rtl";
 }
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("ar");
-
-  useEffect(() => {
-    const fromUrl = new URLSearchParams(window.location.search).get("lang");
-    if (fromUrl === "en" || fromUrl === "ar") {
-      setLocale(fromUrl);
-      localStorage.setItem("mankha_locale", fromUrl);
-      return;
-    }
-    const stored = localStorage.getItem("mankha_locale");
-    if (stored === "en") {
-      setLocale("en");
-    }
-  }, []);
-
+// Locale is now URL-driven (the [lang] route segment) and passed in as a prop
+// from the server layout — no client state, localStorage, or query parsing, so
+// there is no hydration flash or RTL flip. Switching language is navigation
+// (see LocaleSwitcher / swapLocaleInPath), not a state toggle.
+export function I18nProvider({
+  locale,
+  children,
+}: {
+  locale: Locale;
+  children: React.ReactNode;
+}) {
   const t = useCallback(
     (key: TranslationKey) => translations[locale][key],
     [locale]
   );
-
-  const toggleLocale = useCallback(() => {
-    setLocale((prev) => {
-      const next = prev === "en" ? "ar" : "en";
-      localStorage.setItem("mankha_locale", next);
-      return next;
-    });
-  }, []);
-
   const dir: "ltr" | "rtl" = locale === "ar" ? "rtl" : "ltr";
 
-  const value = useMemo(
-    () => ({ locale, t, toggleLocale, dir }),
-    [locale, t, toggleLocale, dir]
-  );
+  const value = useMemo(() => ({ locale, t, dir }), [locale, t, dir]);
 
-  return (
-    <I18nContext.Provider value={value}>
-      {children}
-    </I18nContext.Provider>
-  );
+  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
 export function useI18n() {

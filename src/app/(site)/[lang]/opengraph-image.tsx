@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { BRAND_NAME_AR } from "@/brand";
+import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
 
 export const alt = `${BRAND_NAME_AR} — أقرب سطحة وقت ما تبي`;
 export const size = { width: 1200, height: 630 };
@@ -29,7 +29,13 @@ async function loadArabicFont(weight: 400 | 600 | 700): Promise<ArrayBuffer> {
   return fetch(match[1]).then((r) => r.arrayBuffer());
 }
 
-export default async function Image() {
+export default async function Image({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const brand = lang === "en" ? BRAND_NAME_EN : BRAND_NAME_AR;
   const [regular, bold] = await Promise.all([
     loadArabicFont(400),
     loadArabicFont(700),
@@ -84,7 +90,7 @@ export default async function Image() {
               display: "flex",
             }}
           >
-            {BRAND_NAME_AR}
+            {brand}
           </div>
         </div>
         <div

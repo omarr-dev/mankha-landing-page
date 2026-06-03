@@ -1,11 +1,13 @@
 "use client";
 
 import { useI18n } from "@/i18n/context";
+import { useLocaleSwitchHref } from "@/i18n/useLocaleSwitch";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { LegalContent } from "@/content/legal";
 import { LEGAL_LAST_UPDATED } from "@/content/legal";
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/links";
+import { localePath } from "@/lib/seo";
 import { BRAND_NAME_EN } from "@/brand";
 
 type Props = {
@@ -14,7 +16,9 @@ type Props = {
 };
 
 export function LegalLayout({ en, ar }: Props) {
-  const { locale, toggleLocale } = useI18n();
+  const { locale } = useI18n();
+  const switchHref = useLocaleSwitchHref();
+  const homeHref = localePath(locale, "/");
   const content = locale === "ar" ? ar : en;
   const isRtl = locale === "ar";
   const BackArrow = isRtl ? ArrowRight : ArrowLeft;
@@ -29,7 +33,7 @@ export function LegalLayout({ en, ar }: Props) {
       <header className="border-b border-border/60 bg-bg/80 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
-            href="/"
+            href={homeHref}
             className="flex items-center gap-2 text-text hover:text-primary transition-colors text-sm font-medium"
           >
             <BackArrow className="w-4 h-4" />
@@ -37,7 +41,7 @@ export function LegalLayout({ en, ar }: Props) {
           </Link>
           <div className="flex items-center gap-3">
             <Link
-              href="/"
+              href={homeHref}
               className="flex items-center gap-2 group"
               aria-label={BRAND_NAME_EN}
             >
@@ -47,12 +51,13 @@ export function LegalLayout({ en, ar }: Props) {
                 className="w-7 h-7 group-hover:scale-105 transition-transform"
               />
             </Link>
-            <button
-              onClick={toggleLocale}
+            <Link
+              href={switchHref}
+              hrefLang={isRtl ? "en" : "ar"}
               className="text-text-secondary hover:text-text text-sm px-3 py-1.5 rounded-full hover:bg-bg-muted transition-colors"
             >
               {isRtl ? "English" : "العربية"}
-            </button>
+            </Link>
           </div>
         </div>
       </header>

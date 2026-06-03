@@ -2,13 +2,15 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DOWNLOAD_URL } from "@/lib/links";
+import { DOWNLOAD_URL, withLocale } from "@/lib/links";
+import { localePath } from "@/lib/seo";
 import { HeroMapMockup } from "./HeroMapMockup";
 import { Button } from "@/components/ui/Button";
 
 export function Hero() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const sectionRef = useScrollReveal();
+  const downloadHref = withLocale(DOWNLOAD_URL, locale);
 
   const promises = [
     t("heroPromise1"),
@@ -46,10 +48,10 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mt-10">
-              <Button href={DOWNLOAD_URL} size="lg" showArrow>
+              <Button href={downloadHref} size="lg" showArrow>
                 {t("heroCtaCustomer")}
               </Button>
-              <Button href="#for-drivers" variant="secondary" size="lg">
+              <Button href={localePath(locale, "/drivers")} variant="secondary" size="lg">
                 {t("heroCtaDriver")}
               </Button>
             </div>

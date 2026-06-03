@@ -1,25 +1,16 @@
 "use client";
 
-import { I18nProvider, useI18n } from "@/i18n/context";
+import { I18nProvider } from "@/i18n/context";
+import type { Locale } from "@/i18n/translations";
 
-function DirectionWrapper({ children }: { children: React.ReactNode }) {
-  const { dir, locale } = useI18n();
-
-  return (
-    <div
-      dir={dir}
-      className={locale === "ar" ? "font-arabic" : "font-sans"}
-      style={{ fontFamily: locale === "ar" ? "var(--font-arabic)" : "var(--font-sans)" }}
-    >
-      {children}
-    </div>
-  );
-}
-
-export function ClientProviders({ children }: { children: React.ReactNode }) {
-  return (
-    <I18nProvider>
-      <DirectionWrapper>{children}</DirectionWrapper>
-    </I18nProvider>
-  );
+// Direction + font now live on <html> in the [lang] layout (server-rendered),
+// so no DirectionWrapper is needed here.
+export function ClientProviders({
+  locale,
+  children,
+}: {
+  locale: Locale;
+  children: React.ReactNode;
+}) {
+  return <I18nProvider locale={locale}>{children}</I18nProvider>;
 }
