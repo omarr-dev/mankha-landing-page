@@ -25,6 +25,5 @@ export const buildMailto = (subject: string) =>
 export const buildWhatsAppUrl = (text: string) =>
   `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
 
-export const SOCIAL_X_URL = APP_URL;
-export const SOCIAL_INSTAGRAM_URL = APP_URL;
-export const SOCIAL_LINKEDIN_URL = APP_URL;
+export const SOCIAL_INSTAGRAM_URL = "https://www.instagram.com/sathtek";
+export const SOCIAL_TIKTOK_URL = "https://www.tiktok.com/@sathtek";

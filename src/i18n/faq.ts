@@ -31,8 +31,8 @@ export const homeFaq: Record<Locale, FaqContent> = {
         a: "بعد ما تقبل عرض الكابتن، تشوف موقعه على الخريطة لحظة بلحظة وهو جاي لك، مع وقت الوصول المتوقع. تبقى على اطلاع بكل خطوة من التحميل حتى التسليم، وكل لحظة موثقة داخل التطبيق.",
       },
       {
-        q: "هل الدفع إلكتروني في سطحتك؟",
-        a: "نعم. تدفع بأمان داخل تطبيق سطحتك بعد ما تخلص الخدمة، بدون كاش وبدون إحراج على الطريق. السعر اللي وافقت عليه هو اللي تدفعه، واضح ومتفق عليه من البداية.",
+        q: "كيف أدفع في سطحتك؟",
+        a: "تختار الطريقة اللي تريحك: كاش مباشرة للكابتن، أو دفع إلكتروني آمن داخل التطبيق بالفيزا وكل وسائل الدفع. وفي كل الأحوال السعر اللي وافقت عليه هو اللي تدفعه، واضح ومتفق عليه من البداية.",
       },
     ],
   },
@@ -60,8 +60,8 @@ export const homeFaq: Record<Locale, FaqContent> = {
         a: "Once you accept a driver's offer, you see their location move on the map in real time as they approach, with an estimated arrival time. You stay informed at every step from pickup to dropoff, and each moment is documented in the app.",
       },
       {
-        q: "Is payment electronic on Sathtek?",
-        a: "Yes. You pay securely inside the Sathtek app after the job is done — no cash and no awkward roadside negotiation. The price you agreed to is exactly what you pay, clear and settled from the start.",
+        q: "How do I pay on Sathtek?",
+        a: "Choose whatever suits you: pay the driver in cash, or pay securely inside the app with Visa and all major payment methods. Either way, the price you agreed to is exactly what you pay, clear and settled from the start.",
       },
     ],
   },

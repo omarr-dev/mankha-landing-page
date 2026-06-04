@@ -3,7 +3,7 @@
 > Sathtek is a Saudi on-demand app for tow trucks (سطحة) and roadside assistance. A customer sends one request; it reaches every verified driver nearby, who each send a price offer. The customer compares offers, picks one, and tracks the tow live on a map. Operates 24/7 across Saudi Arabia, with requests currently centered on Riyadh.
 
 ## Key facts
-- Brand: Sathtek / سطحتك (codename: Mankha)
+- Brand: Sathtek / سطحتك
 - Service: tow truck dispatch, roadside assistance, car towing, battery replacement
 - Country: Saudi Arabia (Arabic-first; English supported)
 - Cities served: Riyadh, Jeddah, Dammam, Khobar, Makkah, Madinah, Taif, Abha, Buraidah

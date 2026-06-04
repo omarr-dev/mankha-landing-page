@@ -1,5 +1,10 @@
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
-import { CONTACT_EMAIL, CONTACT_PHONE_E164 } from "@/lib/links";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_E164,
+  SOCIAL_INSTAGRAM_URL,
+  SOCIAL_TIKTOK_URL,
+} from "@/lib/links";
 
 const SITE_URL = "https://sathtek.app";
 const ORG_ID = `${SITE_URL}/#organization`;
@@ -13,13 +18,14 @@ export const organizationSchema = {
   alternateName: [BRAND_NAME_EN, "Satha"],
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
+  image: `${SITE_URL}/icon-512.png`,
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE_E164,
   areaServed: {
     "@type": "Country",
     name: "Saudi Arabia",
   },
-  sameAs: [] as string[],
+  sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_TIKTOK_URL],
 };
 
 export const websiteSchema = {
