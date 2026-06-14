@@ -1,6 +1,7 @@
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
 import { ClientProviders } from "@/components/ClientProviders";
 import { GtagScripts } from "@/components/GtagScripts";
+import { TikTokPixel } from "@/components/TikTokPixel";
 import { ibmPlexArabic } from "@/lib/fonts";
 import {
   SITE_URL,
@@ -129,6 +130,7 @@ export default async function LocaleLayout({
     >
       <body className="font-sans antialiased bg-parchment text-near-black">
         <GtagScripts />
+        <TikTokPixel />
         <ClientProviders locale={lang}>{children}</ClientProviders>
         <Analytics />
       </body>

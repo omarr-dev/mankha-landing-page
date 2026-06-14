@@ -1,4 +1,5 @@
 import { GtagScripts } from "@/components/GtagScripts";
+import { TikTokPixel } from "@/components/TikTokPixel";
 import { ibmPlexArabic } from "@/lib/fonts";
 import { SITE_URL } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
@@ -27,6 +28,7 @@ export default function RedirectsLayout({
     <html lang="ar" dir="rtl" className={ibmPlexArabic.variable}>
       <body className="font-sans antialiased bg-parchment text-near-black">
         <GtagScripts />
+        <TikTokPixel />
         {children}
         <Analytics />
       </body>
