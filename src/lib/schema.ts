@@ -72,7 +72,7 @@ export const localBusinessSchema = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "خدمات سطحتك",
+    name: "خدمات واير",
     itemListElement: [
       {
         "@type": "Offer",

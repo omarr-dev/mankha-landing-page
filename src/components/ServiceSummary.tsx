@@ -14,7 +14,7 @@ const COPY: Record<
 > = {
   ar: {
     answer:
-      "سطحتك هو تطبيق سعودي لطلب السطحة والمساعدة على الطريق. بدل ما تدق على عشر سطحات، طلب واحد يوصل لكل الكباتن الموثقين القريبين منك، تجيك عروضهم، وتختار الأنسب وتتابع رحلتك مباشرة على الخريطة — ٢٤ ساعة في جميع أنحاء المملكة.",
+      "واير هو تطبيق سعودي لطلب السطحة والمساعدة على الطريق. بدل ما تدق على عشر سطحات، طلب واحد يوصل لكل الكباتن الموثقين القريبين منك، تجيك عروضهم، وتختار الأنسب وتتابع رحلتك مباشرة على الخريطة — ٢٤ ساعة في جميع أنحاء المملكة.",
     facts: [
       { value: "٢٤/٧", label: "متوفر طوال الأسبوع" },
       { value: "+٩", label: "مدن مغطاة" },
@@ -25,7 +25,7 @@ const COPY: Record<
   },
   en: {
     answer:
-      "Sathtek is a Saudi app for tow trucks and roadside assistance. Instead of calling ten tow trucks, one request reaches every verified driver near you, their offers come back, and you pick the best and track your tow live on the map — 24/7 across the Kingdom.",
+      "Wire is a Saudi app for tow trucks and roadside assistance. Instead of calling ten tow trucks, one request reaches every verified driver near you, their offers come back, and you pick the best and track your tow live on the map — 24/7 across the Kingdom.",
     facts: [
       { value: "24/7", label: "Available every day" },
       { value: "9+", label: "Cities covered" },

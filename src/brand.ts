@@ -1,2 +1,2 @@
-export const BRAND_NAME_EN = "Sathtek";
-export const BRAND_NAME_AR = "سطحتك";
+export const BRAND_NAME_EN = "Wire";
+export const BRAND_NAME_AR = "واير";

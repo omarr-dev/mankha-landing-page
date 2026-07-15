@@ -12,26 +12,26 @@ export const homeFaq: Record<Locale, FaqContent> = {
     items: [
       {
         q: "كم تكلفة السطحة في الرياض؟",
-        a: "ما في سعر ثابت. ترسل طلب واحد عبر سطحتك فيوصل لكل الكباتن القريبين منك، وكل كابتن يرسل لك عرضه، وأنت تختار الأنسب. تقارن الأسعار قبل ما تقبل، بدون زيادات مفاجئة وبدون مساومة على الطريق.",
+        a: "ما في سعر ثابت. ترسل طلب واحد عبر واير فيوصل لكل الكباتن القريبين منك، وكل كابتن يرسل لك عرضه، وأنت تختار الأنسب. تقارن الأسعار قبل ما تقبل، بدون زيادات مفاجئة وبدون مساومة على الطريق.",
       },
       {
         q: "كيف أطلب سطحة قريبة مني؟",
-        a: "افتح تطبيق سطحتك، حدد موقعك على الخريطة أو خل الـ GPS يحدده، ووصّف حالتك. طلبك يوصل فورًا لكل كباتن السطحات حولك في الرياض، وتجيك عروضهم خلال دقائق لتختار الأقرب والأنسب لك.",
+        a: "افتح تطبيق واير، حدد موقعك على الخريطة أو خل الـ GPS يحدده، ووصّف حالتك. طلبك يوصل فورًا لكل كباتن السطحات حولك في الرياض، وتجيك عروضهم خلال دقائق لتختار الأقرب والأنسب لك.",
       },
       {
-        q: "هل خدمة سطحتك متوفرة ٢٤ ساعة؟",
-        a: "نعم. سطحتك تعمل ٢٤ ساعة طوال أيام الأسبوع، بما فيها العطلات. سواء تعطلت ليلًا أو نهارًا، تقدر تطلب سطحة أو مساعدة على الطريق في أي وقت وتحصل على كباتن موثقين قريبين منك.",
+        q: "هل خدمة واير متوفرة ٢٤ ساعة؟",
+        a: "نعم. واير تعمل ٢٤ ساعة طوال أيام الأسبوع، بما فيها العطلات. سواء تعطلت ليلًا أو نهارًا، تقدر تطلب سطحة أو مساعدة على الطريق في أي وقت وتحصل على كباتن موثقين قريبين منك.",
       },
       {
-        q: "ما المدن التي تغطيها سطحتك؟",
-        a: "تغطي سطحتك مدن المملكة الرئيسية ومنها الرياض وجدة والدمام والخبر ومكة والمدينة والطائف وأبها وبريدة. الطلبات الحالية تبدأ من الرياض، والتغطية تتوسع باستمرار لمدن جديدة في جميع أنحاء السعودية.",
+        q: "ما المدن التي تغطيها واير؟",
+        a: "تغطي واير مدن المملكة الرئيسية ومنها الرياض وجدة والدمام والخبر ومكة والمدينة والطائف وأبها وبريدة. الطلبات الحالية تبدأ من الرياض، والتغطية تتوسع باستمرار لمدن جديدة في جميع أنحاء السعودية.",
       },
       {
         q: "كيف أتابع السطحة مباشرة؟",
         a: "بعد ما تقبل عرض الكابتن، تشوف موقعه على الخريطة لحظة بلحظة وهو جاي لك، مع وقت الوصول المتوقع. تبقى على اطلاع بكل خطوة من التحميل حتى التسليم، وكل لحظة موثقة داخل التطبيق.",
       },
       {
-        q: "كيف أدفع في سطحتك؟",
+        q: "كيف أدفع في واير؟",
         a: "تختار الطريقة اللي تريحك: كاش مباشرة للكابتن، أو دفع إلكتروني آمن داخل التطبيق بالفيزا وكل وسائل الدفع. وفي كل الأحوال السعر اللي وافقت عليه هو اللي تدفعه، واضح ومتفق عليه من البداية.",
       },
     ],
@@ -41,26 +41,26 @@ export const homeFaq: Record<Locale, FaqContent> = {
     items: [
       {
         q: "How much does a tow truck cost in Riyadh?",
-        a: "There is no fixed price. With Sathtek you send one request, it reaches every nearby driver, and each one sends you an offer. You compare quotes and pick the best — no surge pricing and no haggling on the roadside.",
+        a: "There is no fixed price. With Wire you send one request, it reaches every nearby driver, and each one sends you an offer. You compare quotes and pick the best — no surge pricing and no haggling on the roadside.",
       },
       {
         q: "How do I request a tow truck near me?",
-        a: "Open the Sathtek app, drop a pin on the map or let GPS set your location, and describe the problem. Your request instantly reaches every nearby tow truck driver, and their offers arrive within minutes so you choose the closest, best fit.",
+        a: "Open the Wire app, drop a pin on the map or let GPS set your location, and describe the problem. Your request instantly reaches every nearby tow truck driver, and their offers arrive within minutes so you choose the closest, best fit.",
       },
       {
-        q: "Is Sathtek available 24 hours?",
-        a: "Yes. Sathtek operates 24 hours a day, 7 days a week, including holidays. Whether you break down at night or midday, you can request a tow or roadside assistance any time and reach verified drivers near you.",
+        q: "Is Wire available 24 hours?",
+        a: "Yes. Wire operates 24 hours a day, 7 days a week, including holidays. Whether you break down at night or midday, you can request a tow or roadside assistance any time and reach verified drivers near you.",
       },
       {
-        q: "Which cities does Sathtek cover?",
-        a: "Sathtek covers major Saudi cities including Riyadh, Jeddah, Dammam, Khobar, Makkah, Madinah, Taif, Abha and Buraidah. Requests currently start from Riyadh, and coverage keeps expanding to new cities across Saudi Arabia.",
+        q: "Which cities does Wire cover?",
+        a: "Wire covers major Saudi cities including Riyadh, Jeddah, Dammam, Khobar, Makkah, Madinah, Taif, Abha and Buraidah. Requests currently start from Riyadh, and coverage keeps expanding to new cities across Saudi Arabia.",
       },
       {
         q: "How do I track the tow truck live?",
         a: "Once you accept a driver's offer, you see their location move on the map in real time as they approach, with an estimated arrival time. You stay informed at every step from pickup to dropoff, and each moment is documented in the app.",
       },
       {
-        q: "How do I pay on Sathtek?",
+        q: "How do I pay on Wire?",
         a: "Choose whatever suits you: pay the driver in cash, or pay securely inside the app with Visa and all major payment methods. Either way, the price you agreed to is exactly what you pay, clear and settled from the start.",
       },
     ],
@@ -72,12 +72,12 @@ export const driverFaq: Record<Locale, FaqContent> = {
     title: "أسئلة السواقين الشائعة",
     items: [
       {
-        q: "كيف أسجل كسائق سطحة في سطحتك؟",
+        q: "كيف أسجل كسائق سطحة في واير؟",
         a: "اضغط على «سجّل كسايق»، ارفع هويتك ورخصتك وأوراق السطحة، ونراجع طلبك خلال ٢٤ ساعة. بعد الموافقة تبدأ تستقبل طلبات السطحات القريبة منك مباشرة وتربح بشروطك.",
       },
       {
-        q: "هل في رسوم تسجيل في سطحتك؟",
-        a: "لا. التسجيل في سطحتك مجاني تمامًا بدون أي رسوم مقدمة (٠ ريال). تنشئ حسابك وترفع أوراقك وتبدأ تستقبل الطلبات بدون اشتراكات أو تكاليف خفية.",
+        q: "هل في رسوم تسجيل في واير؟",
+        a: "لا. التسجيل في واير مجاني تمامًا بدون أي رسوم مقدمة (٠ ريال). تنشئ حسابك وترفع أوراقك وتبدأ تستقبل الطلبات بدون اشتراكات أو تكاليف خفية.",
       },
       {
         q: "كيف توصلني طلبات السطحات؟",
@@ -101,12 +101,12 @@ export const driverFaq: Record<Locale, FaqContent> = {
     title: "Driver FAQ",
     items: [
       {
-        q: "How do I register as a tow truck driver on Sathtek?",
+        q: "How do I register as a tow truck driver on Wire?",
         a: "Tap “Register as a driver”, upload your ID, driving licence and tow truck papers, and we review your application within 24 hours. Once approved, you start receiving nearby tow requests directly and earn on your own terms.",
       },
       {
-        q: "Are there registration fees on Sathtek?",
-        a: "No. Registering on Sathtek is completely free with zero upfront cost (0 SAR). You create your account, upload your documents and start receiving requests — no subscriptions and no hidden fees.",
+        q: "Are there registration fees on Wire?",
+        a: "No. Registering on Wire is completely free with zero upfront cost (0 SAR). You create your account, upload your documents and start receiving requests — no subscriptions and no hidden fees.",
       },
       {
         q: "How do tow requests reach me?",

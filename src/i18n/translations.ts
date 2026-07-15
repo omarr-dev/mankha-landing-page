@@ -160,7 +160,7 @@ export const translations = {
     navDownload: "اطلب سطحة",
 
     // Hero
-    heroBadge: "حولك حواليك سطحتك بين يديك",
+    heroBadge: "حولك حواليك واير بين يديك",
     heroHeadlineLead: "أقرب",
     heroHeadlineHighlight: "سطحة",
     heroHeadlineTail: "وقت ما تبي.",

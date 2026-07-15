@@ -7,8 +7,7 @@ export const contentType = "image/png";
 
 const PARCHMENT = "#f5f4ed";
 const NEAR_BLACK = "#141413";
-const BRAND_ORANGE = "#C45520";
-const BRAND_GOLD = "#E29D2A";
+const BRAND_ORANGE = "#c96442";
 const SUBTITLE = "#3a3833";
 
 async function loadArabicFont(weight: 400 | 600 | 700): Promise<ArrayBuffer> {
@@ -62,24 +61,24 @@ export default async function Image({
             flexDirection: "row-reverse",
             alignItems: "center",
             justifyContent: "center",
-            gap: 0,
+            gap: 32,
           }}
         >
           <svg
-            width="142"
-            height="238"
-            viewBox="40 0 420 700"
+            width="200"
+            height="200"
+            viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <rect width="512" height="512" rx="116" fill={BRAND_ORANGE} />
             <path
-              d="M 250 680 L 433.25 352.56 A 210 210 0 1 0 66.75 352.56 Z"
-              fill={BRAND_ORANGE}
+              d="M96 210 L176 322 L256 210 L336 322 L416 210"
+              stroke={PARCHMENT}
+              strokeWidth="42"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
             />
-            <path
-              d="M 314.7 462.0 L 389.6 328.1 A 160 160 0 1 0 110.4 328.1 L 188.9 284.2 A 70 70 0 1 1 311.1 284.2 L 236.2 418.1 Z"
-              fill={PARCHMENT}
-            />
-            <circle cx="250" cy="250" r="35" fill={BRAND_GOLD} />
           </svg>
           <div
             style={{
