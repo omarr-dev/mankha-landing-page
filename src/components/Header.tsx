@@ -32,7 +32,7 @@ export function Header() {
   const navLinks = [
     { label: t("navHowItWorks"), href: "#how-it-works" },
     { label: t("navApp"), href: "#app-preview" },
-    { label: t("navForDrivers"), href: "#for-drivers" },
+    { label: t("navForDrivers"), href: "/drivers" },
   ];
 
   return (

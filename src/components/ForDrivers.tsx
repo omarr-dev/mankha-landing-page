@@ -2,7 +2,7 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DRIVER_REGISTER_URL, withLocale } from "@/lib/links";
+import { StoreBadges } from "@/components/StoreBadges";
 
 const benefitIcons = [
   <svg key="1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -58,16 +58,16 @@ export function ForDrivers() {
               {t("driversSub")}
             </p>
 
-            <div className="flex flex-wrap gap-3 mt-10">
+            <div className="mt-10 space-y-4">
+              <StoreBadges tone="light" />
               <a
-                href={withLocale(DRIVER_REGISTER_URL, locale)}
-                className="group inline-flex items-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory font-sans font-medium text-[15px] px-6 py-3.5 rounded-[12px] transition-colors"
-                style={{ boxShadow: "0 0 0 1px #c96442" }}
+                href="/drivers"
+                className="group inline-flex items-center gap-2 text-warm-silver hover:text-ivory font-sans font-medium text-[14px] transition-colors"
               >
-                {t("driversCtaRegister")}
+                {t("driversCtaLearn")}
                 <svg
-                  width="15"
-                  height="15"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -79,12 +79,6 @@ export function ForDrivers() {
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </a>
-              <a
-                href="/drivers"
-                className="inline-flex items-center bg-dark-surface hover:bg-[#3d3d3a] text-warm-silver font-sans font-medium text-[15px] px-6 py-3.5 rounded-[12px] border border-border-dark transition-colors"
-              >
-                {t("driversCtaLearn")}
               </a>
             </div>
           </div>

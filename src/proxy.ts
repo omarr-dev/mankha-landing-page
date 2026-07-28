@@ -3,7 +3,7 @@ import { DEFAULT_LOCALE, LOCALES } from "@/lib/seo";
 
 // Locale-agnostic routes that must keep their bare URLs (Google Ads conversion
 // is configured against /record; both are noindex).
-const EXCLUDED = ["/record", "/whatsapp"];
+const EXCLUDED = ["/record", "/whatsapp", "/driver-app"];
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

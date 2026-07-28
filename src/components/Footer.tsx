@@ -26,7 +26,7 @@ export function Footer() {
       title: t("footerProduct"),
       links: [
         { label: t("footerHowItWorks"), href: "#how-it-works" },
-        { label: t("footerForDrivers"), href: "#for-drivers" },
+        { label: t("footerForDrivers"), href: "/drivers" },
         { label: t("footerPricing"), href: "#" },
       ],
     },

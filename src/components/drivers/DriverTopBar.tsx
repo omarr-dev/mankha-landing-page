@@ -5,15 +5,12 @@ import { useI18n } from "@/i18n/context";
 import { useLocaleSwitchHref } from "@/i18n/useLocaleSwitch";
 import { BRAND_NAME_EN } from "@/brand";
 import { Button } from "@/components/ui/Button";
-import { withLocale } from "@/lib/links";
+import { DRIVER_APP_SMART_LINK } from "@/lib/links";
 import { localePath } from "@/lib/seo";
 
-type Props = { registerHref: string };
-
-export function DriverTopBar({ registerHref }: Props) {
+export function DriverTopBar() {
   const { t, locale } = useI18n();
   const switchHref = useLocaleSwitchHref();
-  const href = withLocale(registerHref, locale);
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border/60">
@@ -50,8 +47,8 @@ export function DriverTopBar({ registerHref }: Props) {
             <span className="hidden sm:inline">{t("language")}</span>
           </Link>
 
-          <Button href={href} size="sm">
-            {t("dpCtaRegister")}
+          <Button href={DRIVER_APP_SMART_LINK} size="sm">
+            {t("dpCtaDownload")}
           </Button>
         </div>
       </nav>

@@ -2,18 +2,14 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Button } from "@/components/ui/Button";
-import { withLocale } from "@/lib/links";
+import { StoreBadges } from "@/components/StoreBadges";
 
-type Props = { registerHref: string };
-
-export function DriverFinalCta({ registerHref }: Props) {
-  const { t, locale } = useI18n();
-  const href = withLocale(registerHref, locale);
+export function DriverFinalCta() {
+  const { t } = useI18n();
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-20 lg:py-24">
+    <section ref={ref} id="download" className="py-20 lg:py-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="reveal relative overflow-hidden rounded-3xl bg-primary text-white px-6 sm:px-12 py-14 lg:py-16">
           {/* Decorative rings */}
@@ -36,10 +32,8 @@ export function DriverFinalCta({ registerHref }: Props) {
               {t("dpFinalSub")}
             </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button href={href} variant="inverse" size="lg" showArrow>
-                {t("dpFinalCta")}
-              </Button>
+            <div className="mt-8 flex justify-center">
+              <StoreBadges tone="light" className="justify-center" />
             </div>
           </div>
         </div>

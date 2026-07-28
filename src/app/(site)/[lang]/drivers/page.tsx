@@ -7,13 +7,10 @@ import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { driverFaq } from "@/i18n/faq";
-import { DRIVER_REGISTER_URL } from "@/lib/links";
 import { breadcrumbSchema, faqSchema, organizationSchema } from "@/lib/schema";
 import { SITE_URL, buildAlternates, isLocale, ogLocale, type Locale } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-const REGISTER_HREF = DRIVER_REGISTER_URL;
 
 const TITLES: Record<Locale, string> = {
   ar: `انضم سائق سطحة — طلبات أكثر ودخل أعلى مع ${BRAND_NAME_AR}`,
@@ -73,11 +70,11 @@ export default async function DriversPage({
           faqSchema(faq.items),
         ]}
       />
-      <DriverTopBar registerHref={REGISTER_HREF} />
-      <DriverHero registerHref={REGISTER_HREF} />
+      <DriverTopBar />
+      <DriverHero />
       <DriverBenefits />
       <Faq title={faq.title} items={faq.items} />
-      <DriverFinalCta registerHref={REGISTER_HREF} />
+      <DriverFinalCta />
       <Footer />
     </main>
   );

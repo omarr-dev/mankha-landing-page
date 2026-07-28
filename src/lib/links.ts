@@ -9,7 +9,14 @@ export function withLocale(url: string, locale: string) {
 // Customer "request tow" CTAs route through the same-origin /record page so
 // Google Ads page-view conversion tags fire before redirecting to the app.
 export const DOWNLOAD_URL = "/record";
-export const DRIVER_REGISTER_URL = `${APP_URL}/driver`;
+
+// Driver acquisition goes to the native app stores — the web driver flow is a
+// fallback only, never a marketing destination.
+export const DRIVER_APP_STORE_URL = "https://apps.apple.com/sa/app/id6777888557";
+export const DRIVER_PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.sathtek.driver";
+// Same-origin UA-based redirect to the right store (QR codes, WhatsApp templates).
+export const DRIVER_APP_SMART_LINK = "/driver-app";
 
 // TODO: replace placeholders with real business destinations
 export const CONTACT_EMAIL = "Support@sathtek.app";

@@ -2,14 +2,10 @@
 
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Button } from "@/components/ui/Button";
-import { withLocale } from "@/lib/links";
+import { StoreBadges } from "@/components/StoreBadges";
 
-type Props = { registerHref: string };
-
-export function DriverHero({ registerHref }: Props) {
-  const { t, dir, locale } = useI18n();
-  const href = withLocale(registerHref, locale);
+export function DriverHero() {
+  const { t, dir } = useI18n();
   const ref = useScrollReveal();
   const isRtl = dir === "rtl";
 
@@ -57,10 +53,8 @@ export function DriverHero({ registerHref }: Props) {
             </p>
 
             {/* CTAs */}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <Button href={href} size="lg" showArrow>
-                {t("dpCtaRegister")}
-              </Button>
+            <div className="mt-7">
+              <StoreBadges />
             </div>
 
             {/* Trust strip */}
