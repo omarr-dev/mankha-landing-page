@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/_next/", "/record", "/whatsapp"],
+      disallow: ["/api/", "/_next/", "/whatsapp", "/driver-app", "/app"],
     },
     sitemap: "https://sathtek.app/sitemap.xml",
     host: "https://sathtek.app",

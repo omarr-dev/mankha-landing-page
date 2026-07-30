@@ -6,9 +6,15 @@ export function withLocale(url: string, locale: string) {
   return `${url}${sep}lang=${locale}`;
 }
 
-// Customer "request tow" CTAs route through the same-origin /record page so
-// Google Ads page-view conversion tags fire before redirecting to the app.
-export const DOWNLOAD_URL = "/record";
+// Customer "request tow" CTAs go straight to the web app (the old /record
+// ads-conversion hop was removed 2026-07-30 — no longer needed).
+export const DOWNLOAD_URL = APP_URL;
+
+// Customer app stores. Play is empty until the Android review clears — the
+// /app smart redirect falls back to the web app for Android meanwhile.
+export const USER_APP_STORE_URL = "https://apps.apple.com/sa/app/id6789758197";
+export const USER_PLAY_STORE_URL = "";
+export const USER_APP_SMART_LINK = "/app";
 
 // Driver acquisition goes to the native app stores — the web driver flow is a
 // fallback only, never a marketing destination.
