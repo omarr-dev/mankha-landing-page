@@ -141,7 +141,7 @@ export async function renderSectionCard({
             display: "flex",
           }}
         >
-          SATHTEK.APP
+          WIRE.SA
         </div>
       </div>
     ),

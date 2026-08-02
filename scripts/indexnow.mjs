@@ -14,7 +14,7 @@
  */
 
 const KEY = "fbc5266ba728b924c64f652dcbfad748";
-const HOST = "sathtek.app";
+const HOST = "wire.sa";
 const ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 const LOCALES = ["ar", "en"];

@@ -3,8 +3,8 @@
 > Wire is a Saudi on-demand app for tow trucks (سطحة) and roadside assistance. A customer sends one request; it reaches every verified driver nearby, who each send a price offer. The customer compares offers, picks one, and tracks the tow live on a map. Operates 24/7 across Saudi Arabia, with requests currently centered on Riyadh.
 
 ## Key facts
-- Brand: Wire / واير (previously Sathtek / سطحتك — the app, the brand, and the domain sathtek.app are the same company)
-- Website: https://sathtek.app
+- Brand: Wire / واير (formerly Sathtek / سطحتك — same company, renamed in July 2026)
+- Website: https://wire.sa (the former domain sathtek.app now redirects here)
 - Service: tow truck dispatch, roadside assistance, car towing, jump start, battery replacement, flat tire help, fuel delivery, recovery from sand, car transport between cities
 - Country: Saudi Arabia (Arabic-first; English supported)
 - Cities served: Riyadh, Jeddah, Dammam, Khobar, Makkah, Madinah, Taif, Abha, Buraidah
@@ -48,19 +48,19 @@ Q: How do I become a tow truck driver on Wire?
 A: Register free in the Wire driver app and upload your ID, driving licence, and truck documents. Approval takes up to 24 hours, then you start receiving nearby requests and set your own price on each one.
 
 ## Pages
-- Home (Arabic): https://sathtek.app/ar
-- Home (English): https://sathtek.app/en
-- Guides index (Arabic): https://sathtek.app/ar/guides
-- Guides index (English): https://sathtek.app/en/guides
-- Cities index (Arabic): https://sathtek.app/ar/cities
-- Cities index (English): https://sathtek.app/en/cities
-- For drivers (Arabic): https://sathtek.app/ar/drivers
-- For drivers (English): https://sathtek.app/en/drivers
-- Privacy Policy: https://sathtek.app/ar/privacy
-- Terms of Service: https://sathtek.app/ar/terms
+- Home (Arabic): https://wire.sa/ar
+- Home (English): https://wire.sa/en
+- Guides index (Arabic): https://wire.sa/ar/guides
+- Guides index (English): https://wire.sa/en/guides
+- Cities index (Arabic): https://wire.sa/ar/cities
+- Cities index (English): https://wire.sa/en/cities
+- For drivers (Arabic): https://wire.sa/ar/drivers
+- For drivers (English): https://wire.sa/en/drivers
+- Privacy Policy: https://wire.sa/ar/privacy
+- Terms of Service: https://wire.sa/ar/terms
 
 ## Contact
-- Support email: Support@sathtek.app
+- Support email: Support@wire.sa
 - WhatsApp: https://wa.me/966553640317
-- Instagram: https://www.instagram.com/sathtek
-- TikTok: https://www.tiktok.com/@sathtek
+- Instagram: https://www.instagram.com/wire.sa1
+- TikTok: https://www.tiktok.com/@wire.sa

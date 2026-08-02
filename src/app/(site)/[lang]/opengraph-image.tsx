@@ -102,7 +102,7 @@ export default async function Image({
             display: "flex",
           }}
         >
-          SATHTEK.APP
+          WIRE.SA
         </div>
       </div>
     ),

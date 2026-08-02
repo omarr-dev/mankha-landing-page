@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://sathtek.app";
+export const SITE_URL = "https://wire.sa";
 
 export const LOCALES = ["ar", "en"] as const;
 export type Locale = (typeof LOCALES)[number];

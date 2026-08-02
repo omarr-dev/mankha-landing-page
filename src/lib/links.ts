@@ -25,7 +25,7 @@ export const DRIVER_PLAY_STORE_URL =
 export const DRIVER_APP_SMART_LINK = "/driver-app";
 
 // TODO: replace placeholders with real business destinations
-export const CONTACT_EMAIL = "Support@sathtek.app";
+export const CONTACT_EMAIL = "Support@wire.sa";
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
 export const CONTACT_PHONE_DISPLAY = "+966 55 364 0317";
 export const CONTACT_PHONE_E164 = "+966553640317";
@@ -38,5 +38,7 @@ export const buildMailto = (subject: string) =>
 export const buildWhatsAppUrl = (text: string) =>
   `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
 
-export const SOCIAL_INSTAGRAM_URL = "https://www.instagram.com/sathtek";
-export const SOCIAL_TIKTOK_URL = "https://www.tiktok.com/@sathtek";
+// Handles moved with the rebrand. Instagram took "wire.sa1" because "wire.sa"
+// was unavailable there — do not "fix" this to match the TikTok handle.
+export const SOCIAL_INSTAGRAM_URL = "https://www.instagram.com/wire.sa1";
+export const SOCIAL_TIKTOK_URL = "https://www.tiktok.com/@wire.sa";

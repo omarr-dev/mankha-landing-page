@@ -10,7 +10,8 @@ import {
   USER_PLAY_STORE_URL,
 } from "@/lib/links";
 
-const SITE_URL = "https://sathtek.app";
+import { SITE_URL } from "@/lib/seo";
+
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
@@ -19,10 +20,11 @@ export const organizationSchema = {
   "@type": "Organization",
   "@id": ORG_ID,
   name: BRAND_NAME_AR,
-  // "Sathtek/سطحتك" is the pre-rebrand name and still the domain. Keeping both
-  // as alternateName is what lets an engine that learned the old name resolve
-  // it to this entity instead of treating Wire as an unknown brand.
-  alternateName: [BRAND_NAME_EN, "Sathtek", "سطحتك", "Satha"],
+  // "Sathtek/سطحتك" is the pre-rebrand name and the former domain, which now
+  // 301s here. Keeping both as alternateName is what lets an engine that
+  // learned the old name resolve it to this entity rather than treating Wire
+  // as an unknown brand — it is the whole reason the rename is survivable.
+  alternateName: [BRAND_NAME_EN, "Sathtek", "سطحتك", "Satha", "sathtek.app"],
   description:
     "تطبيق سعودي لطلب السطحة والمساعدة على الطريق: طلب واحد يوصل لكل الكباتن القريبين، تقارن عروضهم وتتابع رحلتك مباشرة، ٢٤ ساعة في جميع أنحاء المملكة.",
   url: SITE_URL,
