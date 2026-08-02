@@ -25,9 +25,15 @@ export function Footer() {
     {
       title: t("footerProduct"),
       links: [
-        { label: t("footerHowItWorks"), href: "#how-it-works" },
-        { label: t("footerForDrivers"), href: "/drivers" },
-        { label: t("footerPricing"), href: "#" },
+        // Locale-prefixed, not bare: a bare "/drivers" is 308'd by the proxy to
+        // the *default* locale, which drops an English visitor into Arabic.
+        {
+          label: t("footerHowItWorks"),
+          href: `${localePath(locale, "/")}#how-it-works`,
+        },
+        { label: t("footerForDrivers"), href: localePath(locale, "/drivers") },
+        { label: t("footerGuides"), href: localePath(locale, "/guides") },
+        { label: t("footerCities"), href: localePath(locale, "/cities") },
       ],
     },
     {

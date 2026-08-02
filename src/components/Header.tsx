@@ -29,10 +29,14 @@ export function Header() {
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
+  // Anchors are home-prefixed so they still resolve from the guide/city pages,
+  // where #how-it-works and #app-preview do not exist.
+  const home = localePath(locale, "/");
   const navLinks = [
-    { label: t("navHowItWorks"), href: "#how-it-works" },
-    { label: t("navApp"), href: "#app-preview" },
-    { label: t("navForDrivers"), href: "/drivers" },
+    { label: t("navHowItWorks"), href: `${home}#how-it-works` },
+    { label: t("navApp"), href: `${home}#app-preview` },
+    { label: t("footerGuides"), href: localePath(locale, "/guides") },
+    { label: t("navForDrivers"), href: localePath(locale, "/drivers") },
   ];
 
   return (

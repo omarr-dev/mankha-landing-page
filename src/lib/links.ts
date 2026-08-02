@@ -10,10 +10,10 @@ export function withLocale(url: string, locale: string) {
 // ads-conversion hop was removed 2026-07-30 — no longer needed).
 export const DOWNLOAD_URL = APP_URL;
 
-// Customer app stores. Play is empty until the Android review clears — the
-// /app smart redirect falls back to the web app for Android meanwhile.
+// Customer app stores — both live as of 2026-08-02.
 export const USER_APP_STORE_URL = "https://apps.apple.com/sa/app/id6789758197";
-export const USER_PLAY_STORE_URL = "";
+export const USER_PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.sathtek.user";
 export const USER_APP_SMART_LINK = "/app";
 
 // Driver acquisition goes to the native app stores — the web driver flow is a

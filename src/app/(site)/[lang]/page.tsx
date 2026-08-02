@@ -11,6 +11,7 @@ import { isLocale } from "@/lib/seo";
 import {
   faqSchema,
   localBusinessSchema,
+  mobileAppSchema,
   organizationSchema,
   serviceSchema,
   websiteSchema,
@@ -34,6 +35,7 @@ export default async function Home({
           websiteSchema,
           localBusinessSchema,
           serviceSchema,
+          mobileAppSchema,
           faqSchema(faq.items),
         ]}
       />

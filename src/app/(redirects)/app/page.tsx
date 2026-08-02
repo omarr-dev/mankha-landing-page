@@ -27,21 +27,18 @@ export default function AppPage() {
           >
             حمّله من App Store
           </a>
-          {USER_PLAY_STORE_URL ? (
-            <a
-              href={USER_PLAY_STORE_URL}
-              className="inline-flex w-64 items-center justify-center rounded-xl bg-[#111] px-6 py-3 text-white font-medium shadow hover:opacity-90 transition"
-            >
-              احصل عليه من Google Play
-            </a>
-          ) : (
-            <a
-              href={APP_URL}
-              className="inline-flex w-64 items-center justify-center rounded-xl border border-near-black/20 px-6 py-3 text-near-black font-medium hover:bg-near-black/5 transition"
-            >
-              اطلب من الويب
-            </a>
-          )}
+          <a
+            href={USER_PLAY_STORE_URL}
+            className="inline-flex w-64 items-center justify-center rounded-xl bg-[#111] px-6 py-3 text-white font-medium shadow hover:opacity-90 transition"
+          >
+            احصل عليه من Google Play
+          </a>
+          <a
+            href={APP_URL}
+            className="inline-flex w-64 items-center justify-center rounded-xl border border-near-black/20 px-6 py-3 text-near-black font-medium hover:bg-near-black/5 transition"
+          >
+            اطلب من الويب
+          </a>
         </div>
         <AppRedirect />
       </div>

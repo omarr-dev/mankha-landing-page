@@ -7,7 +7,12 @@ import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { driverFaq } from "@/i18n/faq";
-import { breadcrumbSchema, faqSchema, organizationSchema } from "@/lib/schema";
+import {
+  breadcrumbSchema,
+  driverAppSchema,
+  faqSchema,
+  organizationSchema,
+} from "@/lib/schema";
 import { SITE_URL, buildAlternates, isLocale, ogLocale, type Locale } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -67,6 +72,7 @@ export default async function DriversPage({
         data={[
           organizationSchema,
           breadcrumbSchema(lang, "/drivers", BREADCRUMB_LABEL[lang]),
+          driverAppSchema,
           faqSchema(faq.items),
         ]}
       />
