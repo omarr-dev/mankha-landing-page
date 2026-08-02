@@ -303,6 +303,8 @@ export function guideArticleSchema(opts: {
   description: string;
   url: string;
   locale: string;
+  datePublished: string;
+  dateModified: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -311,6 +313,9 @@ export function guideArticleSchema(opts: {
     description: opts.description,
     url: opts.url,
     inLanguage: opts.locale === "ar" ? "ar-SA" : "en",
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified,
+    mainEntityOfPage: { "@type": "WebPage", "@id": opts.url },
     author: { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
     image: `${SITE_URL}/icon-512.png`,

@@ -15,6 +15,16 @@ import type { Locale } from "@/lib/seo";
  *   - `faq` becomes FAQPage JSON-LD; questions match the visible <h3> exactly.
  */
 
+/**
+ * Bump `CONTENT_UPDATED` whenever a guide's text changes — answer engines
+ * weight freshness, and a page with no date is treated as undated rather than
+ * as new. Deliberately hand-maintained: deriving it from the build clock would
+ * claim a fresh edit on every unrelated deploy, which is the kind of signal
+ * that gets discounted once it's noticed.
+ */
+export const CONTENT_PUBLISHED = "2026-08-02";
+export const CONTENT_UPDATED = "2026-08-02";
+
 export type GuideStep = { name: string; text: string };
 
 export type GuideContent = {

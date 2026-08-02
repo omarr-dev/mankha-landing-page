@@ -1,6 +1,7 @@
 import { AppPreview } from "@/components/AppPreview";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
+import { GuideTeasers } from "@/components/GuideTeasers";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
@@ -43,6 +44,7 @@ export default async function Home({
       <Hero />
       <ServiceSummary locale={lang} />
       <AppPreview />
+      <GuideTeasers locale={lang} />
       <Faq title={faq.title} items={faq.items} />
       <TrustBlock />
       <Footer />

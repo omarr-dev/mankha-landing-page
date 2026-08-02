@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CITY_SLUGS } from "@/content/cities";
-import { GUIDE_SLUGS } from "@/content/guides";
+import { CONTENT_UPDATED, GUIDE_SLUGS } from "@/content/guides";
 import { SITE_URL } from "@/lib/seo";
 
 type Route = {
@@ -35,10 +35,13 @@ const CITY_ROUTES: Route[] = CITY_SLUGS.map((slug) => ({
 const ROUTES: Route[] = [...STATIC_ROUTES, ...GUIDE_ROUTES, ...CITY_ROUTES];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // The real last-content-change date, not the build clock — a sitemap that
+  // reports "modified today" on every deploy trains crawlers to ignore the
+  // field, which is exactly the signal we want them to trust.
+  const lastModified = CONTENT_UPDATED;
   return ROUTES.map((r) => ({
     url: `${SITE_URL}/ar${r.path}`, // Arabic is the canonical primary
-    lastModified: now,
+    lastModified,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
     alternates: {

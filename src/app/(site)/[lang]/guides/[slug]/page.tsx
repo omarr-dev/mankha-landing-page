@@ -10,7 +10,14 @@ import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { GUIDE_SLUGS, guideBySlug, guides, guidesIndex } from "@/content/guides";
+import {
+  CONTENT_PUBLISHED,
+  CONTENT_UPDATED,
+  GUIDE_SLUGS,
+  guideBySlug,
+  guides,
+  guidesIndex,
+} from "@/content/guides";
 import {
   breadcrumbTrail,
   faqSchema,
@@ -92,6 +99,8 @@ export default async function GuidePage({
             description: c.description,
             url,
             locale: lang,
+            datePublished: CONTENT_PUBLISHED,
+            dateModified: CONTENT_UPDATED,
           }),
           howToSchema({
             name: c.question,
