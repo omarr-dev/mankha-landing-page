@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CITY_SLUGS } from "@/content/cities";
 import { CONTENT_UPDATED, GUIDE_SLUGS } from "@/content/guides";
-import { SITE_URL } from "@/lib/seo";
+import { LOCALES, SITE_URL } from "@/lib/seo";
 
 type Route = {
   path: string;
@@ -34,22 +34,38 @@ const CITY_ROUTES: Route[] = CITY_SLUGS.map((slug) => ({
 
 const ROUTES: Route[] = [...STATIC_ROUTES, ...GUIDE_ROUTES, ...CITY_ROUTES];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  // The real last-content-change date, not the build clock — a sitemap that
-  // reports "modified today" on every deploy trains crawlers to ignore the
-  // field, which is exactly the signal we want them to trust.
-  const lastModified = CONTENT_UPDATED;
-  return ROUTES.map((r) => ({
-    url: `${SITE_URL}/ar${r.path}`, // Arabic is the canonical primary
-    lastModified,
-    changeFrequency: r.changeFrequency,
-    priority: r.priority,
-    alternates: {
-      languages: {
-        "ar-SA": `${SITE_URL}/ar${r.path}`,
-        en: `${SITE_URL}/en${r.path}`,
-        "x-default": `${SITE_URL}/ar${r.path}`,
-      },
+/** Every language version of a route, for the xhtml:link alternates. */
+function alternatesFor(path: string) {
+  return {
+    languages: {
+      "ar-SA": `${SITE_URL}/ar${path}`,
+      en: `${SITE_URL}/en${path}`,
+      "x-default": `${SITE_URL}/ar${path}`,
     },
-  }));
+  };
+}
+
+/**
+ * One entry per locale per route, each carrying the full alternate set.
+ *
+ * Listing only the Arabic URLs and leaving English to be inferred from the
+ * alternates does work — Google finds the pages — but they never count as
+ * submitted, so coverage reports undercount by half and the English pages get
+ * no crawl priority of their own.
+ *
+ * `lastModified` is the real last-content-change date, not the build clock: a
+ * sitemap that reports "modified today" on every deploy trains crawlers to
+ * ignore the field, which is exactly the signal we want them to trust.
+ */
+export default function sitemap(): MetadataRoute.Sitemap {
+  return ROUTES.flatMap((r) =>
+    LOCALES.map((locale) => ({
+      url: `${SITE_URL}/${locale}${r.path}`,
+      lastModified: CONTENT_UPDATED,
+      changeFrequency: r.changeFrequency,
+      // Arabic is the primary market, so it keeps the higher priority.
+      priority: locale === "ar" ? r.priority : Math.max(0.1, r.priority - 0.1),
+      alternates: alternatesFor(r.path),
+    })),
+  );
 }
