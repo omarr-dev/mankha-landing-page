@@ -20,6 +20,7 @@ const ENDPOINT = "https://api.indexnow.org/IndexNow";
 const LOCALES = ["ar", "en"];
 const PATHS = [
   "",
+  "/nearest-tow-truck",
   "/drivers",
   "/guides",
   "/cities",

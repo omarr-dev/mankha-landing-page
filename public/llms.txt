@@ -50,6 +50,8 @@ A: Register free in the Wire driver app and upload your ID, driving licence, and
 ## Pages
 - Home (Arabic): https://wire.sa/ar
 - Home (English): https://wire.sa/en
+- Nearest tow truck (Arabic): https://wire.sa/ar/nearest-tow-truck
+- Nearest tow truck (English): https://wire.sa/en/nearest-tow-truck
 - Guides index (Arabic): https://wire.sa/ar/guides
 - Guides index (English): https://wire.sa/en/guides
 - Cities index (Arabic): https://wire.sa/ar/cities

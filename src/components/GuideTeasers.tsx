@@ -1,5 +1,6 @@
 import { cities, citiesIndex } from "@/content/cities";
 import { guides, guidesIndex } from "@/content/guides";
+import { nearest } from "@/content/nearest";
 import { localePath, type Locale } from "@/lib/seo";
 import Link from "next/link";
 
@@ -79,8 +80,16 @@ export function GuideTeasers({ locale }: { locale: Locale }) {
         </div>
 
         {/* Flat city links: crawlable anchors with the city name in the text,
-            which is what "سطحة جدة" style queries resolve against. */}
+            which is what "سطحة جدة" style queries resolve against. The nearest
+            page leads the row — Search Console shows that proximity cluster
+            carrying the most impressions of anything on the site. */}
         <div className="mt-8 pt-8 border-t border-border-warm flex flex-wrap gap-x-5 gap-y-2">
+          <Link
+            href={localePath(locale, "/nearest-tow-truck")}
+            className="text-terracotta hover:text-terracotta-hover text-[14px] font-semibold transition-colors"
+          >
+            {nearest[locale].label}
+          </Link>
           {cities.map((city) => (
             <Link
               key={city.slug}
