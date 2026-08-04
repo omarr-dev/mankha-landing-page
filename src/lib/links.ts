@@ -16,6 +16,13 @@ export const USER_PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.sathtek.user";
 export const USER_APP_SMART_LINK = "/app";
 
+// Review deep links. iOS opens the write-review sheet directly; Play has no
+// web equivalent, so we land on the listing with the reviews section expanded.
+export const USER_APP_STORE_REVIEW_URL = `${USER_APP_STORE_URL}?action=write-review`;
+export const USER_PLAY_STORE_REVIEW_URL = `${USER_PLAY_STORE_URL}&showAllReviews=true`;
+// Same-origin UA-based redirect to the right review page (WhatsApp follow-ups).
+export const USER_RATE_SMART_LINK = "/rate";
+
 // Driver acquisition goes to the native app stores — the web driver flow is a
 // fallback only, never a marketing destination.
 export const DRIVER_APP_STORE_URL = "https://apps.apple.com/sa/app/id6777888557";
