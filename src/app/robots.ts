@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
-const DISALLOW = ["/api/", "/_next/", "/whatsapp", "/driver-app", "/app"];
+const DISALLOW = ["/api/", "/_next/", "/whatsapp", "/driver-app", "/app", "/go/"];
 
 /**
  * Crawlers that feed AI answer engines. They are already covered by the `*`

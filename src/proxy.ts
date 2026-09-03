@@ -4,7 +4,7 @@ import { DEFAULT_LOCALE, LOCALES } from "@/lib/seo";
 // Locale-agnostic routes that must keep their bare URLs (all noindex): the
 // redirect hops, plus /links (the bio-link page shared from social profiles —
 // one stable URL, language toggled in-page).
-const EXCLUDED = ["/whatsapp", "/driver-app", "/app", "/rate", "/links"];
+const EXCLUDED = ["/whatsapp", "/driver-app", "/app", "/rate", "/links", "/go"];
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
 import {
+  API_URL,
+  goPlayStoreUrl,
   SOCIAL_INSTAGRAM_URL,
   SOCIAL_TIKTOK_URL,
   USER_APP_STORE_URL,
-  USER_PLAY_STORE_URL,
 } from "@/lib/links";
 import type { Locale } from "@/lib/seo";
 
@@ -126,6 +127,9 @@ function LogoMark() {
 
 export function LinksClient() {
   const [locale, setLocale] = useState<Locale>("ar");
+  // Which bio this visit came from: /links?src=tiktok vs ?src=instagram.
+  // Untagged visits count under the generic "links" channel.
+  const [channel, setChannel] = useState("links");
   const c = COPY[locale];
 
   // The layout renders <html lang="ar" dir="rtl"> — keep it in sync with the
@@ -135,6 +139,20 @@ export function LinksClient() {
     document.documentElement.dir = c.dir;
     document.title = c.docTitle;
   }, [locale, c.dir, c.docTitle]);
+
+  // Count the bio visit server-side (same beacon shape as /go/<channel>).
+  useEffect(() => {
+    const src = new URLSearchParams(window.location.search).get("src")?.toLowerCase() ?? "";
+    const ch = /^[a-z0-9_-]{1,40}$/.test(src) ? src : "links";
+    setChannel(ch);
+    if (API_URL) {
+      fetch(`${API_URL}/track/click?channel=${encodeURIComponent(ch)}`, {
+        method: "POST",
+        mode: "no-cors",
+        keepalive: true,
+      }).catch(() => {});
+    }
+  }, []);
 
   const storeClass =
     "flex items-center justify-center gap-3 rounded-[14px] bg-near-black px-4 py-3.5 text-ivory transition-colors hover:bg-[#000]";
@@ -170,7 +188,7 @@ export function LinksClient() {
 
         <div className="mt-7 grid gap-2.5">
           <a
-            href={`/${locale}`}
+            href={`/${locale}?utm_source=${channel}&utm_medium=bio`}
             onClick={() => track("website")}
             className={rowClass}
           >
@@ -197,7 +215,7 @@ export function LinksClient() {
             </span>
           </a>
           <a
-            href={USER_PLAY_STORE_URL}
+            href={goPlayStoreUrl(channel, "bio")}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("user_play_store")}

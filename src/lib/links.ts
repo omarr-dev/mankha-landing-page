@@ -1,5 +1,30 @@
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001";
 
+// Satha API base (e.g. https://api.example.com/api), used only for the
+// /go/<channel> click beacon. When unset (e.g. a fresh local checkout) the
+// beacon is skipped and /go still redirects. Trailing slashes are stripped so
+// either form of the env value works.
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/+$/, "");
+
+// Tracked marketing links: wire.sa/go/<channel> (e.g. /go/tiktok).
+// Counted server-side (ChannelClicks) and surfaced on the admin
+// "customer sources" page; the redirect carries UTM params so web signups
+// and Android installs attribute per-user.
+export const GO_UTM_MEDIUM = "go_link";
+
+export function goWebAppUrl(channel: string, medium: string = GO_UTM_MEDIUM): string {
+  return `${APP_URL}?utm_source=${encodeURIComponent(channel)}&utm_medium=${medium}`;
+}
+
+export function goPlayStoreUrl(channel: string, medium: string = GO_UTM_MEDIUM): string {
+  // The referrer param rides the Play install and is read by the app via the
+  // Install Referrer API — this is what makes Android attribution per-user.
+  const referrer = encodeURIComponent(
+    `utm_source=${channel}&utm_medium=${medium}`
+  );
+  return `${USER_PLAY_STORE_URL}&referrer=${referrer}`;
+}
+
 export function withLocale(url: string, locale: string) {
   if (locale !== "en" && locale !== "ar") return url;
   const sep = url.includes("?") ? "&" : "?";
