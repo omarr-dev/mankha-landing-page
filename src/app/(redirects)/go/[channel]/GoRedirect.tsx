@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { API_URL, goPlayStoreUrl, USER_APP_STORE_URL } from "@/lib/links";
+import { API_URL, goPlayStoreUrl, userAppStoreUrl } from "@/lib/links";
 
 declare global {
   interface Window {
@@ -32,7 +32,7 @@ export function GoRedirect({ channel }: { channel: string }) {
 
     const ua = navigator.userAgent;
     const target = /iPhone|iPad|iPod/i.test(ua)
-      ? USER_APP_STORE_URL
+      ? userAppStoreUrl(channel)
       : /Android/i.test(ua)
         ? goPlayStoreUrl(channel)
         : null;

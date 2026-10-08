@@ -36,7 +36,27 @@ export function withLocale(url: string, locale: string) {
 export const DOWNLOAD_URL = APP_URL;
 
 // Customer app stores — both live as of 2026-08-02.
+// Plain listing URL: for schema/sameAs/manifest. Links people tap use the
+// campaign builders below so the install is attributed.
 export const USER_APP_STORE_URL = "https://apps.apple.com/sa/app/id6789758197";
+export const USER_APP_STORE_ID = "6789758197";
+export const DRIVER_APP_STORE_ID = "6777888557";
+
+// App Store campaign links (App Store Connect → Analytics → Campaigns): `pt`
+// is the account's provider token, `ct` names the campaign (≤30 chars).
+// The App Store hands the app no referrer, so these per-campaign install
+// counts in App Store Connect are the only per-link iOS attribution we get.
+export const APP_STORE_PROVIDER_TOKEN = "129003929";
+
+export function appStoreCampaignUrl(appId: string, campaign: string): string {
+  const ct = campaign.replace(/[^a-z0-9_-]/gi, "").slice(0, 30) || "unknown";
+  return `https://apps.apple.com/app/apple-store/id${appId}?pt=${APP_STORE_PROVIDER_TOKEN}&ct=${ct}&mt=8`;
+}
+
+export const userAppStoreUrl = (campaign: string) =>
+  appStoreCampaignUrl(USER_APP_STORE_ID, campaign);
+export const driverAppStoreUrl = (campaign: string) =>
+  appStoreCampaignUrl(DRIVER_APP_STORE_ID, campaign);
 export const USER_PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.sathtek.user";
 export const USER_APP_SMART_LINK = "/app";

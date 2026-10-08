@@ -1,7 +1,7 @@
 "use client";
 
 import { useI18n } from "@/i18n/context";
-import { DRIVER_APP_STORE_URL, DRIVER_PLAY_STORE_URL } from "@/lib/links";
+import { DRIVER_PLAY_STORE_URL, driverAppStoreUrl } from "@/lib/links";
 
 const COPY = {
   ar: {
@@ -55,7 +55,7 @@ export function StoreBadges({ tone = "dark", className = "" }: Props) {
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       <a
-        href={DRIVER_APP_STORE_URL}
+        href={driverAppStoreUrl("site_drivers")}
         target="_blank"
         rel="noopener"
         className={`inline-flex items-center gap-3 rounded-[12px] px-5 py-2.5 transition-colors ${badgeClass}`}

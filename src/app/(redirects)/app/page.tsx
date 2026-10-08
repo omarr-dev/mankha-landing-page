@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { BRAND_NAME_AR } from "@/brand";
-import { APP_URL, USER_APP_STORE_URL, USER_PLAY_STORE_URL } from "@/lib/links";
+import { APP_URL, USER_PLAY_STORE_URL, userAppStoreUrl } from "@/lib/links";
 import { AppRedirect } from "./AppRedirect";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function AppPage() {
         </p>
         <div className="flex flex-col items-center gap-3">
           <a
-            href={USER_APP_STORE_URL}
+            href={userAppStoreUrl("site_app")}
             className="inline-flex w-64 items-center justify-center rounded-xl bg-[#111] px-6 py-3 text-white font-medium shadow hover:opacity-90 transition"
           >
             حمّله من App Store

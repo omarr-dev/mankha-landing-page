@@ -7,7 +7,7 @@ import {
   goPlayStoreUrl,
   SOCIAL_INSTAGRAM_URL,
   SOCIAL_TIKTOK_URL,
-  USER_APP_STORE_URL,
+  userAppStoreUrl,
 } from "@/lib/links";
 import type { Locale } from "@/lib/seo";
 
@@ -202,7 +202,7 @@ export function LinksClient() {
           </a>
 
           <a
-            href={USER_APP_STORE_URL}
+            href={userAppStoreUrl(`bio_${channel}`)}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("user_app_store")}

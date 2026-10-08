@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { BRAND_NAME_AR } from "@/brand";
-import { DRIVER_APP_STORE_URL, DRIVER_PLAY_STORE_URL } from "@/lib/links";
+import { DRIVER_PLAY_STORE_URL, driverAppStoreUrl } from "@/lib/links";
 import { DriverAppRedirect } from "./DriverAppRedirect";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function DriverAppPage() {
         </p>
         <div className="flex flex-col items-center gap-3">
           <a
-            href={DRIVER_APP_STORE_URL}
+            href={driverAppStoreUrl("driver_link")}
             className="inline-flex w-64 items-center justify-center rounded-xl bg-[#111] px-6 py-3 text-white font-medium shadow hover:opacity-90 transition"
           >
             حمّله من App Store
