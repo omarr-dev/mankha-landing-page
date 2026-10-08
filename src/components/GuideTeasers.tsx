@@ -1,6 +1,7 @@
 import { cities, citiesIndex } from "@/content/cities";
 import { guides, guidesIndex } from "@/content/guides";
 import { nearest } from "@/content/nearest";
+import { prices } from "@/content/prices";
 import { localePath, type Locale } from "@/lib/seo";
 import Link from "next/link";
 
@@ -89,6 +90,12 @@ export function GuideTeasers({ locale }: { locale: Locale }) {
             className="text-terracotta hover:text-terracotta-hover text-[14px] font-semibold transition-colors"
           >
             {nearest[locale].label}
+          </Link>
+          <Link
+            href={localePath(locale, "/prices")}
+            className="text-terracotta hover:text-terracotta-hover text-[14px] font-semibold transition-colors"
+          >
+            {prices[locale].label}
           </Link>
           {cities.map((city) => (
             <Link

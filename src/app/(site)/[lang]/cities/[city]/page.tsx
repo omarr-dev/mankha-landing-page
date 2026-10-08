@@ -17,6 +17,7 @@ import {
   cityHeading,
 } from "@/content/cities";
 import { guides, guidesIndex } from "@/content/guides";
+import { prices } from "@/content/prices";
 import {
   breadcrumbTrail,
   cityServiceSchema,
@@ -85,11 +86,20 @@ export default async function CityPage({
         .join(lang === "ar" ? "، " : ", "),
     }));
 
-  const guideCards = guides.slice(0, 4).map((g) => ({
-    href: localePath(lang, `/guides/${g.slug}`),
-    label: g.content[lang].question,
-    description: g.content[lang].label,
-  }));
+  // The price page leads: "كم سعر السطحة في <city>" is the follow-up
+  // question to almost every city query.
+  const guideCards = [
+    {
+      href: localePath(lang, "/prices"),
+      label: prices[lang].question,
+      description: prices[lang].label,
+    },
+    ...guides.slice(0, 3).map((g) => ({
+      href: localePath(lang, `/guides/${g.slug}`),
+      label: g.content[lang].question,
+      description: g.content[lang].label,
+    })),
+  ];
 
   return (
     <main className="bg-parchment min-h-screen">

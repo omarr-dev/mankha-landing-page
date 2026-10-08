@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { cities } from "@/content/cities";
 import { guides } from "@/content/guides";
 import { nearest } from "@/content/nearest";
+import { prices } from "@/content/prices";
 import { DOWNLOAD_URL, withLocale } from "@/lib/links";
 import {
   breadcrumbTrail,
@@ -82,11 +83,18 @@ export default async function NearestTowTruckPage({
       .join(lang === "ar" ? "، " : ", "),
   }));
 
-  const guideCards = guides.slice(0, 4).map((g) => ({
-    href: localePath(lang, `/guides/${g.slug}`),
-    label: g.content[lang].question,
-    description: g.content[lang].label,
-  }));
+  const guideCards = [
+    {
+      href: localePath(lang, "/prices"),
+      label: prices[lang].question,
+      description: prices[lang].label,
+    },
+    ...guides.slice(0, 3).map((g) => ({
+      href: localePath(lang, `/guides/${g.slug}`),
+      label: g.content[lang].question,
+      description: g.content[lang].label,
+    })),
+  ];
 
   return (
     <main className="bg-parchment min-h-screen">

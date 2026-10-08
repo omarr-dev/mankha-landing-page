@@ -26,7 +26,7 @@ export const organizationSchema = {
   // as an unknown brand — it is the whole reason the rename is survivable.
   alternateName: [BRAND_NAME_EN, "Sathtek", "سطحتك", "Satha", "sathtek.app"],
   description:
-    "تطبيق سعودي لطلب السطحة والمساعدة على الطريق: طلب واحد يوصل لكل الكباتن القريبين، تقارن عروضهم وتتابع رحلتك مباشرة، ٢٤ ساعة في جميع أنحاء المملكة.",
+    "تطبيق سعودي لطلب السطحة والمساعدة على الطريق: طلب واحد يوصل لكل الكباتن القريبين، تقارن عروضهم وتتابع رحلتك مباشرة، ٢٤ ساعة في الرياض وجدة والمنطقة الشرقية والأحساء.",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   image: `${SITE_URL}/icon-512.png`,
@@ -167,31 +167,29 @@ export const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "مساعدة على الطريق",
-          description: "مساعدة فورية على الطريق 24 ساعة في جميع مدن المملكة.",
+          description: "مساعدة فورية على الطريق 24 ساعة في الرياض وجدة والمنطقة الشرقية والأحساء.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "تغيير بطارية السيارة",
-          description: "تغيير بطارية السيارة في الموقع.",
+          name: "نقل سيارات بين المدن",
+          description: "نقل السيارات بسطحة من الرياض وجدة والمنطقة الشرقية والأحساء إلى أي مدينة.",
         },
       },
     ],
   },
 };
 
+// Pickup cities the backend accepts (ServiceAreaOptions) — keep in step.
 const SERVED_CITIES = [
   "Riyadh",
   "Jeddah",
   "Dammam",
-  "Makkah",
-  "Madinah",
-  "Taif",
-  "Abha",
   "Khobar",
-  "Buraidah",
+  "Dhahran",
+  "Al-Ahsa",
 ];
 
 export const serviceSchema = {

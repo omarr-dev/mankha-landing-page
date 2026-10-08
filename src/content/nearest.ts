@@ -93,7 +93,7 @@ export const nearest: Record<Locale, NearestContent> = {
       },
       {
         q: "هل في سطحة قريبة مني ٢٤ ساعة؟",
-        a: "نعم. واير تشتغل ٢٤ ساعة طوال أيام الأسبوع بما فيها العطلات في جميع أنحاء السعودية، فتقدر تطلب أقرب سطحة في أي وقت من الليل أو النهار.",
+        a: "نعم. واير تشتغل ٢٤ ساعة طوال أيام الأسبوع بما فيها العطلات في الرياض وجدة والشرقية والأحساء، فتقدر تطلب أقرب سطحة في أي وقت من الليل أو النهار.",
       },
       {
         q: "وش أسوي إذا ما جاني أي عرض؟",
@@ -155,7 +155,7 @@ export const nearest: Record<Locale, NearestContent> = {
       },
       {
         q: "Is there a tow truck near me at any hour?",
-        a: "Yes. Wire operates 24 hours a day, 7 days a week including holidays across Saudi Arabia, so you can request the nearest tow at any time of day or night.",
+        a: "Yes. Wire operates 24 hours a day, 7 days a week including holidays in Riyadh, Jeddah, the Eastern Province and Al-Ahsa, so you can request the nearest tow at any time of day or night.",
       },
       {
         q: "What if no offers come in?",

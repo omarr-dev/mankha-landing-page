@@ -24,7 +24,7 @@ export const homeFaq: Record<Locale, FaqContent> = {
       },
       {
         q: "ما المدن التي تغطيها واير؟",
-        a: "تغطي واير مدن المملكة الرئيسية ومنها الرياض وجدة والدمام والخبر ومكة والمدينة والطائف وأبها وبريدة. الطلبات الحالية تبدأ من الرياض، والتغطية تتوسع باستمرار لمدن جديدة في جميع أنحاء السعودية.",
+        a: "تخدم واير حاليًا الرياض وجدة والدمام والخبر والظهران والأحساء (الهفوف والمبرز). نقطة الاستلام لازم تكون داخل هذي المدن، والتوصيل لأي مكان — حتى لمدينة ثانية. والتغطية تتوسع لمدن جديدة باستمرار.",
       },
       {
         q: "كيف أتابع السطحة مباشرة؟",
@@ -32,7 +32,7 @@ export const homeFaq: Record<Locale, FaqContent> = {
       },
       {
         q: "كيف أدفع في واير؟",
-        a: "تختار الطريقة اللي تريحك: كاش مباشرة للكابتن، أو دفع إلكتروني آمن داخل التطبيق بالفيزا وكل وسائل الدفع. وفي كل الأحوال السعر اللي وافقت عليه هو اللي تدفعه، واضح ومتفق عليه من البداية.",
+        a: "تدفع للكابتن مباشرة عند التسليم، والسعر هو نفس العرض اللي وافقت عليه في التطبيق — واضح ومتفق عليه من البداية، بدون زيادات ولا رسوم خفية ولا مساومة على الطريق.",
       },
     ],
   },
@@ -53,7 +53,7 @@ export const homeFaq: Record<Locale, FaqContent> = {
       },
       {
         q: "Which cities does Wire cover?",
-        a: "Wire covers major Saudi cities including Riyadh, Jeddah, Dammam, Khobar, Makkah, Madinah, Taif, Abha and Buraidah. Requests currently start from Riyadh, and coverage keeps expanding to new cities across Saudi Arabia.",
+        a: "Wire currently serves Riyadh, Jeddah, Dammam, Khobar, Dhahran and Al-Ahsa (Hofuf and Mubarraz). The pickup must be inside one of these cities; the drop-off can be anywhere, even another city. Coverage keeps expanding to new cities.",
       },
       {
         q: "How do I track the tow truck live?",
@@ -61,7 +61,7 @@ export const homeFaq: Record<Locale, FaqContent> = {
       },
       {
         q: "How do I pay on Wire?",
-        a: "Choose whatever suits you: pay the driver in cash, or pay securely inside the app with Visa and all major payment methods. Either way, the price you agreed to is exactly what you pay, clear and settled from the start.",
+        a: "You pay the driver directly at drop-off, and the price is exactly the offer you accepted in the app — clear and agreed from the start, with no surcharges, no hidden fees and no roadside haggling.",
       },
     ],
   },

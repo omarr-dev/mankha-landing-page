@@ -13,7 +13,7 @@ export const translations = {
     navDownload: "Request a Tow",
 
     // Hero
-    heroBadge: "Available now across Saudi Arabia",
+    heroBadge: "Now in Riyadh, Jeddah, the Eastern Province & Al-Ahsa",
     heroHeadlineLead: "Nearest",
     heroHeadlineHighlight: "tow truck,",
     heroHeadlineTail: "on demand.",
@@ -21,7 +21,7 @@ export const translations = {
     heroCtaCustomer: "Request a Tow",
     heroCtaDriver: `Drive with ${BRAND_NAME_EN}`,
     // Hero promise pills (forward commitments, not claimed history)
-    heroPromise1: "Electronic payment",
+    heroPromise1: "Price agreed upfront",
     heroPromise2: "Live tracking",
     heroPromise3: "Every moment documented",
     heroPromise4: "Saudi-operated",
@@ -94,6 +94,7 @@ export const translations = {
     footerPricing: "Pricing",
     footerGuides: "Roadside guides",
     footerCities: "Cities we cover",
+    footerPrices: "Tow truck prices",
     footerCompany: "Company",
     footerAbout: "About Us",
     footerCareers: "Careers",
@@ -171,7 +172,7 @@ export const translations = {
     heroCtaCustomer: "اطلب سطحة",
     heroCtaDriver: "اعرف اكثر",
     // Hero promise pills
-    heroPromise1: "دفع إلكتروني",
+    heroPromise1: "سعر واضح قبل ما توافق",
     heroPromise2: "تتبع مباشر",
     heroPromise3: "توثيق لكل لحظة",
     heroPromise4: "سعودي 100%",
@@ -244,6 +245,7 @@ export const translations = {
     footerPricing: "الأسعار",
     footerGuides: "أدلة الطريق",
     footerCities: "المدن اللي نغطيها",
+    footerPrices: "أسعار السطحات",
     footerCompany: "الشركة",
     footerAbout: `عن ${BRAND_NAME_AR}`,
     footerCareers: "الوظائف",

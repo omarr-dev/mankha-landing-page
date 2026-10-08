@@ -34,7 +34,7 @@ export type City = {
 
 /**
  * The <h1> is phrased as the question a person actually asks, not as the
- * <title>. Derived rather than hand-written so all nine cities stay identical
+ * <title>. Derived rather than hand-written so every city stays identical
  * in shape — an answer engine comparing them sees one consistent template.
  */
 export const cityHeading = (locale: Locale, name: string): string =>
@@ -42,14 +42,16 @@ export const cityHeading = (locale: Locale, name: string): string =>
     ? `سطحة ${name} — كيف تطلب أقرب سطحة؟`
     : `Tow truck in ${name} — how do I get the nearest one?`;
 
-const arFaq = (city: string): FaqItem[] => [
+const arFaq = (city: string, price?: string): FaqItem[] => [
   {
     q: `كيف أطلب سطحة في ${city}؟`,
     a: `افتح تطبيق واير، حدد موقعك في ${city} على الخريطة أو خل الـ GPS يحدده، ووصّف حالتك. الطلب يوصل فورًا لكل كباتن السطحات القريبين منك، وتجيك عروضهم بأسعارها خلال دقائق فتختار الأنسب.`,
   },
   {
     q: `كم سعر السطحة في ${city}؟`,
-    a: `ما في تسعيرة ثابتة. كل كابتن قريب منك في ${city} يرسل عرضه لرحلتك بالتحديد حسب المسافة وحالة السيارة، وأنت تقارن العروض وتختار. تشوف السعر قبل ما توافق فما في مساومة على الطريق.`,
+    a:
+      price ??
+      `ما في تسعيرة ثابتة. كل كابتن قريب منك في ${city} يرسل عرضه لرحلتك بالتحديد حسب المسافة وحالة السيارة، وأنت تقارن العروض وتختار. تشوف السعر قبل ما توافق فما في مساومة على الطريق.`,
   },
   {
     q: `هل في سطحة ٢٤ ساعة في ${city}؟`,
@@ -61,14 +63,16 @@ const arFaq = (city: string): FaqItem[] => [
   },
 ];
 
-const enFaq = (city: string): FaqItem[] => [
+const enFaq = (city: string, price?: string): FaqItem[] => [
   {
     q: `How do I get a tow truck in ${city}?`,
     a: `Open the Wire app, set your location in ${city} on the map or let GPS place it, and describe the problem. The request reaches every nearby tow truck driver at once, and their quotes come back within minutes so you pick the best fit.`,
   },
   {
     q: `How much does a tow truck cost in ${city}?`,
-    a: `There is no fixed rate. Each driver near you in ${city} quotes your specific trip based on distance and the car's condition, and you compare and choose. You see the price before accepting, so there is no roadside haggling.`,
+    a:
+      price ??
+      `There is no fixed rate. Each driver near you in ${city} quotes your specific trip based on distance and the car's condition, and you compare and choose. You see the price before accepting, so there is no roadside haggling.`,
   },
   {
     q: `Is there 24 hour towing in ${city}?`,
@@ -79,6 +83,17 @@ const enFaq = (city: string): FaqItem[] => [
     a: `Yes. Once you accept a driver's offer, you watch their location move on the map in real time with an estimated arrival, and every step from loading to drop-off is documented in the app.`,
   },
 ];
+
+// Price answers quote real completed trips (test accounts excluded); the same
+// dataset backs /prices — keep the two in step when the numbers are refreshed.
+const RIYADH_PRICE_AR =
+  "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع: من ١٦٩ رحلة منفذة عبر واير داخل الرياض (أبريل–أكتوبر ٢٠٢٦) كان نصف الرحلات بين ١١٠ و١٥٠ ريال، والسعر الوسيط ١٤٠ ريال. تشوف السعر قبل ما توافق فما في مساومة على الطريق.";
+const RIYADH_PRICE_EN =
+  "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference: across 169 tows completed on Wire inside Riyadh (April–October 2026), the middle half cost 110–150 SAR and the median was 140 SAR. You see the price before accepting, so there is no roadside haggling.";
+const JEDDAH_PRICE_AR =
+  "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع: الرحلات المنفذة عبر واير داخل جدة كانت أغلبها بين ١٠٥ و٢٠٠ ريال حسب المسافة، والسعر الوسيط ١٥٠ ريال. تشوف السعر قبل ما توافق فما في مساومة على الطريق.";
+const JEDDAH_PRICE_EN =
+  "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference: tows completed on Wire inside Jeddah mostly cost 105–200 SAR depending on distance, with a median of 150 SAR. You see the price before accepting, so there is no roadside haggling.";
 
 export const cities: City[] = [
   {
@@ -97,14 +112,26 @@ export const cities: City[] = [
           "العليا",
           "الملقا",
           "الياسمين",
+          "النرجس",
           "حطين",
+          "العارض",
           "النخيل",
+          "العقيق",
           "الروضة",
+          "اليرموك",
           "النسيم",
+          "الجنادرية",
+          "الرمال",
+          "السلي",
           "السويدي",
+          "عرقة",
           "الشفا",
           "العزيزية",
+          "المروة",
           "قرطبة",
+          "الصناعية",
+          "المصانع",
+          "الروابي",
           "الدرعية",
         ],
         roadsTitle: "والطرق الرئيسية",
@@ -117,7 +144,7 @@ export const cities: City[] = [
           "طريق مكة",
         ],
         faqTitle: "أسئلة عن السطحة في الرياض",
-        faq: arFaq("الرياض"),
+        faq: arFaq("الرياض", RIYADH_PRICE_AR),
       },
       en: {
         name: "Riyadh",
@@ -131,14 +158,26 @@ export const cities: City[] = [
           "Olaya",
           "Al Malqa",
           "Al Yasmin",
+          "Al Narjis",
           "Hittin",
+          "Al Arid",
           "Al Nakheel",
+          "Al Aqiq",
           "Al Rawdah",
+          "Al Yarmouk",
           "Al Naseem",
+          "Al Janadriyah",
+          "Al Rimal",
+          "Al Sulay",
           "Al Suwaidi",
+          "Irqah",
           "Al Shifa",
           "Al Aziziyah",
+          "Al Marwah",
           "Qurtubah",
+          "Al Sinaiyah (industrial area)",
+          "Al Masani",
+          "Al Rawabi",
           "Diriyah",
         ],
         roadsTitle: "And the main roads",
@@ -151,7 +190,7 @@ export const cities: City[] = [
           "Makkah Road",
         ],
         faqTitle: "Questions about towing in Riyadh",
-        faq: enFaq("Riyadh"),
+        faq: enFaq("Riyadh", RIYADH_PRICE_EN),
       },
     },
   },
@@ -178,6 +217,13 @@ export const cities: City[] = [
           "العزيزية",
           "الرحاب",
           "البلد",
+          "أبحر الجنوبية",
+          "الأجاويد",
+          "الحرازات",
+          "الزهراء",
+          "الحمدانية",
+          "النزهة",
+          "بريمان",
         ],
         roadsTitle: "والطرق الرئيسية",
         roads: [
@@ -189,7 +235,7 @@ export const cities: City[] = [
           "طريق الأمير سلطان",
         ],
         faqTitle: "أسئلة عن السطحة في جدة",
-        faq: arFaq("جدة"),
+        faq: arFaq("جدة", JEDDAH_PRICE_AR),
       },
       en: {
         name: "Jeddah",
@@ -210,6 +256,13 @@ export const cities: City[] = [
           "Al Aziziyah",
           "Al Rehab",
           "Al Balad",
+          "South Obhur",
+          "Al Ajaweed",
+          "Al Harazat",
+          "Al Zahra",
+          "Al Hamdaniyah",
+          "Al Nuzhah",
+          "Briman",
         ],
         roadsTitle: "And the main roads",
         roads: [
@@ -221,7 +274,7 @@ export const cities: City[] = [
           "Prince Sultan Road",
         ],
         faqTitle: "Questions about towing in Jeddah",
-        faq: enFaq("Jeddah"),
+        faq: enFaq("Jeddah", JEDDAH_PRICE_EN),
       },
     },
   },
@@ -301,7 +354,7 @@ export const cities: City[] = [
         description:
           "اطلب سطحة في الخبر ٢٤ ساعة عبر واير. طلبك يوصل لكل الكباتن القريبين منك في العقربية والثقبة والراكة وبقية أحياء الخبر.",
         answer:
-          "لطلب سطحة في الخبر، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. الطلب يوصل لكل كباتن السطحات القريبين منك في الخبر دفعة وحدة، تجيك عروضهم وتختار الأنسب وتتابع الكابتن على الخريطة. الخدمة متاحة ٢٤ ساعة في جميع أحياء الخبر.",
+          "لطلب سطحة في الخبر، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. الطلب يوصل لكل كباتن السطحات القريبين منك في الخبر دفعة وحدة، تجيك عروضهم وتختار الأنسب وتتابع الكابتن على الخريطة. الخدمة متاحة ٢٤ ساعة في جميع أحياء الخبر والظهران.",
         areasTitle: "نغطي أحياء الخبر",
         areas: [
           "العقربية",
@@ -330,7 +383,7 @@ export const cities: City[] = [
         description:
           "Request a tow truck in Khobar 24/7 with Wire. Your request reaches every nearby driver across Al Aqrabiyah, Thuqbah, Al Rakah and the rest of Khobar.",
         answer:
-          "To get a tow truck in Khobar, open the Wire app, set your location on the map, and describe the problem. The request reaches every nearby tow truck driver in Khobar at once; their offers come back, you choose one, and you track them on the map. Available 24/7 across all Khobar districts.",
+          "To get a tow truck in Khobar, open the Wire app, set your location on the map, and describe the problem. The request reaches every nearby tow truck driver in Khobar at once; their offers come back, you choose one, and you track them on the map. Available 24/7 across Khobar and Dhahran.",
         areasTitle: "Districts we cover in Khobar",
         areas: [
           "Al Aqrabiyah",
@@ -356,268 +409,72 @@ export const cities: City[] = [
     },
   },
   {
-    slug: "makkah",
-    schemaName: "Makkah",
+    slug: "ahsa",
+    schemaName: "Al-Ahsa",
     content: {
       ar: {
-        name: "مكة",
-        metaTitle: "سطحة مكة ٢٤ ساعة — أقرب سطحة لك بأفضل عرض",
+        name: "الأحساء",
+        metaTitle: "سطحة الأحساء ٢٤ ساعة — أقرب سطحة في الهفوف والمبرز",
         description:
-          "اطلب سطحة في مكة المكرمة ٢٤ ساعة عبر واير. طلبك يوصل لكل الكباتن القريبين منك في العزيزية والشوقية والعوالي وبقية أحياء مكة.",
+          "اطلب سطحة في الأحساء ٢٤ ساعة عبر واير. طلب واحد يوصل لكل الكباتن القريبين منك في الهفوف والمبرز، تقارن عروضهم وتختار الأنسب وتتابع الكابتن على الخريطة.",
         answer:
-          "لطلب سطحة في مكة المكرمة، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. طلبك يوصل لكل كباتن السطحات القريبين منك في مكة، تقارن عروضهم وأسعارهم وتختار الأنسب وتتابعه على الخريطة لين يوصلك. الخدمة متاحة ٢٤ ساعة.",
-        areasTitle: "نغطي أحياء مكة",
+          "لطلب سطحة في الأحساء، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. طلبك يوصل في نفس اللحظة لكل كباتن السطحات الموثقين القريبين منك في الهفوف والمبرز، تجيك عروضهم بأسعارها، تختار الأنسب وتتابع الكابتن على الخريطة لين يوصل. الخدمة متاحة ٢٤ ساعة في الهفوف والمبرز وما حولها.",
+        areasTitle: "نغطي الهفوف والمبرز",
         areas: [
-          "العزيزية",
-          "الشوقية",
-          "النسيم",
-          "العوالي",
-          "الششة",
-          "أجياد",
-          "الزاهر",
-          "الكعكية",
+          "الهفوف",
+          "المبرز",
+          "الكوت",
+          "الرفعة",
+          "النعاثل",
+          "المزروعية",
+          "السلمانية",
+          "الحفيرة",
+          "السيفة",
+          "اليرموك",
+          "الحزم",
+          "محاسن",
         ],
         roadsTitle: "والطرق الرئيسية",
         roads: [
-          "طريق الحرمين السريع",
-          "طريق جدة القديم",
-          "الدائري الثالث",
-          "طريق الملك عبدالله",
-          "طريق الطائف",
+          "طريق الظهران – الأحساء",
+          "طريق الرياض – الأحساء",
+          "طريق العقير",
+          "طريق سلوى",
         ],
-        faqTitle: "أسئلة عن السطحة في مكة",
-        faq: arFaq("مكة"),
+        faqTitle: "أسئلة عن السطحة في الأحساء",
+        faq: arFaq("الأحساء"),
       },
       en: {
-        name: "Makkah",
-        metaTitle: "Tow truck in Makkah, 24/7 — nearest driver, best offer",
+        name: "Al-Ahsa",
+        metaTitle: "Tow truck in Al-Ahsa, 24/7 — nearest driver in Hofuf & Mubarraz",
         description:
-          "Request a tow truck in Makkah 24/7 with Wire. Your request reaches every nearby driver across Al Aziziyah, Al Shawqiyah, Al Awali and the rest of Makkah.",
+          "Request a tow truck in Al-Ahsa 24/7 with Wire. One request reaches every nearby driver in Hofuf and Mubarraz — compare offers, pick one and track it live.",
         answer:
-          "To get a tow truck in Makkah, open the Wire app, set your location on the map, and describe the problem. Your request reaches every nearby tow truck driver in Makkah; you compare their quotes, pick the best, and track them on the map until they arrive. Available 24/7.",
-        areasTitle: "Districts we cover in Makkah",
+          "To get a tow truck in Al-Ahsa, open the Wire app, set your location on the map, and describe the problem. Your request reaches every verified tow truck driver near you in Hofuf and Mubarraz at the same moment; their quotes come back, you pick one and track them on the map until they arrive. Available 24/7 in Hofuf, Mubarraz and the surrounding area.",
+        areasTitle: "Areas we cover in Al-Ahsa",
         areas: [
-          "Al Aziziyah",
-          "Al Shawqiyah",
-          "Al Naseem",
-          "Al Awali",
-          "Al Shishah",
-          "Ajyad",
-          "Al Zahir",
-          "Al Kakiyah",
+          "Hofuf",
+          "Mubarraz",
+          "Al Kut",
+          "Al Rifa'a",
+          "Al Na'athil",
+          "Al Mazrou'iya",
+          "Al Salmaniyah",
+          "Al Hufayrah",
+          "Al Sayfah",
+          "Al Yarmouk",
+          "Al Hazm",
+          "Mahasin",
         ],
         roadsTitle: "And the main roads",
         roads: [
-          "Haramain Expressway",
-          "Old Jeddah Road",
-          "Third Ring Road",
-          "King Abdullah Road",
-          "Taif Road",
+          "Dhahran–Al-Ahsa Highway",
+          "Riyadh–Al-Ahsa Highway",
+          "Al Uqair Road",
+          "Salwa Road",
         ],
-        faqTitle: "Questions about towing in Makkah",
-        faq: enFaq("Makkah"),
-      },
-    },
-  },
-  {
-    slug: "madinah",
-    schemaName: "Madinah",
-    content: {
-      ar: {
-        name: "المدينة المنورة",
-        metaTitle: "سطحة المدينة المنورة ٢٤ ساعة — اطلب أقرب سطحة",
-        description:
-          "اطلب سطحة في المدينة المنورة ٢٤ ساعة عبر واير. طلبك يوصل لكل الكباتن القريبين منك في قباء والعوالي والخالدية وبقية أحياء المدينة.",
-        answer:
-          "لطلب سطحة في المدينة المنورة، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. الطلب يوصل لكل كباتن السطحات القريبين منك في المدينة، تجيك عروضهم بأسعارها وتختار الأنسب وتتابع الكابتن على الخريطة. الخدمة متاحة ٢٤ ساعة.",
-        areasTitle: "نغطي أحياء المدينة",
-        areas: [
-          "قباء",
-          "العوالي",
-          "الحرة الشرقية",
-          "شظاة",
-          "الخالدية",
-          "سلطانة",
-          "الدفاع",
-          "بني حارثة",
-        ],
-        roadsTitle: "والطرق الرئيسية",
-        roads: [
-          "طريق الملك عبدالله",
-          "طريق الهجرة",
-          "الدائري الثاني",
-          "طريق الملك فهد",
-          "طريق تبوك",
-        ],
-        faqTitle: "أسئلة عن السطحة في المدينة",
-        faq: arFaq("المدينة المنورة"),
-      },
-      en: {
-        name: "Madinah",
-        metaTitle: "Tow truck in Madinah, 24/7 — request the nearest driver",
-        description:
-          "Request a tow truck in Madinah 24/7 with Wire. Your request reaches every nearby driver across Quba, Al Awali, Al Khalidiyah and the rest of Madinah.",
-        answer:
-          "To get a tow truck in Madinah, open the Wire app, set your location on the map, and describe the problem. The request reaches every nearby tow truck driver in Madinah, their quotes arrive, and you pick one and track them on the map. Available 24/7.",
-        areasTitle: "Districts we cover in Madinah",
-        areas: [
-          "Quba",
-          "Al Awali",
-          "Eastern Harrah",
-          "Shuzah",
-          "Al Khalidiyah",
-          "Sultanah",
-          "Al Difa",
-          "Bani Harithah",
-        ],
-        roadsTitle: "And the main roads",
-        roads: [
-          "King Abdullah Road",
-          "Al Hijrah Road",
-          "Second Ring Road",
-          "King Fahd Road",
-          "Tabuk Road",
-        ],
-        faqTitle: "Questions about towing in Madinah",
-        faq: enFaq("Madinah"),
-      },
-    },
-  },
-  {
-    slug: "taif",
-    schemaName: "Taif",
-    content: {
-      ar: {
-        name: "الطائف",
-        metaTitle: "سطحة الطائف ٢٤ ساعة — أقرب سطحة لك في الطائف والهدا",
-        description:
-          "اطلب سطحة في الطائف ٢٤ ساعة عبر واير، من داخل المدينة إلى طريق الهدا وطريق السيل. قارن عروض الكباتن القريبين واختر الأنسب.",
-        answer:
-          "لطلب سطحة في الطائف، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. طلبك يوصل لكل كباتن السطحات القريبين منك في الطائف وطرقه الجبلية، تجيك عروضهم وتختار الأنسب وتتابعه على الخريطة. الخدمة متاحة ٢٤ ساعة.",
-        areasTitle: "نغطي أحياء الطائف",
-        areas: ["الشفا", "الهدا", "الفيصلية", "شهار", "المثناة", "الوشحاء", "السلامة"],
-        roadsTitle: "والطرق الرئيسية",
-        roads: [
-          "طريق الهدا",
-          "طريق السيل الكبير",
-          "طريق الرياض",
-          "طريق مكة الطائف",
-          "طريق الملك فيصل",
-        ],
-        faqTitle: "أسئلة عن السطحة في الطائف",
-        faq: arFaq("الطائف"),
-      },
-      en: {
-        name: "Taif",
-        metaTitle: "Tow truck in Taif, 24/7 — nearest driver in Taif and Al Hada",
-        description:
-          "Request a tow truck in Taif 24/7 with Wire, from inside the city to the Al Hada and Al Sail mountain roads. Compare nearby drivers' quotes and choose.",
-        answer:
-          "To get a tow truck in Taif, open the Wire app, set your location on the map, and describe the problem. Your request reaches every nearby tow truck driver in Taif and on its mountain roads; you compare offers, choose one, and track them on the map. Available 24/7.",
-        areasTitle: "Districts we cover in Taif",
-        areas: ["Al Shafa", "Al Hada", "Al Faisaliyah", "Shihar", "Al Mathnah", "Al Wishha", "Al Salamah"],
-        roadsTitle: "And the main roads",
-        roads: [
-          "Al Hada Road",
-          "Al Sail Al Kabir Road",
-          "Riyadh Road",
-          "Makkah–Taif Road",
-          "King Faisal Road",
-        ],
-        faqTitle: "Questions about towing in Taif",
-        faq: enFaq("Taif"),
-      },
-    },
-  },
-  {
-    slug: "abha",
-    schemaName: "Abha",
-    content: {
-      ar: {
-        name: "أبها",
-        metaTitle: "سطحة أبها ٢٤ ساعة — أقرب سطحة في أبها وخميس مشيط",
-        description:
-          "اطلب سطحة في أبها ٢٤ ساعة عبر واير، داخل المدينة وعلى الطرق الجبلية. قارن عروض الكباتن القريبين وتابع رحلتك على الخريطة.",
-        answer:
-          "لطلب سطحة في أبها، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. طلبك يوصل لكل كباتن السطحات القريبين منك في أبها ومحيطها، تجيك عروضهم بأسعارها وتختار الأنسب وتتابعه على الخريطة. الخدمة متاحة ٢٤ ساعة.",
-        areasTitle: "نغطي أحياء أبها",
-        areas: ["المنسك", "الموظفين", "الخالدية", "السد", "الشعف", "النسيم", "البديع"],
-        roadsTitle: "والطرق الرئيسية",
-        roads: [
-          "طريق الملك فهد",
-          "طريق أبها خميس مشيط",
-          "عقبة ضلع",
-          "طريق السودة",
-          "طريق الملك عبدالعزيز",
-        ],
-        faqTitle: "أسئلة عن السطحة في أبها",
-        faq: arFaq("أبها"),
-      },
-      en: {
-        name: "Abha",
-        metaTitle: "Tow truck in Abha, 24/7 — nearest driver in Abha and Khamis Mushait",
-        description:
-          "Request a tow truck in Abha 24/7 with Wire, inside the city and on the mountain roads. Compare nearby drivers' quotes and track your tow on the map.",
-        answer:
-          "To get a tow truck in Abha, open the Wire app, set your location on the map, and describe the problem. Your request reaches every nearby tow truck driver in Abha and its surroundings; their quotes arrive, you choose one, and you track them on the map. Available 24/7.",
-        areasTitle: "Districts we cover in Abha",
-        areas: ["Al Mansak", "Al Muwazafin", "Al Khalidiyah", "Al Sadd", "Al Shaaf", "Al Naseem", "Al Badie"],
-        roadsTitle: "And the main roads",
-        roads: [
-          "King Fahd Road",
-          "Abha–Khamis Mushait Road",
-          "Dhala Escarpment",
-          "Al Soudah Road",
-          "King Abdulaziz Road",
-        ],
-        faqTitle: "Questions about towing in Abha",
-        faq: enFaq("Abha"),
-      },
-    },
-  },
-  {
-    slug: "buraidah",
-    schemaName: "Buraidah",
-    content: {
-      ar: {
-        name: "بريدة",
-        metaTitle: "سطحة بريدة ٢٤ ساعة — أقرب سطحة لك في القصيم",
-        description:
-          "اطلب سطحة في بريدة ٢٤ ساعة عبر واير. طلبك يوصل لكل الكباتن القريبين منك في الصفراء والفايزية والريان وبقية أحياء بريدة.",
-        answer:
-          "لطلب سطحة في بريدة، افتح تطبيق واير وحدد موقعك على الخريطة ووصّف حالتك. الطلب يوصل لكل كباتن السطحات القريبين منك في بريدة والقصيم، تقارن عروضهم وتختار الأنسب وتتابع الكابتن على الخريطة. الخدمة متاحة ٢٤ ساعة.",
-        areasTitle: "نغطي أحياء بريدة",
-        areas: ["الصفراء", "الفايزية", "الإسكان", "الريان", "النهضة", "الخليج", "الرابية"],
-        roadsTitle: "والطرق الرئيسية",
-        roads: [
-          "طريق الملك عبدالعزيز",
-          "طريق الرياض القصيم",
-          "طريق عنيزة",
-          "طريق الملك فهد",
-          "الدائري الشرقي",
-        ],
-        faqTitle: "أسئلة عن السطحة في بريدة",
-        faq: arFaq("بريدة"),
-      },
-      en: {
-        name: "Buraidah",
-        metaTitle: "Tow truck in Buraidah, 24/7 — nearest driver in Qassim",
-        description:
-          "Request a tow truck in Buraidah 24/7 with Wire. Your request reaches every nearby driver across Al Safra, Al Fayziyah, Al Rayyan and the rest of Buraidah.",
-        answer:
-          "To get a tow truck in Buraidah, open the Wire app, set your location on the map, and describe the problem. The request reaches every nearby tow truck driver in Buraidah and Qassim; you compare offers, choose one, and track the driver on the map. Available 24/7.",
-        areasTitle: "Districts we cover in Buraidah",
-        areas: ["Al Safra", "Al Fayziyah", "Al Iskan", "Al Rayyan", "Al Nahdah", "Al Khaleej", "Al Rabiyah"],
-        roadsTitle: "And the main roads",
-        roads: [
-          "King Abdulaziz Road",
-          "Riyadh–Qassim Highway",
-          "Unaizah Road",
-          "King Fahd Road",
-          "Eastern Ring Road",
-        ],
-        faqTitle: "Questions about towing in Buraidah",
-        faq: enFaq("Buraidah"),
+        faqTitle: "Questions about towing in Al-Ahsa",
+        faq: enFaq("Al-Ahsa"),
       },
     },
   },
@@ -635,18 +492,18 @@ export const citiesIndex: Record<
 > = {
   ar: {
     title: "سطحة في مدينتك",
-    metaTitle: "سطحة ٢٤ ساعة في مدن السعودية — الرياض وجدة والدمام وغيرها",
+    metaTitle: "سطحة ٢٤ ساعة — الرياض وجدة والدمام والخبر والأحساء",
     description:
-      "واير تغطي الرياض وجدة والدمام والخبر ومكة والمدينة والطائف وأبها وبريدة. اختر مدينتك وشوف كيف تطلب أقرب سطحة وتقارن العروض.",
+      "واير تخدم الرياض وجدة والدمام والخبر والظهران والأحساء (الهفوف والمبرز). اختر مدينتك وشوف كيف تطلب أقرب سطحة وتقارن العروض.",
     intro:
       "اختر مدينتك تشوف الأحياء والطرق اللي نغطيها، وكيف يوصل طلبك لكل الكباتن القريبين منك خلال دقائق.",
     label: "المدن",
   },
   en: {
     title: "Towing in your city",
-    metaTitle: "24/7 towing across Saudi cities — Riyadh, Jeddah, Dammam and more",
+    metaTitle: "24/7 towing — Riyadh, Jeddah, Dammam, Khobar and Al-Ahsa",
     description:
-      "Wire covers Riyadh, Jeddah, Dammam, Khobar, Makkah, Madinah, Taif, Abha and Buraidah. Pick your city to see how to reach the nearest tow truck and compare quotes.",
+      "Wire serves Riyadh, Jeddah, Dammam, Khobar, Dhahran and Al-Ahsa (Hofuf and Mubarraz). Pick your city to see how to reach the nearest tow truck and compare quotes.",
     intro:
       "Pick your city to see the districts and roads we cover, and how your request reaches every nearby driver within minutes.",
     label: "Cities",

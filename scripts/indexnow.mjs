@@ -21,6 +21,7 @@ const LOCALES = ["ar", "en"];
 const PATHS = [
   "",
   "/nearest-tow-truck",
+  "/prices",
   "/drivers",
   "/guides",
   "/cities",
@@ -35,6 +36,9 @@ const PATHS = [
   "/cities/jeddah",
   "/cities/dammam",
   "/cities/khobar",
+  "/cities/ahsa",
+  // Retired 2026-10-08 (cities we don't serve) — submitted so engines pick
+  // up the 308 to /cities quickly instead of waiting for a recrawl.
   "/cities/makkah",
   "/cities/madinah",
   "/cities/taif",

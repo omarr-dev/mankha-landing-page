@@ -22,7 +22,7 @@ const TITLES: Record<Locale, string> = {
 };
 const DESCRIPTIONS: Record<Locale, string> = {
   ar: "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك، تجيك عروضهم — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
-  en: "Skip calling ten tow trucks — one request reaches every nearby driver across Saudi Arabia. Compare quotes, pick the best, and track your tow live, 24/7.",
+  en: "Skip calling ten tow trucks — one request reaches every nearby driver in Riyadh, Jeddah, the Eastern Province and Al-Ahsa. Compare quotes, pick the best, and track your tow live, 24/7.",
 };
 const KEYWORDS: Record<Locale, string[]> = {
   ar: [

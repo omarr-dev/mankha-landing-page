@@ -14,6 +14,8 @@ const STATIC_ROUTES: Route[] = [
   // The proximity cluster ("أقرب سطحة من موقعي" and friends) is the single
   // largest source of impressions on the site, so this sits with the home page.
   { path: "/nearest-tow-truck", changeFrequency: "weekly", priority: 0.95 },
+  // Real completed-trip prices — the "كم سعر السطحة" cluster.
+  { path: "/prices", changeFrequency: "monthly", priority: 0.9 },
   { path: "/drivers", changeFrequency: "monthly", priority: 0.9 },
   { path: "/guides", changeFrequency: "weekly", priority: 0.9 },
   { path: "/cities", changeFrequency: "weekly", priority: 0.8 },

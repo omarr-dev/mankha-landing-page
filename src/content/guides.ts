@@ -23,7 +23,7 @@ import type { Locale } from "@/lib/seo";
  * that gets discounted once it's noticed.
  */
 export const CONTENT_PUBLISHED = "2026-08-02";
-export const CONTENT_UPDATED = "2026-08-02";
+export const CONTENT_UPDATED = "2026-10-08";
 
 export type GuideStep = { name: string; text: string };
 

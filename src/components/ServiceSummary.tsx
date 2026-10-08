@@ -2,7 +2,9 @@ import type { Locale } from "@/lib/seo";
 
 // Above-the-fold-adjacent, self-contained answer block + visible coverage facts.
 // Gives crawlers and AI answer engines an extractable canonical passage with
-// concrete entities (cities, 24/7, electronic payment) rather than only JSON-LD.
+// concrete entities (cities, 24/7, real trip numbers) rather than only JSON-LD.
+// Numbers come from completed trips (test accounts excluded) — refresh them
+// together with content/prices.ts.
 const COPY: Record<
   Locale,
   {
@@ -14,22 +16,24 @@ const COPY: Record<
 > = {
   ar: {
     answer:
-      "واير هو تطبيق سعودي لطلب السطحة والمساعدة على الطريق. بدل ما تدق على عشر سطحات، طلب واحد يوصل لكل الكباتن الموثقين القريبين منك، تجيك عروضهم، وتختار الأنسب وتتابع رحلتك مباشرة على الخريطة — ٢٤ ساعة في جميع أنحاء المملكة.",
+      "واير هو تطبيق سعودي لطلب السطحة والمساعدة على الطريق. بدل ما تدق على عشر سطحات، طلب واحد يوصل لكل الكباتن الموثقين القريبين منك، تجيك عروضهم، وتختار الأنسب وتتابع رحلتك مباشرة على الخريطة — ٢٤ ساعة في الرياض وجدة والشرقية والأحساء.",
     facts: [
+      { value: "+٢٦٠", label: "كابتن سطحة موثق" },
+      { value: "٧", label: "عروض في المتوسط لكل طلب" },
+      { value: "٤٫٩", label: "تقييم العملاء بعد الرحلة" },
       { value: "٢٤/٧", label: "متوفر طوال الأسبوع" },
-      { value: "+٩", label: "مدن مغطاة" },
-      { value: "٠ ريال", label: "بدون رسوم خفية" },
     ],
     citiesLabel: "نخدم في",
-    cities: ["الرياض", "جدة", "الدمام", "الخبر", "مكة", "المدينة", "الطائف", "أبها", "بريدة"],
+    cities: ["الرياض", "جدة", "الدمام", "الخبر", "الظهران", "الأحساء"],
   },
   en: {
     answer:
-      "Wire is a Saudi app for tow trucks and roadside assistance. Instead of calling ten tow trucks, one request reaches every verified driver near you, their offers come back, and you pick the best and track your tow live on the map — 24/7 across the Kingdom.",
+      "Wire is a Saudi app for tow trucks and roadside assistance. Instead of calling ten tow trucks, one request reaches every verified driver near you, their offers come back, and you pick the best and track your tow live on the map — 24/7 in Riyadh, Jeddah, the Eastern Province and Al-Ahsa.",
     facts: [
+      { value: "260+", label: "Verified tow truck drivers" },
+      { value: "7", label: "Offers per request on average" },
+      { value: "4.9", label: "Customer rating after the trip" },
       { value: "24/7", label: "Available every day" },
-      { value: "9+", label: "Cities covered" },
-      { value: "0 SAR", label: "No hidden fees" },
     ],
     citiesLabel: "We serve",
     cities: [
@@ -37,11 +41,8 @@ const COPY: Record<
       "Jeddah",
       "Dammam",
       "Khobar",
-      "Makkah",
-      "Madinah",
-      "Taif",
-      "Abha",
-      "Buraidah",
+      "Dhahran",
+      "Al-Ahsa",
     ],
   },
 };
