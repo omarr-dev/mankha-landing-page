@@ -32,6 +32,7 @@ export function Footer() {
           href: `${localePath(locale, "/")}#how-it-works`,
         },
         { label: t("footerForDrivers"), href: localePath(locale, "/drivers") },
+        { label: t("footerBusiness"), href: localePath(locale, "/business") },
         { label: t("footerGuides"), href: localePath(locale, "/guides") },
         { label: t("footerCities"), href: localePath(locale, "/cities") },
         { label: t("footerPrices"), href: localePath(locale, "/prices") },

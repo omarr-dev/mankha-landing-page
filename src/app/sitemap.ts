@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CITY_SLUGS } from "@/content/cities";
+import { RIYADH_ZONE_SLUGS } from "@/content/riyadhZones";
 import { CONTENT_UPDATED, GUIDE_SLUGS } from "@/content/guides";
 import { LOCALES, SITE_URL } from "@/lib/seo";
 
@@ -17,6 +18,7 @@ const STATIC_ROUTES: Route[] = [
   // Real completed-trip prices — the "كم سعر السطحة" cluster.
   { path: "/prices", changeFrequency: "monthly", priority: 0.9 },
   { path: "/drivers", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/business", changeFrequency: "monthly", priority: 0.8 },
   { path: "/guides", changeFrequency: "weekly", priority: 0.9 },
   { path: "/cities", changeFrequency: "weekly", priority: 0.8 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
@@ -37,7 +39,18 @@ const CITY_ROUTES: Route[] = CITY_SLUGS.map((slug) => ({
   priority: 0.7,
 }));
 
-const ROUTES: Route[] = [...STATIC_ROUTES, ...GUIDE_ROUTES, ...CITY_ROUTES];
+const ZONE_ROUTES: Route[] = RIYADH_ZONE_SLUGS.map((zone) => ({
+  path: `/cities/riyadh/${zone}`,
+  changeFrequency: "monthly",
+  priority: 0.7,
+}));
+
+const ROUTES: Route[] = [
+  ...STATIC_ROUTES,
+  ...GUIDE_ROUTES,
+  ...CITY_ROUTES,
+  ...ZONE_ROUTES,
+];
 
 /** Every language version of a route, for the xhtml:link alternates. */
 function alternatesFor(path: string) {

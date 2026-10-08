@@ -49,7 +49,7 @@ export type GuideContent = {
 export type Guide = {
   slug: string;
   /** Emoji-free inline icon key, kept in the layout. */
-  icon: "tow" | "battery" | "tire" | "accident" | "fuel" | "sand" | "transport";
+  icon: "tow" | "battery" | "tire" | "accident" | "fuel" | "sand" | "transport" | "water";
   content: Record<Locale, GuideContent>;
 };
 
@@ -871,6 +871,123 @@ export const guides: Guide[] = [
           {
             q: "How do I track my car during transport?",
             a: "Once you accept a driver's offer you see their location move on the map in real time with an estimated arrival, and every stage from loading to delivery is documented inside the Wire app.",
+          },
+        ],
+      },
+    },
+  },
+  {
+    // Published ahead of the Oct–Dec rain season: flooded underpasses are the
+    // one predictable spike in Riyadh tow demand, and the searches
+    // ("سيارتي غرقت في المطر") start the day it rains.
+    slug: "car-flooded",
+    icon: "water",
+    content: {
+      ar: {
+        question: "سيارتي غرقت في المطر أو دخلها ماء — وش أسوي؟",
+        metaTitle: "سيارتك غرقت في المطر؟ لا تشغّلها — الخطوات الصحيحة وطلب سطحة",
+        description:
+          "إذا دخل الماء سيارتك في المطر أو نفق غرقان: لا تشغّل المحرك، اطلع بأمان، صوّر للتأمين، وانقلها على سطحة للورشة. الخطوات بالترتيب.",
+        label: "غرقت في المطر",
+        answer:
+          "إذا غرقت سيارتك أو دخلها ماء: لا تحاول تشغّلها أبدًا، لأن الماء إذا وصل للمحرك يكسره من أول تشغيل. اطلع منها بأمان، صوّرها والموقع للتأمين، وانقلها على سطحة — مو سحب — لأقرب ورشة تفحص الزيت والكهرباء. افتح تطبيق واير واكتب «السيارة غرقانة» في الطلب، وتجيك عروض الكباتن القريبين.",
+        stepsTitle: "الخطوات بالترتيب",
+        steps: [
+          {
+            name: "سلامتك أول",
+            text: "إذا الماء يرتفع أو يجري حولك، اطلع من السيارة لمكان مرتفع فورًا ولا تنتظر. السيارة تتعوض، وأنت لا. للطوارئ اتصل ٩١١ أو الدفاع المدني ٩٩٨.",
+          },
+          {
+            name: "لا تشغّل المحرك",
+            text: "إذا طفت السيارة في الماء أو وصل الماء فوق مستوى الأبواب، لا تحاول تشغّلها. دخول الماء لغرفة الاحتراق يكسر المحرك من أول محاولة، وتتحول مشكلة بسيطة لمحرك كامل.",
+          },
+          {
+            name: "صوّر كل شي",
+            text: "صوّر مستوى الماء على السيارة، داخلها، والموقع (نفق أو شارع). هذي الصور تحتاجها لمطالبة التأمين.",
+          },
+          {
+            name: "اطلب سطحة — مو سحب",
+            text: "السيارة الغرقانة تنقل على سطحة والكفرات كلها مرفوعة، عشان ما يتضرر القير. افتح واير واكتب «السيارة غرقانة» في الوصف، ولو السيارة منخفضة أو فخمة اختر سطحة هيدروليك.",
+          },
+          {
+            name: "ودّها للورشة قبل أي تشغيل",
+            text: "الورشة تفحص الزيت (إذا لونه حليبي فيه ماء)، فلتر الهواء، والكهرباء، وتنشّف السيارة قبل ما تشغّلها. تشغيلها قبل الفحص يضيّع عليك التأمين ويكبر الضرر.",
+          },
+        ],
+        notesTitle: "أشياء تنتبه لها",
+        notes: [
+          "لا تدخل نفق أو منخفض فيه ماء حتى لو شفت سيارات قبلك عدّت — عمق الماء ما ينقاس بالعين.",
+          "وقت المطر الطلب على السطحات يرتفع، فاطلب بدري ولا تنتظر الماء ينزل.",
+          "إذا تقدر بأمان، افصل البطارية عشان تحمي الكهرباء — ولا تلمس شي والسيارة في الماء.",
+          "التأمين ضد الغير ما يغطي أضرار سيارتك. التأمين الشامل غالبًا يغطي الغرق حسب وثيقتك — كلّمهم قبل الإصلاح.",
+        ],
+        faqTitle: "أسئلة متكررة",
+        faq: [
+          {
+            q: "هل أقدر أشغّل السيارة بعد ما دخلها ماء؟",
+            a: "لا تشغّلها قبل فحص الورشة. إذا وصل الماء لمدخل الهواء، أول تشغيل ممكن يكسر المحرك (اللي يسمونه «شرقة ماء»). انقلها على سطحة للورشة، وهم يفحصون الزيت والفلتر والكهرباء قبل أي تشغيل.",
+          },
+          {
+            q: "هل التأمين يغطي غرق السيارة في المطر؟",
+            a: "تأمين ضد الغير ما يغطي أضرار سيارتك نفسها. التأمين الشامل غالبًا يغطي الكوارث الطبيعية مثل السيول والغرق حسب شروط وثيقتك. صوّر السيارة والموقع، وتواصل مع شركة التأمين قبل ما تبدأ أي إصلاح.",
+          },
+          {
+            q: "كم سعر سطحة لسيارة غرقانة في الرياض؟",
+            a: "مثل أي رحلة سطحة: حسب المسافة ونوع السطحة. داخل الرياض السعر الوسيط لرحلات واير ١٤٠ ريال، والهيدروليك وسيطها ١٥٠ ريال. وقت المطر الطلب يزيد، فقارن العروض واختر الأقرب.",
+          },
+        ],
+      },
+      en: {
+        question: "My car flooded in the rain — what should I do?",
+        metaTitle: "Car flooded in the rain? Don't start it — the right steps and a flatbed",
+        description:
+          "If water got into your car in the rain or a flooded underpass: don't start the engine, get out safely, photograph it for insurance and move it on a flatbed to a workshop. Step by step.",
+        label: "Flooded in the rain",
+        answer:
+          "If your car flooded or took on water: never try to start it — if water reached the engine, the first start can wreck it. Get out safely, photograph the car and the spot for insurance, and move it on a flatbed — not a tow by the wheels — to the nearest workshop to check the oil and electrics. Open Wire, write \"car flooded\" in the request, and nearby drivers send offers.",
+        stepsTitle: "Step by step",
+        steps: [
+          {
+            name: "Safety first",
+            text: "If the water is rising or flowing around you, leave the car for higher ground immediately. Cars are replaceable; you are not. In an emergency call 911 or Civil Defense on 998.",
+          },
+          {
+            name: "Don't start the engine",
+            text: "If the car stalled in water or the water rose above the door sills, don't try to start it. Water drawn into the cylinders breaks the engine on the first attempt, turning a small problem into a whole engine.",
+          },
+          {
+            name: "Photograph everything",
+            text: "Capture the water level on the car, the interior and the location (underpass or street). You will need these for an insurance claim.",
+          },
+          {
+            name: "Request a flatbed — not a wheel tow",
+            text: "A flooded car should travel on a flatbed with all wheels off the ground so the transmission isn't damaged. Open Wire and write \"car flooded\" in the request; for a low or luxury car choose a hydraulic flatbed.",
+          },
+          {
+            name: "Workshop before any restart",
+            text: "The workshop checks the oil (milky means water), the air filter and the electrics, and dries the car before starting it. Starting it first can void your insurance and multiply the damage.",
+          },
+        ],
+        notesTitle: "Things to watch",
+        notes: [
+          "Never drive into a flooded underpass or dip even if other cars made it — you can't judge depth by eye.",
+          "Tow demand jumps when it rains, so request early rather than waiting for the water to drop.",
+          "If you can do it safely, disconnect the battery to protect the electrics — never touch anything while the car is in water.",
+          "Third-party insurance doesn't cover damage to your own car. Comprehensive cover often includes floods depending on your policy — call them before repairs.",
+        ],
+        faqTitle: "Common questions",
+        faq: [
+          {
+            q: "Can I start my car after water got in?",
+            a: "Not before a workshop checks it. If water reached the air intake, the first start can break the engine (hydrolock). Move it on a flatbed to a workshop, which checks the oil, filter and electrics before any restart.",
+          },
+          {
+            q: "Does insurance cover a car flooded by rain?",
+            a: "Third-party insurance doesn't cover damage to your own car. Comprehensive insurance often covers natural disasters such as floods, depending on your policy terms. Photograph the car and location, and contact your insurer before starting any repair.",
+          },
+          {
+            q: "How much is a flatbed for a flooded car in Riyadh?",
+            a: "Like any tow, it depends on distance and truck type. Inside Riyadh the median completed Wire tow is 140 SAR, and 150 SAR for a hydraulic flatbed. Demand rises in the rain, so compare offers and pick the closest.",
           },
         ],
       },

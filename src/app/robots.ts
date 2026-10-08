@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
-const DISALLOW = ["/api/", "/_next/", "/whatsapp", "/driver-app", "/app", "/go/"];
+// Never disallow /_next/: Google renders pages with their CSS/JS, and a page it
+// can't render is judged on a broken layout. "/app$" is anchored so the rule
+// doesn't also swallow /apple-icon.png.
+const DISALLOW = ["/api/", "/whatsapp", "/driver-app", "/app$", "/go/"];
 
 /**
  * Crawlers that feed AI answer engines. They are already covered by the `*`

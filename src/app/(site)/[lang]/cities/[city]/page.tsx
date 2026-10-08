@@ -18,6 +18,7 @@ import {
 } from "@/content/cities";
 import { guides, guidesIndex } from "@/content/guides";
 import { prices } from "@/content/prices";
+import { riyadhZones } from "@/content/riyadhZones";
 import {
   breadcrumbTrail,
   cityServiceSchema,
@@ -101,6 +102,16 @@ export default async function CityPage({
     })),
   ];
 
+  // Riyadh links down to its zone pages (north/east/south/west).
+  const zoneCards =
+    city === "riyadh"
+      ? riyadhZones.map((z) => ({
+          href: localePath(lang, `/cities/${city}/${z.slug}`),
+          label: lang === "ar" ? `سطحة ${z.content.ar.name}` : `Towing in ${z.content.en.name}`,
+          description: z.content[lang].areas.slice(0, 3).join(lang === "ar" ? "، " : ", "),
+        }))
+      : [];
+
   return (
     <main className="bg-parchment min-h-screen">
       <JsonLd
@@ -138,6 +149,13 @@ export default async function CityPage({
         <ChipList title={c.areasTitle} items={c.areas} />
         <ChipList title={c.roadsTitle} items={c.roads} />
       </section>
+
+      {zoneCards.length > 0 && (
+        <LinkCards
+          title={lang === "ar" ? "اختر منطقتك في الرياض" : "Pick your part of Riyadh"}
+          items={zoneCards}
+        />
+      )}
 
       <Faq title={c.faqTitle} items={c.faq} />
 
