@@ -14,10 +14,12 @@ export const translations = {
 
     // Hero
     heroBadge: "Now in Riyadh, Jeddah, the Eastern Province & Al-Ahsa",
+    // Headline + sub repeat the home <title> promise (content/home.ts): 24/7,
+    // offers within seconds, a real price range from content/prices.ts.
     heroHeadlineLead: "Nearest",
     heroHeadlineHighlight: "tow truck,",
-    heroHeadlineTail: "on demand.",
-    heroSub: "Skip calling ten tow trucks — one request reaches every nearby driver. Compare their quotes, pick the best fit, and track your ride in real time.",
+    heroHeadlineTail: "24/7.",
+    heroSub: "Skip calling ten tow trucks — one request reaches every nearby driver and the first offer lands within seconds. Compare quotes (a short tow inside Riyadh is mostly 100–140 SAR) and pick the best fit.",
     heroCtaCustomer: "Request a Tow",
     heroCtaDriver: `Drive with ${BRAND_NAME_EN}`,
     // Hero promise pills (forward commitments, not claimed history)
@@ -166,10 +168,13 @@ export const translations = {
 
     // Hero
     heroBadge: "حولك حواليك واير بين يديك",
+    // Same promise as the home <title> (content/home.ts): 24 hours, first
+    // offer within seconds, a real price range from content/prices.ts.
     heroHeadlineLead: "أقرب",
     heroHeadlineHighlight: "سطحة",
-    heroHeadlineTail: "وقت ما تبي.",
-    heroSub: "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك، تجيك عروضهم — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
+    // No-break space keeps «٢٤ ساعة» on one line (phones broke it before ساعة).
+    heroHeadlineTail: "لك ٢٤\u00a0ساعة.",
+    heroSub: "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك وأول عرض يجيك خلال ثواني. قارن العروض — المشوار القصير داخل الرياض غالبًا ١٠٠–١٤٠ ريال — واختر الأنسب.",
     heroCtaCustomer: "اطلب سطحة",
     heroCtaDriver: "اعرف اكثر",
     // Hero promise pills

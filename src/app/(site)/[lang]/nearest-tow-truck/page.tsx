@@ -3,6 +3,7 @@ import {
   ContentHeader,
   LinkCards,
   StepList,
+  TermList,
 } from "@/components/content/blocks";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
@@ -133,6 +134,11 @@ export default async function NearestTowTruckPage({
       </header>
 
       <StepList title={c.stepsTitle} steps={c.steps} />
+
+      {/* The two questions this searcher asks next, answered before the
+          "nearest isn't best" argument: what to have ready, how long it takes. */}
+      <TermList title={c.prepTitle} intro={c.prepIntro} items={c.prep} />
+      <TermList title={c.waitTitle} items={c.wait} />
 
       <section className="max-w-[820px] mx-auto px-6 py-10 border-t border-border-warm">
         <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-[-0.01em] text-near-black mb-5">

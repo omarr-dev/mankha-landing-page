@@ -3,6 +3,7 @@ import { ClientProviders } from "@/components/ClientProviders";
 import { GtagScripts } from "@/components/GtagScripts";
 import { TikTokPixel } from "@/components/TikTokPixel";
 import { UtmForward } from "@/components/UtmForward";
+import { homeMeta } from "@/content/home";
 import { ibmPlexArabic } from "@/lib/fonts";
 import {
   SITE_URL,
@@ -16,14 +17,6 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "../../globals.css";
 
-const TITLES: Record<Locale, string> = {
-  ar: `${BRAND_NAME_AR} — أقرب سطحة وقت ما تبي`,
-  en: `${BRAND_NAME_EN} — Nearest tow truck, on demand`,
-};
-const DESCRIPTIONS: Record<Locale, string> = {
-  ar: "بدل ما تدق على ١٠ سطحات، طلب واحد يوصل لكل الكباتن حولك، تجيك عروضهم — اختر الأنسب وتابع رحلتك لحظة بلحظة.",
-  en: "Skip calling ten tow trucks — one request reaches every nearby driver in Riyadh, Jeddah, the Eastern Province and Al-Ahsa. Compare quotes, pick the best, and track your tow live, 24/7.",
-};
 const KEYWORDS: Record<Locale, string[]> = {
   ar: [
     "سطحة",
@@ -74,8 +67,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) return {};
-  const title = TITLES[lang];
-  const description = DESCRIPTIONS[lang];
+  // Every child page sets its own title, so `default` is in practice the home
+  // page's title — content/home.ts explains the wording.
+  const { title, description } = homeMeta[lang];
   return {
     metadataBase: new URL(SITE_URL),
     title: { default: title, template: `%s | ${BRAND_NAME_AR}` },

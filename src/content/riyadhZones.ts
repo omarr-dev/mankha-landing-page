@@ -14,10 +14,33 @@ import type { Locale } from "@/lib/seo";
  * centre, test accounts excluded, Apr–Oct 2026); prices fall back to the
  * Riyadh-wide distance medians (content/prices.ts) where a zone has too few
  * completed trips to quote on its own.
+ *
+ * Neighbourhood sections (Oct 2026): Search Console showed district-level
+ * queries — «سطحه الشفا» / «الشفاء», «سطحة الدار البيضاء», «سطحة العزيزية»,
+ * «سطحه النسيم» — landing on these zone pages at positions 5–19. They get a
+ * section inside the zone page, not pages of their own: a page per district
+ * would be the thin doorway pattern this file exists to avoid. Roads,
+ * landmarks and workshop areas were checked against OpenStreetMap district
+ * boundaries (which side of a district a road runs on, what lies inside it);
+ * prices and distances come from content/prices.ts bands. No invented stats.
  */
+
+export const ZONES_UPDATED = "2026-10-22";
 
 export const RIYADH_ZONE_SLUGS = ["north", "east", "south", "west"] as const;
 export type RiyadhZoneSlug = (typeof RIYADH_ZONE_SLUGS)[number];
+
+/** A district inside a zone that people search for by name. */
+export type ZoneNeighborhood = {
+  /** Latin anchor id — /cities/riyadh/south#al-shifa. */
+  id: string;
+  /** District name; the <h3> is built from it by neighborhoodHeading(). */
+  name: string;
+  /** Where it is: bounding roads, landmarks, nearest workshop areas. */
+  body: string;
+  /** What someone stuck there needs to know — practical, from real bands. */
+  tips: string[];
+};
 
 export type ZoneContent = {
   name: string;
@@ -33,6 +56,10 @@ export type ZoneContent = {
   roads: string[];
   destinationsTitle: string;
   destinations: { name: string; text: string }[];
+  /** Only zones whose districts show up in search by name. */
+  neighborhoodsTitle?: string;
+  neighborhoodsIntro?: string;
+  neighborhoods?: ZoneNeighborhood[];
   faqTitle: string;
   faq: FaqItem[];
 };
@@ -49,6 +76,10 @@ export const zoneHeading = (locale: Locale, name: string): string =>
     ? `سطحة ${name} — كيف تطلب أقرب سطحة؟`
     : `Tow truck in ${name} — how do I get the nearest one?`;
 
+/** <h3> for a district section, phrased the way it is searched («سطحة الشفا»). */
+export const neighborhoodHeading = (locale: Locale, name: string): string =>
+  locale === "ar" ? `سطحة ${name}` : `Tow truck in ${name}`;
+
 export const riyadhZones: RiyadhZone[] = [
   {
     slug: "north",
@@ -58,7 +89,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "شمال الرياض",
         metaTitle: "سطحة شمال الرياض ٢٤ ساعة — النرجس والملقا والياسمين والعارض",
         description:
-          "تبي سطحة في شمال الرياض؟ طلب واحد من واير يوصل لكل الكباتن القريبين في النرجس والملقا والياسمين والعارض والقيروان، تجيك ٨ عروض في المتوسط وتختار الأنسب.",
+          "تبي سطحة في شمال الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في النرجس والملقا والياسمين والعارض، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
           "لطلب سطحة في شمال الرياض: افتح واير وحدد موقعك ووصّف حالتك، وطلبك يوصل لكل الكباتن الموثقين القريبين في النرجس والملقا والياسمين والعارض وما حولها. شمال الرياض أكثر منطقة نستقبل منها طلبات — ٣٠٠ طلب — ويجي لكل طلب ٨ عروض في المتوسط، والسعر الوسيط للرحلات المنفذة ١٤٠ ريال.",
         statsTitle: "شمال الرياض بالأرقام",
@@ -135,7 +166,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "North Riyadh",
         metaTitle: "Tow truck in North Riyadh, 24/7 — Narjis, Malqa, Yasmin, Arid",
         description:
-          "Need a tow truck in North Riyadh? One Wire request reaches every nearby driver in Al Narjis, Al Malqa, Al Yasmin, Al Arid and Al Qirawan — 8 offers on average, you pick.",
+          "Tow truck in North Riyadh? One Wire request reaches every nearby driver in Al Narjis, Al Malqa, Al Yasmin and Al Arid — first offer in seconds, 24/7.",
         answer:
           "To get a tow truck in North Riyadh, open Wire, set your location and describe the problem; your request reaches every verified driver near you in Al Narjis, Al Malqa, Al Yasmin, Al Arid and around. North Riyadh is where most of our requests come from — 300 so far — with 8 offers per request on average and a 140 SAR median on completed tows.",
         statsTitle: "North Riyadh in numbers",
@@ -218,7 +249,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "شرق الرياض",
         metaTitle: "سطحة شرق الرياض ٢٤ ساعة — النسيم والروضة والخليج والرمال",
         description:
-          "تبي سطحة في شرق الرياض؟ طلب واحد من واير يوصل لكل الكباتن القريبين في النسيم والروضة والخليج والرمال والجنادرية، تقارن عروضهم وتختار الأنسب.",
+          "تبي سطحة في شرق الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في النسيم والروضة والخليج والرمال، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
           "لطلب سطحة في شرق الرياض: افتح واير وحدد موقعك ووصّف حالتك، وطلبك يوصل لكل الكباتن الموثقين القريبين في النسيم والروضة والخليج والرمال والجنادرية. استقبلنا ٢٣٤ طلب من شرق الرياض، يجي لكل طلب ٧ عروض في المتوسط، والسعر الوسيط للرحلات المنفذة ١٤٥ ريال.",
         statsTitle: "شرق الرياض بالأرقام",
@@ -273,6 +304,29 @@ export const riyadhZones: RiyadhZone[] = [
             text: "لمراكز الصيانة والوكالات في الشمال — مشوار طويل داخل المدينة، ووسيطه ١٥٠ ريال.",
           },
         ],
+        neighborhoodsTitle: "سطحة في النسيم (الغربي والشرقي)",
+        neighborhoodsIntro:
+          "النسيم من أكبر أحياء شرق الرياض: طريق خريص من جهة الشمال، وطريق الأمير سعد بن عبدالرحمن الأول من جهة الجنوب، وشارع حسان بن ثابت يفصل بين النسيم الغربي والنسيم الشرقي.",
+        neighborhoods: [
+          {
+            id: "al-naseem-west",
+            name: "النسيم الغربي",
+            body: "بين شارع عبدالرحمن بن عوف وشارع حسان بن ثابت، ويقطعه شارع سعد بن أبي وقاص. على طرفه الجنوبي محطة مترو النسيم (طريق الأمير سعد بن عبدالرحمن الأول)، وعلى طرفه الشمالي العثيم مول على طريق خريص — معالم تختصر على الكابتن الوصف.",
+            tips: [
+              "للصناعية القديمة: مشوار متوسط (١٠ إلى ٢٠ كم بخط مستقيم)، وهالمسافة داخل الرياض أغلب أسعارها بين ١٢٠ و١٥٠ ريال.",
+              "تعطلت على طريق خريص؟ طريق سريع، فاطلع للكتف بعيد عن المسار واكتب اتجاهك في الملاحظات.",
+            ],
+          },
+          {
+            id: "al-naseem-east",
+            name: "النسيم الشرقي",
+            body: "شرق شارع حسان بن ثابت، ومن شوارعه شارع أبي هريرة وشارع أبي الأسود الدؤلي. وفي شماله قرب طريق خريص صناعية النسيم وفيها ورش كثيرة — فإذا ورشتك هناك فالمشوار قصير جدًا.",
+            tips: [
+              "لورش صناعية النسيم: مشوار قصير داخل الحي، والمشوار الأقل من ١٠ كم داخل الرياض أغلب أسعاره بين ١٠٠ و١٤٠ ريال.",
+              "داخل الحي: حط الدبوس عند السيارة نفسها واذكر اسم الشارع وأقرب معلم في الملاحظات.",
+            ],
+          },
+        ],
         faqTitle: "أسئلة عن السطحة في شرق الرياض",
         faq: [
           {
@@ -284,8 +338,8 @@ export const riyadhZones: RiyadhZone[] = [
             a: "من أحياء الشرق للصناعية مشوار متوسط إلى طويل داخل المدينة. وسيط المشاوير من ١٠ إلى ٢٠ كم في رحلات واير ١٢٠ ريال، ومن ٢٠ إلى ٤٠ كم ١٥٠ ريال. اطلب وتجيك العروض بأسعارها.",
           },
           {
-            q: "هل في سطحة قريبة مني في الخليج أو الرمال أو الجنادرية؟",
-            a: "نعم. طلبك يوصل لكل الكباتن القريبين منك في الخليج والرمال والجنادرية وبقية أحياء الشرق في نفس اللحظة، وكل عرض يوضح وقت الوصول المتوقع فتختار الأقرب.",
+            q: "هل في سطحة قريبة مني في النسيم أو الخليج أو الرمال؟",
+            a: "نعم. طلبك يوصل لكل الكباتن القريبين منك في النسيم والخليج والرمال وبقية أحياء الشرق في نفس اللحظة، وكل عرض يوضح وقت الوصول المتوقع فتختار الأقرب.",
           },
         ],
       },
@@ -293,7 +347,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "East Riyadh",
         metaTitle: "Tow truck in East Riyadh, 24/7 — Naseem, Rawdah, Khaleej, Rimal",
         description:
-          "Need a tow truck in East Riyadh? One Wire request reaches every nearby driver in Al Naseem, Al Rawdah, Al Khaleej, Al Rimal and Al Janadriyah — compare offers and choose.",
+          "Tow truck in East Riyadh? One Wire request reaches every nearby driver in Al Naseem, Al Rawdah, Al Khaleej and Al Rimal — first offer in seconds, 24/7.",
         answer:
           "To get a tow truck in East Riyadh, open Wire, set your location and describe the problem; your request reaches every verified driver near you in Al Naseem, Al Rawdah, Al Khaleej, Al Rimal and Al Janadriyah. We've had 234 requests from East Riyadh, with 7 offers per request on average and a 145 SAR median on completed tows.",
         statsTitle: "East Riyadh in numbers",
@@ -348,6 +402,29 @@ export const riyadhZones: RiyadhZone[] = [
             text: "For dealers and service centres in the north — a long in-city trip with a 150 SAR median.",
           },
         ],
+        neighborhoodsTitle: "Towing in Al Naseem (West and East)",
+        neighborhoodsIntro:
+          "Al Naseem is one of East Riyadh's largest districts: Khurais Road on its northern side, Prince Saad Bin Abdulrahman Al Awal Road on its southern side, and Hassan Bin Thabit Street dividing Al Naseem West from Al Naseem East.",
+        neighborhoods: [
+          {
+            id: "al-naseem-west",
+            name: "Al Naseem West",
+            body: "Between Abdulrahman Bin Awf Street and Hassan Bin Thabit Street, crossed by Saad Bin Abi Waqqas Street. Al Naseem metro station sits on its southern edge (Prince Saad Bin Abdulrahman Al Awal Road) and Othaim Mall on Khurais Road at its northern tip — landmarks that save the driver a long description.",
+            tips: [
+              "To Al Sinaiyah: a medium trip (10–20 km in a straight line), a distance where most Riyadh tows cost 120–150 SAR.",
+              "Broken down on Khurais Road? It is a highway — get onto the shoulder away from traffic and write your direction in the notes.",
+            ],
+          },
+          {
+            id: "al-naseem-east",
+            name: "Al Naseem East",
+            body: "East of Hassan Bin Thabit Street, with Abi Huraira Street and Abi Al Aswad Al Duali Street among its main roads. The Al Naseem industrial area, full of workshops, sits in its north near Khurais Road — so if your workshop is there, the trip is very short.",
+            tips: [
+              "To the Al Naseem workshops: a short trip inside the district, and under 10 km most Riyadh tows cost 100–140 SAR.",
+              "Inside the district: put the pin on the car itself and add the street name and nearest landmark in the notes.",
+            ],
+          },
+        ],
         faqTitle: "Questions about towing in East Riyadh",
         faq: [
           {
@@ -359,8 +436,8 @@ export const riyadhZones: RiyadhZone[] = [
             a: "From the eastern districts to Al Sinaiyah is a medium-to-long in-city trip. On Wire, 10–20 km tows have a 120 SAR median and 20–40 km tows 150 SAR. Request and the offers arrive with prices.",
           },
           {
-            q: "Is there a tow truck near me in Al Khaleej, Al Rimal or Al Janadriyah?",
-            a: "Yes. Your request reaches every nearby driver in Al Khaleej, Al Rimal, Al Janadriyah and the rest of the east at the same moment, and each offer shows an estimated arrival so you can pick the closest.",
+            q: "Is there a tow truck near me in Al Naseem, Al Khaleej or Al Rimal?",
+            a: "Yes. Your request reaches every nearby driver in Al Naseem, Al Khaleej, Al Rimal and the rest of the east at the same moment, and each offer shows an estimated arrival so you can pick the closest.",
           },
         ],
       },
@@ -374,7 +451,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "جنوب الرياض",
         metaTitle: "سطحة جنوب الرياض ٢٤ ساعة — الشفا والعزيزية والدار البيضاء",
         description:
-          "تبي سطحة في جنوب الرياض؟ طلب واحد من واير يوصل لكل الكباتن القريبين في الشفا والعزيزية والدار البيضاء والمصانع والحائر، تقارن عروضهم وتختار الأنسب.",
+          "تبي سطحة في جنوب الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في الشفا والعزيزية والدار البيضاء والمصانع، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
           "لطلب سطحة في جنوب الرياض: افتح واير وحدد موقعك ووصّف حالتك، وطلبك يوصل لكل الكباتن الموثقين القريبين في الشفا والعزيزية والدار البيضاء والمصانع والحائر. استقبلنا ١٧٦ طلب من جنوب الرياض، يجي لكل طلب ٦ عروض في المتوسط وأول عرض خلال حوالي ١٥ ثانية.",
         statsTitle: "جنوب الرياض بالأرقام",
@@ -425,6 +502,41 @@ export const riyadhZones: RiyadhZone[] = [
             text: "أعطال على الطرق السريعة جنوب المدينة — حدد موقعك بدقة على الخريطة واذكر اتجاه الطريق في الوصف.",
           },
         ],
+        neighborhoodsTitle: "سطحة في الشفا والعزيزية والدار البيضاء",
+        neighborhoodsIntro:
+          "ثلاثة أحياء في الجنوب، ولكل حي طرقه وورشه القريبة — وهذا اللي يفرق في طلبك ووين توديها:",
+        neighborhoods: [
+          {
+            id: "al-shifa",
+            name: "الشفا",
+            body: "الشفا (ويكتبه بعضهم «الشفاء») من أكبر أحياء أقصى جنوب الرياض. يحده من الشمال الدائري الجنوبي ونهاية طريق الملك فهد، ويخترقه طريق ديراب، وشارع ابن تيمية من أهم شوارعه في جنوبه. جنوبه مباشرة صناعية الشفا، وشرقه حي المصانع بورشه.",
+            tips: [
+              "لورشة في صناعية الشفا أو المصانع: المشوار أقل من ١٠ كم، وهالمسافة داخل الرياض أغلب أسعارها بين ١٠٠ و١٤٠ ريال.",
+              "تعطلت على طريق ديراب أو الدائري الجنوبي؟ اطلع للكتف بعيد عن المسار وشغّل الإشارات، واكتب اتجاهك في الملاحظات.",
+              "داخل الحي: حط الدبوس عند السيارة نفسها واذكر اسم الشارع أو أقرب مسجد.",
+            ],
+          },
+          {
+            id: "al-aziziyah",
+            name: "العزيزية",
+            body: "العزيزية في جنوب الرياض: الدائري الجنوبي يمر بطرفها الشمالي الغربي، وطريق الخرج على حدها الشمالي الشرقي، وطريق الحائر في جهتها الغربية، وطريق العزيزية يقطعها من الشمال للجنوب. في غربها سوق العزيزية للخضار، وشمالها بعد الدائري الجنوبي الصناعية القديمة والمدينة الصناعية الأولى.",
+            tips: [
+              "للصناعية: من أغلب الحي المشوار أقل من ١٠ كم بخط مستقيم، وهالمسافة داخل الرياض أغلب أسعارها بين ١٠٠ و١٤٠ ريال.",
+              "قريب من سوق الخضار؟ المكان كبير، فاذكر أقرب بوابة أو محل في الملاحظات عشان يوصل الكابتن لسيارتك مباشرة.",
+              "على طريق الخرج أو طريق الحائر: وقف بعيد عن المسار واكتب اتجاهك — داخل للرياض أو طالع منها.",
+            ],
+          },
+          {
+            id: "ad-dar-al-baida",
+            name: "الدار البيضاء",
+            body: "الدار البيضاء في جنوب شرق الرياض: طريق الخرج على طرفها الشمالي الشرقي، وطريق الحائر على طرفها الغربي، وطريق العزيزية يمر في وسطها، ومن شوارعها عرفات ومحمد رشيد رضا — وعليه محطة مترو الدار البيضاء على المسار الأزرق. المستودعات كثيرة جهة طريق الخرج، والمدينة الصناعية الثانية شرقها.",
+            tips: [
+              "للصناعية أو المدينة الصناعية الثانية: حوالي ١٠ كم بخط مستقيم من وسط الحي، وهالمسافة داخل الرياض أغلب أسعارها بين ١٠٠ و١٥٠ ريال.",
+              "سيارتك داخل مستودع أو موقف شركة؟ اكتب اسم المكان ورقم البوابة في الملاحظات.",
+              "على طريق الخرج: طريق سريع عليه شاحنات، فاطلع للكتف بعيد عن المسار واكتب اتجاهك.",
+            ],
+          },
+        ],
         faqTitle: "أسئلة عن السطحة في جنوب الرياض",
         faq: [
           {
@@ -445,7 +557,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "South Riyadh",
         metaTitle: "Tow truck in South Riyadh, 24/7 — Shifa, Aziziyah, Dar Al Bayda",
         description:
-          "Need a tow truck in South Riyadh? One Wire request reaches every nearby driver in Al Shifa, Al Aziziyah, Al Dar Al Bayda, Al Masani and Al Hair — compare offers and choose.",
+          "Tow truck in South Riyadh? One Wire request reaches every nearby driver in Al Shifa, Al Aziziyah, Al Dar Al Bayda and Al Masani — first offer in seconds.",
         answer:
           "To get a tow truck in South Riyadh, open Wire, set your location and describe the problem; your request reaches every verified driver near you in Al Shifa, Al Aziziyah, Al Dar Al Bayda, Al Masani and Al Hair. We've had 176 requests from South Riyadh, with 6 offers per request on average and the first usually in about 15 seconds.",
         statsTitle: "South Riyadh in numbers",
@@ -496,6 +608,41 @@ export const riyadhZones: RiyadhZone[] = [
             text: "Breakdowns on the highways south of the city — pin your location precisely and mention the direction of travel in the request.",
           },
         ],
+        neighborhoodsTitle: "Towing in Al Shifa, Al Aziziyah and Al Dar Al Bayda",
+        neighborhoodsIntro:
+          "Three southern districts, each with its own roads and nearby workshops — which is what changes your request and where the car goes:",
+        neighborhoods: [
+          {
+            id: "al-shifa",
+            name: "Al Shifa",
+            body: "Al Shifa (also written Al Shifaa) is one of the largest districts in the far south of Riyadh. The Southern Ring Road and the southern end of King Fahd Road run along its north, Dirab Road cuts through it, and Ibn Taymiyyah Street is one of its main roads in the south. Al Shifa Industrial Area lies just to the south, and Al Masani, with its workshops, to the east.",
+            tips: [
+              "To a workshop in Al Shifa Industrial Area or Al Masani: under 10 km, a distance where most Riyadh tows cost 100–140 SAR.",
+              "Broken down on Dirab Road or the Southern Ring Road? Get onto the shoulder away from traffic, hazard lights on, and write your direction of travel in the notes.",
+              "Inside the district: put the pin on the car itself and add the street name or the nearest mosque.",
+            ],
+          },
+          {
+            id: "al-aziziyah",
+            name: "Al Aziziyah",
+            body: "Al Aziziyah is in south Riyadh: the Southern Ring Road runs along its north-western edge, Al Kharj Road along its north-eastern edge, Al Hair Road through its west, and Al Aziziyah Road cuts through it north to south. The Al Aziziyah vegetable market is on its west side, and north across the ring road lie the old industrial area (Al Sinaiyah) and the First Industrial City.",
+            tips: [
+              "To Al Sinaiyah: from most of the district it is under 10 km in a straight line, a distance where most Riyadh tows cost 100–140 SAR.",
+              "Near the vegetable market? It is a big site, so name the nearest gate or shop in the notes and the driver comes straight to your car.",
+              "On Al Kharj Road or Al Hair Road: stop well away from traffic and write your direction — into Riyadh or out of it.",
+            ],
+          },
+          {
+            id: "ad-dar-al-baida",
+            name: "Al Dar Al Bayda",
+            body: "Al Dar Al Bayda is in south-east Riyadh: Al Kharj Road runs along its north-eastern edge, Al Hair Road along its western edge and Al Aziziyah Road through the middle, crossed by Arafat Street and Mohammed Rashid Rida Street — home to the Al Dar Al Bayda station on the Riyadh Metro Blue Line. Warehouses cluster on the Al Kharj Road side, and the Second Industrial City lies to the east.",
+            tips: [
+              "To Al Sinaiyah or the Second Industrial City: about 10 km in a straight line from the middle of the district, a distance where most Riyadh tows cost 100–150 SAR.",
+              "Car inside a warehouse or a company yard? Write the name of the site and the gate number in the notes.",
+              "On Al Kharj Road: it is a highway with heavy trucks, so get onto the shoulder away from traffic and write your direction.",
+            ],
+          },
+        ],
         faqTitle: "Questions about towing in South Riyadh",
         faq: [
           {
@@ -522,7 +669,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "غرب الرياض",
         metaTitle: "سطحة غرب الرياض ٢٤ ساعة — السويدي وظهرة لبن وطويق وعرقة",
         description:
-          "تبي سطحة في غرب الرياض؟ طلب واحد من واير يوصل لكل الكباتن القريبين في السويدي وظهرة لبن وطويق ونمار وعرقة، تقارن عروضهم وتختار الأنسب.",
+          "تبي سطحة في غرب الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في السويدي وظهرة لبن وطويق وعرقة، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
           "لطلب سطحة في غرب الرياض: افتح واير وحدد موقعك ووصّف حالتك، وطلبك يوصل لكل الكباتن الموثقين القريبين في السويدي وظهرة لبن وطويق ونمار وعرقة. يجي لكل طلب من غرب الرياض ٦ عروض في المتوسط وأول عرض خلال حوالي ١٤ ثانية، وداخل الرياض السعر الوسيط ١٤٠ ريال.",
         statsTitle: "غرب الرياض بالأرقام",
@@ -591,7 +738,7 @@ export const riyadhZones: RiyadhZone[] = [
         name: "West Riyadh",
         metaTitle: "Tow truck in West Riyadh, 24/7 — Suwaidi, Laban, Tuwaiq, Irqah",
         description:
-          "Need a tow truck in West Riyadh? One Wire request reaches every nearby driver in Al Suwaidi, Dhahrat Laban, Tuwaiq, Namar and Irqah — compare offers and choose.",
+          "Tow truck in West Riyadh? One Wire request reaches every nearby driver in Al Suwaidi, Dhahrat Laban, Tuwaiq and Irqah — first offer in seconds, 24/7.",
         answer:
           "To get a tow truck in West Riyadh, open Wire, set your location and describe the problem; your request reaches every verified driver near you in Al Suwaidi, Dhahrat Laban, Tuwaiq, Namar and Irqah. Requests from West Riyadh get 6 offers on average, the first in about 14 seconds, and inside Riyadh the median price is 140 SAR.",
         statsTitle: "West Riyadh in numbers",

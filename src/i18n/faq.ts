@@ -12,11 +12,11 @@ export const homeFaq: Record<Locale, FaqContent> = {
     items: [
       {
         q: "كم تكلفة السطحة في الرياض؟",
-        a: "ما في سعر ثابت. ترسل طلب واحد عبر واير فيوصل لكل الكباتن القريبين منك، وكل كابتن يرسل لك عرضه، وأنت تختار الأنسب. تقارن الأسعار قبل ما تقبل، بدون زيادات مفاجئة وبدون مساومة على الطريق.",
+        a: "ما في سعر ثابت — طلبك في واير يوصل لكل الكباتن القريبين، وكل كابتن يرسل عرضه وأنت تختار. وللمرجع من رحلات واير المنفذة داخل الرياض: المشوار القصير (أقل من ١٠ كم) أغلبه بين ١٠٠ و١٤٠ ريال، والطويل داخل المدينة (٢٠–٤٠ كم) بين ١٥٠ و١٧٥. تشوف السعر قبل ما توافق، بدون مساومة على الطريق.",
       },
       {
         q: "كيف أطلب سطحة قريبة مني؟",
-        a: "افتح تطبيق واير، حدد موقعك على الخريطة أو خل الـ GPS يحدده، ووصّف حالتك. طلبك يوصل فورًا لكل كباتن السطحات حولك في الرياض، وتجيك عروضهم خلال دقائق لتختار الأقرب والأنسب لك.",
+        a: "افتح تطبيق واير، حدد موقعك على الخريطة أو خل الـ GPS يحدده، ووصّف حالتك. طلبك يوصل فورًا لكل كباتن السطحات حولك، وأول عرض يجيك عادةً خلال ثواني، فتقارن وتختار الأقرب والأنسب لك.",
       },
       {
         q: "هل خدمة واير متوفرة ٢٤ ساعة؟",
@@ -32,7 +32,7 @@ export const homeFaq: Record<Locale, FaqContent> = {
       },
       {
         q: "كيف أدفع في واير؟",
-        a: "تدفع للكابتن مباشرة عند التسليم، والسعر هو نفس العرض اللي وافقت عليه في التطبيق — واضح ومتفق عليه من البداية، بدون زيادات ولا رسوم خفية ولا مساومة على الطريق.",
+        a: "تدفع للكابتن كاش مباشرة عند التسليم، والسعر هو نفس العرض اللي وافقت عليه في التطبيق — واضح ومتفق عليه من البداية، بدون زيادات ولا رسوم خفية ولا مساومة على الطريق.",
       },
     ],
   },
@@ -41,11 +41,11 @@ export const homeFaq: Record<Locale, FaqContent> = {
     items: [
       {
         q: "How much does a tow truck cost in Riyadh?",
-        a: "There is no fixed price. With Wire you send one request, it reaches every nearby driver, and each one sends you an offer. You compare quotes and pick the best — no surge pricing and no haggling on the roadside.",
+        a: "There is no fixed price — your Wire request reaches every nearby driver, each sends an offer, and you choose. For reference, from tows completed on Wire inside Riyadh: a short tow (under 10 km) is mostly 100–140 SAR, and a long one inside the city (20–40 km) 150–175 SAR. You see the price before accepting — no roadside haggling.",
       },
       {
         q: "How do I request a tow truck near me?",
-        a: "Open the Wire app, drop a pin on the map or let GPS set your location, and describe the problem. Your request instantly reaches every nearby tow truck driver, and their offers arrive within minutes so you choose the closest, best fit.",
+        a: "Open the Wire app, drop a pin on the map or let GPS set your location, and describe the problem. Your request instantly reaches every nearby tow truck driver, and the first offer usually lands within seconds, so you compare and choose the closest, best fit.",
       },
       {
         q: "Is Wire available 24 hours?",
@@ -61,7 +61,7 @@ export const homeFaq: Record<Locale, FaqContent> = {
       },
       {
         q: "How do I pay on Wire?",
-        a: "You pay the driver directly at drop-off, and the price is exactly the offer you accepted in the app — clear and agreed from the start, with no surcharges, no hidden fees and no roadside haggling.",
+        a: "You pay the driver in cash, directly at drop-off, and the price is exactly the offer you accepted in the app — clear and agreed from the start, with no surcharges, no hidden fees and no roadside haggling.",
       },
     ],
   },

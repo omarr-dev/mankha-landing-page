@@ -323,13 +323,24 @@ export function guideArticleSchema(opts: {
   };
 }
 
-/** City-scoped service, so "tow truck in Jeddah" resolves to one entity. */
+/**
+ * City-scoped service, so "tow truck in Jeddah" resolves to one entity.
+ * `places` names districts the page covers in its own section (the Riyadh
+ * zone pages), each listed as a Place inside the city — same names as the
+ * visible <h3>s, never a list the page doesn't show.
+ */
 export function cityServiceSchema(opts: {
   cityName: string;
   schemaName: string;
   url: string;
   description: string;
+  places?: ReadonlyArray<string>;
 }) {
+  const city = {
+    "@type": "City",
+    name: opts.schemaName,
+    containedInPlace: { "@type": "Country", name: "Saudi Arabia" },
+  };
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -338,11 +349,16 @@ export function cityServiceSchema(opts: {
     description: opts.description,
     url: opts.url,
     provider: { "@id": ORG_ID },
-    areaServed: {
-      "@type": "City",
-      name: opts.schemaName,
-      containedInPlace: { "@type": "Country", name: "Saudi Arabia" },
-    },
+    areaServed: opts.places?.length
+      ? [
+          city,
+          ...opts.places.map((name) => ({
+            "@type": "Place",
+            name,
+            containedInPlace: { "@type": "City", name: opts.schemaName },
+          })),
+        ]
+      : city,
     hoursAvailable: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

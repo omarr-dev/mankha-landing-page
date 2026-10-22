@@ -14,6 +14,7 @@ import { cityBySlug, citiesIndex } from "@/content/cities";
 import { prices } from "@/content/prices";
 import {
   RIYADH_ZONE_SLUGS,
+  neighborhoodHeading,
   riyadhZones,
   zoneBySlug,
   zoneHeading,
@@ -120,6 +121,7 @@ export default async function RiyadhZonePage({
             schemaName: "Riyadh",
             url,
             description: c.answer,
+            places: c.neighborhoods?.map((n) => n.name),
           }),
           faqSchema(c.faq),
         ]}
@@ -157,6 +159,43 @@ export default async function RiyadhZonePage({
         <ChipList title={c.areasTitle} items={c.areas} />
         <ChipList title={c.roadsTitle} items={c.roads} />
       </section>
+
+      {/* District sections — only for districts searched by name (see
+          content/riyadhZones.ts). The ids are stable deep-link anchors. */}
+      {c.neighborhoods && c.neighborhoodsTitle && (
+        <section className="max-w-[820px] mx-auto px-6 py-10 border-t border-border-warm">
+          <SectionTitle>{c.neighborhoodsTitle}</SectionTitle>
+          {c.neighborhoodsIntro && (
+            <p className="-mt-2 mb-8 text-olive text-[15px] sm:text-base leading-[1.8]">
+              {c.neighborhoodsIntro}
+            </p>
+          )}
+          <div className="space-y-10">
+            {c.neighborhoods.map((n) => (
+              <div key={n.id} id={n.id} className="scroll-mt-24">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-[-0.01em] text-near-black leading-snug">
+                  {neighborhoodHeading(lang, n.name)}
+                </h3>
+                <p className="mt-3 text-dark-warm text-[15px] sm:text-base leading-[1.8]">
+                  {n.body}
+                </p>
+                <ul className="mt-4 space-y-2.5">
+                  {n.tips.map((tip) => (
+                    <li key={tip} className="flex gap-3 text-olive text-[15px] leading-[1.8]">
+                      <span aria-hidden="true" className="text-terracotta mt-2 shrink-0">
+                        <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
+                          <circle cx="3" cy="3" r="3" />
+                        </svg>
+                      </span>
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="max-w-[820px] mx-auto px-6 py-10 border-t border-border-warm">
         <SectionTitle>{c.destinationsTitle}</SectionTitle>

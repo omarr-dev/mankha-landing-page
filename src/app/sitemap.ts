@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { CITY_SLUGS } from "@/content/cities";
-import { RIYADH_ZONE_SLUGS } from "@/content/riyadhZones";
+import { HOME_UPDATED } from "@/content/home";
+import { NEAREST_UPDATED } from "@/content/nearest";
+import { RIYADH_ZONE_SLUGS, ZONES_UPDATED } from "@/content/riyadhZones";
 import { CONTENT_UPDATED, GUIDE_SLUGS } from "@/content/guides";
 import { LOCALES, SITE_URL } from "@/lib/seo";
 
@@ -8,13 +10,20 @@ type Route = {
   path: string;
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
   priority: number;
+  /** Real last content change; defaults to CONTENT_UPDATED. */
+  lastModified?: string;
 };
 
 const STATIC_ROUTES: Route[] = [
-  { path: "", changeFrequency: "weekly", priority: 1.0 },
+  { path: "", changeFrequency: "weekly", priority: 1.0, lastModified: HOME_UPDATED },
   // The proximity cluster ("أقرب سطحة من موقعي" and friends) is the single
   // largest source of impressions on the site, so this sits with the home page.
-  { path: "/nearest-tow-truck", changeFrequency: "weekly", priority: 0.95 },
+  {
+    path: "/nearest-tow-truck",
+    changeFrequency: "weekly",
+    priority: 0.95,
+    lastModified: NEAREST_UPDATED,
+  },
   // Real completed-trip prices — the "كم سعر السطحة" cluster.
   { path: "/prices", changeFrequency: "monthly", priority: 0.9 },
   { path: "/drivers", changeFrequency: "monthly", priority: 0.9 },
@@ -43,6 +52,7 @@ const ZONE_ROUTES: Route[] = RIYADH_ZONE_SLUGS.map((zone) => ({
   path: `/cities/riyadh/${zone}`,
   changeFrequency: "monthly",
   priority: 0.7,
+  lastModified: ZONES_UPDATED,
 }));
 
 const ROUTES: Route[] = [
@@ -73,13 +83,15 @@ function alternatesFor(path: string) {
  *
  * `lastModified` is the real last-content-change date, not the build clock: a
  * sitemap that reports "modified today" on every deploy trains crawlers to
- * ignore the field, which is exactly the signal we want them to trust.
+ * ignore the field, which is exactly the signal we want them to trust. Pages
+ * edited on their own carry their own date (HOME_UPDATED, NEAREST_UPDATED,
+ * ZONES_UPDATED) so one page's edit doesn't re-date every URL.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.flatMap((r) =>
     LOCALES.map((locale) => ({
       url: `${SITE_URL}/${locale}${r.path}`,
-      lastModified: CONTENT_UPDATED,
+      lastModified: r.lastModified ?? CONTENT_UPDATED,
       changeFrequency: r.changeFrequency,
       // Arabic is the primary market, so it keeps the higher priority.
       priority: locale === "ar" ? r.priority : Math.max(0.1, r.priority - 0.1),

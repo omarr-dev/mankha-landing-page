@@ -159,6 +159,40 @@ export function NoteList({ title, notes }: { title: string; notes: string[] }) {
   );
 }
 
+/** Titled list of named points, each a short bold term plus one explanation. */
+export function TermList({
+  title,
+  intro,
+  items,
+}: {
+  title: string;
+  intro?: string;
+  items: { name: string; text: string }[];
+}) {
+  return (
+    <section className="max-w-[820px] mx-auto px-6 py-10 border-t border-border-warm">
+      <SectionTitle>{title}</SectionTitle>
+      {intro && (
+        <p className="text-olive text-[15px] sm:text-base leading-[1.8] mb-6">
+          {intro}
+        </p>
+      )}
+      <dl className="space-y-6">
+        {items.map((item) => (
+          <div key={item.name}>
+            <dt className="font-semibold text-near-black text-[17px] leading-snug">
+              {item.name}
+            </dt>
+            <dd className="mt-1.5 text-olive text-[15px] leading-[1.8]">
+              {item.text}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  );
+}
+
 /** Flat chip list — used for city districts and named roads. */
 export function ChipList({
   title,

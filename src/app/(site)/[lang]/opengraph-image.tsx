@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { BRAND_NAME_AR, BRAND_NAME_EN } from "@/brand";
 
-export const alt = `${BRAND_NAME_AR} — أقرب سطحة وقت ما تبي`;
+export const alt = `${BRAND_NAME_AR} — أقرب سطحة لك ٢٤ ساعة`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
