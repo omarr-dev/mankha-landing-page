@@ -84,16 +84,14 @@ const enFaq = (city: string, price?: string): FaqItem[] => [
   },
 ];
 
-// Price answers quote real completed trips (test accounts excluded); the same
-// dataset backs /prices — keep the two in step when the numbers are refreshed.
+// Price answers quote the /prices dataset (accepted offers, last 90 days, test
+// accounts excluded) — keep the two in step when the numbers are refreshed.
+// A city with fewer than 12 accepted offers gets the generic answer instead
+// (Jeddah had 9 in the Oct 2026 refresh).
 const RIYADH_PRICE_AR =
-  "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع: من ١٦٩ رحلة منفذة عبر واير داخل الرياض (أبريل–أكتوبر ٢٠٢٦) كان نصف الرحلات بين ١١٠ و١٥٠ ريال، والسعر الوسيط ١٤٠ ريال. تشوف السعر قبل ما توافق فما في مساومة على الطريق.";
+  "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع: من ٢١١ عرض وافق عليه العملاء عبر واير داخل الرياض في آخر ٩٠ يوم، نص الأسعار بين ١٠٠ و١٥٠ ريال والسعر الوسيط ١٢٠ ريال. تشوف السعر قبل ما توافق فما في مساومة على الطريق.";
 const RIYADH_PRICE_EN =
-  "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference: across 169 tows completed on Wire inside Riyadh (April–October 2026), the middle half cost 110–150 SAR and the median was 140 SAR. You see the price before accepting, so there is no roadside haggling.";
-const JEDDAH_PRICE_AR =
-  "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع: الرحلات المنفذة عبر واير داخل جدة كانت أغلبها بين ١٠٥ و٢٠٠ ريال حسب المسافة، والسعر الوسيط ١٥٠ ريال. تشوف السعر قبل ما توافق فما في مساومة على الطريق.";
-const JEDDAH_PRICE_EN =
-  "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference: tows completed on Wire inside Jeddah mostly cost 105–200 SAR depending on distance, with a median of 150 SAR. You see the price before accepting, so there is no roadside haggling.";
+  "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference: across 211 offers customers accepted on Wire inside Riyadh in the last 90 days, the middle half were 100–150 SAR and the median was 120 SAR. You see the price before accepting, so there is no roadside haggling.";
 
 export const cities: City[] = [
   {
@@ -235,7 +233,7 @@ export const cities: City[] = [
           "طريق الأمير سلطان",
         ],
         faqTitle: "أسئلة عن السطحة في جدة",
-        faq: arFaq("جدة", JEDDAH_PRICE_AR),
+        faq: arFaq("جدة"),
       },
       en: {
         name: "Jeddah",
@@ -274,7 +272,7 @@ export const cities: City[] = [
           "Prince Sultan Road",
         ],
         faqTitle: "Questions about towing in Jeddah",
-        faq: enFaq("Jeddah", JEDDAH_PRICE_EN),
+        faq: enFaq("Jeddah"),
       },
     },
   },

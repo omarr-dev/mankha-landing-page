@@ -23,7 +23,7 @@ import type { Locale } from "@/lib/seo";
  * that gets discounted once it's noticed.
  */
 export const CONTENT_PUBLISHED = "2026-08-02";
-export const CONTENT_UPDATED = "2026-10-08";
+export const CONTENT_UPDATED = "2026-10-22";
 
 export type GuideStep = { name: string; text: string };
 
@@ -933,7 +933,7 @@ export const guides: Guide[] = [
           },
           {
             q: "كم سعر سطحة لسيارة غرقانة في الرياض؟",
-            a: "مثل أي رحلة سطحة: حسب المسافة ونوع السطحة. داخل الرياض السعر الوسيط لرحلات واير ١٤٠ ريال، والهيدروليك وسيطها ١٥٠ ريال. وقت المطر الطلب يزيد، فقارن العروض واختر الأقرب.",
+            a: "مثل أي رحلة سطحة: حسب المسافة ونوع السطحة. داخل الرياض وسيط الأسعار اللي وافق عليها عملاء واير ١٢٠ ريال، وللهيدروليك ١٣٥ ريال. وقت المطر الطلب يزيد، فقارن العروض واختر الأقرب.",
           },
         ],
       },
@@ -987,7 +987,7 @@ export const guides: Guide[] = [
           },
           {
             q: "How much is a flatbed for a flooded car in Riyadh?",
-            a: "Like any tow, it depends on distance and truck type. Inside Riyadh the median completed Wire tow is 140 SAR, and 150 SAR for a hydraulic flatbed. Demand rises in the rain, so compare offers and pick the closest.",
+            a: "Like any tow, it depends on distance and truck type. Inside Riyadh the median price customers accepted on Wire is 120 SAR, and 135 SAR for a hydraulic flatbed. Demand rises in the rain, so compare offers and pick the closest.",
           },
         ],
       },

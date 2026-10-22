@@ -66,10 +66,10 @@ export const business: Record<Locale, BusinessContent> = {
     why: [
       "+٢٦٠ كابتن سطحة موثق — هوية ورخصة واستمارة مراجعة قبل التفعيل.",
       "٧ عروض في المتوسط لكل طلب، وأول عرض غالبًا خلال أقل من ٣٠ ثانية.",
-      "سعر واضح قبل الموافقة — وسيط رحلاتنا داخل الرياض ١٤٠ ريال.",
+      "سعر واضح قبل الموافقة — وسيط الأسعار اللي وافق عليها عملاؤنا داخل الرياض ١٢٠ ريال.",
       "تتبع مباشر لكل نقلة على الخريطة مع وقت الوصول المتوقع.",
       "٢٤ ساعة في الرياض وجدة والدمام والخبر والظهران والأحساء، والتوصيل لأي مدينة.",
-      "بدون اشتراك ولا رسوم شهرية — تدفع لكل نقلة للكابتن مباشرة.",
+      "بدون اشتراك ولا رسوم شهرية — كل نقلة بسعر عرض الكابتن اللي تختاره.",
     ],
     stepsTitle: "كيف تبدأ",
     steps: [
@@ -90,7 +90,7 @@ export const business: Record<Locale, BusinessContent> = {
     faq: [
       {
         q: "هل في عقد أو اشتراك شهري؟",
-        a: "لا. ما في اشتراك ولا رسوم شهرية ولا حد أدنى للطلبات. كل نقلة لها سعرها من عرض الكابتن اللي تختاره، وتدفعه للكابتن مباشرة عند التسليم.",
+        a: "لا. ما في اشتراك ولا رسوم شهرية ولا حد أدنى للطلبات. كل نقلة لها سعرها من عرض الكابتن اللي تختاره.",
       },
       {
         q: "أقدر أطلب أكثر من سطحة بنفس الوقت؟",
@@ -102,7 +102,7 @@ export const business: Record<Locale, BusinessContent> = {
       },
       {
         q: "كم سعر النقلة داخل المدينة؟",
-        a: "حسب المسافة ونوع السطحة. داخل الرياض، من ١٦٩ رحلة منفذة كان نصف الرحلات بين ١١٠ و١٥٠ ريال والوسيط ١٤٠ ريال. تشوف كل الأسعار قبل ما توافق على أي عرض.",
+        a: "حسب المسافة ونوع السطحة. داخل الرياض، من ٢١١ عرض وافق عليه العملاء في آخر ٩٠ يوم، نص الأسعار بين ١٠٠ و١٥٠ ريال والوسيط ١٢٠ ريال. تشوف كل الأسعار قبل ما توافق على أي عرض.",
       },
     ],
   },
@@ -141,10 +141,10 @@ export const business: Record<Locale, BusinessContent> = {
     why: [
       "260+ verified tow truck drivers — ID, licence and registration checked before activation.",
       "7 offers per request on average, the first usually in under 30 seconds.",
-      "A clear price before you accept — our median tow inside Riyadh is 140 SAR.",
+      "A clear price before you accept — the median price our customers accepted inside Riyadh is 120 SAR.",
       "Live map tracking of every move with an estimated arrival.",
       "24/7 in Riyadh, Jeddah, Dammam, Khobar, Dhahran and Al-Ahsa, delivering to any city.",
-      "No subscription or monthly fee — you pay the driver per move, directly.",
+      "No subscription or monthly fee — each move is priced by the driver offer you choose.",
     ],
     stepsTitle: "How to start",
     steps: [
@@ -165,7 +165,7 @@ export const business: Record<Locale, BusinessContent> = {
     faq: [
       {
         q: "Is there a contract or monthly subscription?",
-        a: "No. There is no subscription, monthly fee or minimum volume. Each move is priced by the driver offer you choose, paid to the driver directly at drop-off.",
+        a: "No. There is no subscription, monthly fee or minimum volume. Each move is priced by the driver offer you choose.",
       },
       {
         q: "Can I request several tow trucks at once?",
@@ -177,7 +177,7 @@ export const business: Record<Locale, BusinessContent> = {
       },
       {
         q: "How much is an in-city move?",
-        a: "It depends on distance and truck type. Inside Riyadh, across 169 completed tows, the middle half cost 110–150 SAR and the median was 140 SAR. You see every price before accepting an offer.",
+        a: "It depends on distance and truck type. Inside Riyadh, across 211 offers customers accepted in the last 90 days, the middle half were 100–150 SAR and the median was 120 SAR. You see every price before accepting an offer.",
       },
     ],
   },

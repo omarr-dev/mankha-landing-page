@@ -11,8 +11,9 @@ import type { Locale } from "@/lib/seo";
  * next to us doesn't say: we're open 24 hours, and roughly what it costs.
  *
  * The price signal must stay true to content/prices.ts: the cheapest band
- * there (Riyadh, under 10 km) has most tows at 100–140 SAR, so "from about
+ * there (under 10 km) has most accepted prices at 100–120 SAR, so "from about
  * 100" is honest; "cheapest" or a fixed price never is — captains set prices.
+ * Payment method (cash) stays out of marketing copy — it isn't a selling point.
  * The hero (i18n/translations.ts) and the home FAQ (i18n/faq.ts) repeat the
  * same promise, so change the three together and bump HOME_UPDATED.
  *
@@ -25,7 +26,7 @@ export const homeMeta: Record<Locale, { title: string; description: string }> = 
   ar: {
     title: `سطحة ٢٤ ساعة من ١٠٠ ريال تقريبًا — قارن عروض الكباتن | ${BRAND_NAME_AR}`,
     description:
-      "تعطلت سيارتك؟ طلبك في واير يوصل لكل كباتن السطحات حولك في الرياض وجدة والشرقية والأحساء، وأول عرض يجيك خلال ثواني. قارن واختر وادفع كاش. اطلب الحين.",
+      "تعطلت سيارتك؟ طلبك في واير يوصل لكل كباتن السطحات حولك في الرياض وجدة والشرقية والأحساء، وأول عرض يجيك خلال ثواني. قارن العروض واختر الأنسب. اطلب الحين.",
   },
   en: {
     title: `Tow truck 24/7 from ~100 SAR — compare driver offers | ${BRAND_NAME_EN}`,

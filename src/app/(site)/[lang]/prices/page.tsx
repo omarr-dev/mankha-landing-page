@@ -82,6 +82,8 @@ export default async function PricesPage({
   // The Riyadh range the answer quotes, as structured data an answer engine
   // can lift without parsing prose. Service rather than Product: no rich
   // result is claimed, it only makes the numbers machine-readable.
+  // low/high = lowest and highest end of the in-city distance bands;
+  // offerCount = accepted offers behind the Riyadh figures (content/prices.ts).
   const priceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -94,8 +96,8 @@ export default async function PricesPage({
       "@type": "AggregateOffer",
       priceCurrency: "SAR",
       lowPrice: 100,
-      highPrice: 175,
-      offerCount: 169,
+      highPrice: 170,
+      offerCount: 211,
     },
   };
 

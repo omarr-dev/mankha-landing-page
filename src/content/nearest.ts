@@ -107,10 +107,6 @@ export const nearest: Record<Locale, NearestContent> = {
         name: "أي شي يصعّب الوصول",
         text: "قبو، موقف ضيق، أو طريق سريع؟ اذكره في الملاحظات، وعلى الطريق السريع اكتب اتجاهك (مثلًا: طريق الخرج متجه جنوب).",
       },
-      {
-        name: "المبلغ كاش",
-        text: "الدفع للكابتن كاش، بنفس السعر اللي وافقت عليه في التطبيق وبدون رسوم إضافية.",
-      },
     ],
     waitTitle: "كم تنتظر أقرب سطحة؟",
     wait: [
@@ -148,19 +144,15 @@ export const nearest: Record<Locale, NearestContent> = {
       },
       {
         q: "كم سعر أقرب سطحة؟",
-        a: "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع من رحلات واير المنفذة داخل الرياض: المشوار القصير (أقل من ١٠ كم) أغلبه بين ١٠٠ و١٤٠ ريال، والمتوسط (١٠–٢٠ كم) بين ١٢٠ و١٥٠. تشوف السعر قبل ما توافق، فما في مساومة على الطريق.",
+        a: "ما في تسعيرة ثابتة — كل كابتن قريب يرسل عرضه لرحلتك وأنت تختار. وللمرجع من الأسعار اللي وافق عليها عملاء واير في آخر ٩٠ يوم: المشوار القصير (أقل من ١٠ كم) أغلبه بين ١٠٠ و١٢٠ ريال، والمتوسط (١٠–٢٠ كم) بين ١٠٥ و١٥٠. تشوف السعر قبل ما توافق، فما في مساومة على الطريق.",
       },
       {
         q: "وش أجهز قبل ما أطلب سطحة؟",
-        a: "موقعك بدقة (وحرّك الدبوس إذا الـ GPS مو دقيق)، ووين تبي توديها، ونوع سيارتك وحالتها. إذا السيارة ما تتحرك جهّز صورة لها لأن التطبيق يطلبها، واذكر في الملاحظات إذا كانت في قبو أو على طريق سريع. والدفع للكابتن كاش.",
+        a: "موقعك بدقة (وحرّك الدبوس إذا الـ GPS مو دقيق)، ووين تبي توديها، ونوع سيارتك وحالتها. إذا السيارة ما تتحرك جهّز صورة لها لأن التطبيق يطلبها، واذكر في الملاحظات إذا كانت في قبو أو على طريق سريع.",
       },
       {
         q: "هل في سطحة قريبة مني ٢٤ ساعة؟",
         a: "نعم. واير تشتغل ٢٤ ساعة طوال أيام الأسبوع بما فيها العطلات في الرياض وجدة والشرقية والأحساء، فتقدر تطلب أقرب سطحة في أي وقت من الليل أو النهار.",
-      },
-      {
-        q: "هل الدفع كاش للكابتن؟",
-        a: "نعم. تدفع للكابتن كاش نفس السعر اللي وافقت عليه في التطبيق، بدون رسوم إضافية على العميل. تحميل التطبيق وإرسال الطلب مجاني، وما يلزمك شي لين تقبل عرض.",
       },
       {
         q: "وش أسوي إذا ما جاني أي عرض؟",
@@ -221,10 +213,6 @@ export const nearest: Record<Locale, NearestContent> = {
         name: "Anything that makes access hard",
         text: "A basement, tight parking or a highway? Say so in the notes, and on a highway write your direction of travel (e.g. Al Kharj Road, southbound).",
       },
-      {
-        name: "Cash",
-        text: "You pay the driver in cash — the price you accepted in the app, with no extra fees.",
-      },
     ],
     waitTitle: "How long will the nearest tow take?",
     wait: [
@@ -262,19 +250,15 @@ export const nearest: Record<Locale, NearestContent> = {
       },
       {
         q: "How much does the nearest tow truck cost?",
-        a: "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference, from tows completed on Wire inside Riyadh: a short tow (under 10 km) is mostly 100–140 SAR and a medium one (10–20 km) 120–150 SAR. You see the price before accepting, so there is no roadside haggling.",
+        a: "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference, from prices Wire customers accepted in the last 90 days: a short tow (under 10 km) is mostly 100–120 SAR and a medium one (10–20 km) 105–150 SAR. You see the price before accepting, so there is no roadside haggling.",
       },
       {
         q: "What should I have ready before requesting a tow?",
-        a: "Your exact location (move the pin if GPS is off), where the car should go, and the car's type and condition. If the car doesn't move, have a photo ready because the app asks for one, and note a basement or highway in the request. You pay the driver in cash.",
+        a: "Your exact location (move the pin if GPS is off), where the car should go, and the car's type and condition. If the car doesn't move, have a photo ready because the app asks for one, and note a basement or highway in the request.",
       },
       {
         q: "Is there a tow truck near me at any hour?",
         a: "Yes. Wire operates 24 hours a day, 7 days a week including holidays in Riyadh, Jeddah, the Eastern Province and Al-Ahsa, so you can request the nearest tow at any time of day or night.",
-      },
-      {
-        q: "Do I pay the driver in cash?",
-        a: "Yes. You pay the driver in cash — exactly the price you accepted in the app, with no extra fees for customers. Downloading the app and sending a request are free, and nothing binds you until you accept an offer.",
       },
       {
         q: "What if no offers come in?",

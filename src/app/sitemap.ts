@@ -24,7 +24,7 @@ const STATIC_ROUTES: Route[] = [
     priority: 0.95,
     lastModified: NEAREST_UPDATED,
   },
-  // Real completed-trip prices — the "كم سعر السطحة" cluster.
+  // Real accepted prices (content/prices.ts) — the "كم سعر السطحة" cluster.
   { path: "/prices", changeFrequency: "monthly", priority: 0.9 },
   { path: "/drivers", changeFrequency: "monthly", priority: 0.9 },
   { path: "/business", changeFrequency: "monthly", priority: 0.8 },

@@ -144,7 +144,7 @@ export function AppPreview() {
                         </div>
                         <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-border-cream">
                           <div className="flex items-baseline gap-1">
-                            <span className="font-serif text-[17px] font-medium text-near-black">95</span>
+                            <span className="font-serif text-[17px] font-medium text-near-black">100</span>
                             <span className="font-sans text-[10px] text-olive">{t("appPreviewPrice")}</span>
                           </div>
                           <button
