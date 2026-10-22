@@ -100,7 +100,7 @@ export const cities: City[] = [
     content: {
       ar: {
         name: "الرياض",
-        metaTitle: "سطحة الرياض ٢٤ ساعة — أقرب سطحة لك بأفضل سعر",
+        metaTitle: "سطحة الرياض ٢٤ ساعة — قارن عروض أقرب الكباتن لك",
         description:
           "اطلب سطحة في الرياض ٢٤ ساعة عبر واير. طلب واحد يوصل لكل الكباتن القريبين منك في العليا والملقا والنسيم وبقية أحياء الرياض، تقارن عروضهم وتتابع رحلتك مباشرة.",
         answer:
@@ -146,7 +146,7 @@ export const cities: City[] = [
       },
       en: {
         name: "Riyadh",
-        metaTitle: "Tow truck in Riyadh, 24/7 — nearest driver, best price",
+        metaTitle: "Tow truck in Riyadh, 24/7 — compare offers from nearby drivers",
         description:
           "Request a tow truck in Riyadh 24/7 with Wire. One request reaches every nearby driver across Olaya, Malqa, Naseem and the rest of Riyadh — compare quotes and track your tow live.",
         answer:
