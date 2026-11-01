@@ -4,7 +4,7 @@
 
 import { BRAND_NAME_EN } from "@/brand";
 
-export const LEGAL_LAST_UPDATED = "2026-05-21";
+export const LEGAL_LAST_UPDATED = "2026-11-01";
 export const LEGAL_COMPANY_DISPLAY = BRAND_NAME_EN;
 
 export type LegalSection = {
@@ -83,8 +83,10 @@ export const TERMS_EN: LegalContent = {
       id: "cancellation",
       heading: "6. Cancellation",
       body: [
-        "Either party may cancel a trip before the driver completes the service. Cancellations performed through the Platform are recorded and may affect account standing.",
-        "Repeated or abusive cancellations (such as a driver cancelling after accepting to secure a better request, or a customer cancelling after the driver has travelled a significant distance) may result in warnings, temporary suspension, or termination of the account. Where permitted by law, Wire may also charge a cancellation fee to cover reasonable costs incurred.",
+        "A customer may cancel a trip at any time before it is completed, free of charge, and is asked for the reason.",
+        "A driver who accepts an offer commits to the trip. A trip counts as a strike against the driver if the driver cancels it, or if the customer cancels because of the driver: the driver asked them to cancel, asked for more than the agreed price, stopped responding, or passed the arrival time shown. If the driver says the customer was the cause, we ask the customer, and it does not count if they confirm it or do not answer within 10 minutes.",
+        "Two strikes within 30 days bring a warning. A third stops the driver from sending offers for 7 days. Wire may suspend or terminate an account for repeated or abusive conduct.",
+        "If a driver cancels 30 minutes or more after accepting, or a trip stays open after our reminders, we ask the customer whether the service took place. If they say it did, the trip is recorded as completed, the platform fee applies, and the driver cannot send offers until we review it.",
       ],
     },
     {
@@ -247,8 +249,10 @@ export const TERMS_AR: LegalContent = {
       id: "cancellation",
       heading: "٦. الإلغاء",
       body: [
-        "يحق لكل طرف إلغاء الرحلة قبل أن يُكمل السائق الخدمة. تُسجَّل الإلغاءات التي تتم داخل المنصة وقد تؤثر على تصنيف الحساب.",
-        "الإلغاءات المتكررة أو غير المبررة (مثل إلغاء السائق بعد القبول للبحث عن طلب أفضل، أو إلغاء العميل بعد قطع السائق مسافة كبيرة) قد ينتج عنها تحذيرات أو إيقاف مؤقت أو إنهاء للحساب. ويجوز لواير، ضمن ما يسمح به النظام، فرض رسم إلغاء لتغطية التكاليف المعقولة.",
+        "يحق للعميل إلغاء الرحلة مجانًا في أي وقت قبل اكتمالها، ويُطلب منه ذكر السبب.",
+        "قبول السائق للعرض التزام بالرحلة. تُحسب الرحلة إخلالًا على السائق إذا ألغاها، أو إذا ألغاها العميل بسببه: طلب منه الإلغاء، أو طلب أكثر من السعر المتفق عليه، أو توقف عن الرد، أو تجاوز وقت الوصول المعروض. وإذا قال السائق إن العميل هو السبب نسأل العميل، ولا تُحسب إذا أكد ذلك أو لم يرد خلال ١٠ دقائق.",
+        "إخلالان خلال ٣٠ يومًا يُوجبان تنبيهًا، والثالث يوقف السائق عن تقديم العروض ٧ أيام. ويجوز لواير إيقاف الحساب أو إنهاؤه عند تكرار الإساءة.",
+        "إذا ألغى السائق بعد ٣٠ دقيقة أو أكثر من القبول، أو ظلت الرحلة مفتوحة بعد تذكيراتنا، نسأل العميل هل تمت الخدمة. فإذا قال إنها تمت، تُسجَّل الرحلة مكتملة ويُطبَّق رسم المنصة، ويتوقف السائق عن تقديم العروض حتى نراجعها.",
       ],
     },
     {
@@ -411,6 +415,7 @@ export const PRIVACY_EN: LegalContent = {
         "Tap Payments: payment service provider that processes card data and authorizations.",
         "Cloud storage: we use Cloudflare R2 (S3-compatible object storage) to host uploaded photos and documents under secure URLs.",
         "Messaging providers: SMS and WhatsApp providers used to deliver OTPs and trip notifications.",
+        "Anthropic: if you agree in the app, what you type to Wire's assistant goes to Anthropic in the United States, with your name and trip details, so the assistant can reply. If you don't agree, your message goes to our team instead. The assistant's buttons don't use this provider.",
         "Law enforcement and regulators, where we are required by law or compelled by a valid order to disclose data.",
         "Professional advisors (legal, accounting, auditors) bound by duties of confidentiality.",
         "We do not sell personal data. We do not use your personal data for third-party advertising.",
@@ -530,6 +535,7 @@ export const PRIVACY_AR: LegalContent = {
         "Tap Payments: مزود خدمة الدفع الذي يُعالج بيانات البطاقات والتفويضات.",
         "التخزين السحابي: نستخدم Cloudflare R2 (تخزين كائنات متوافق مع S3) لاستضافة الصور والوثائق المرفوعة عبر روابط مؤمَّنة.",
         "مزودو الرسائل: مزودو SMS وواتساب لإرسال رموز التحقق وإشعارات الرحلة.",
+        "Anthropic: إذا وافقت داخل التطبيق، تُرسَل الرسائل التي تكتبها لمساعد واير إلى Anthropic في الولايات المتحدة، مع اسمك وتفاصيل رحلتك، ليرد عليك المساعد. وإذا لم توافق تصل رسالتك إلى فريقنا. أما أزرار المساعد فلا تستخدم هذا المزود.",
         "الجهات الأمنية والجهات التنظيمية عند اشتراط النظام الإفصاح أو صدور أمر صحيح.",
         "المستشارون المهنيون (قانونيون، محاسبون، مراجعون) المُلتزمون بالسرية.",
         "لا نبيع البيانات الشخصية. ولا نستخدمها للإعلان لدى أطراف ثالثة.",
