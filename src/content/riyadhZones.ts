@@ -27,9 +27,14 @@ import type { Locale } from "@/lib/seo";
  * landmarks and workshop areas were checked against OpenStreetMap district
  * boundaries (which side of a district a road runs on, what lies inside it);
  * prices and distances come from content/prices.ts bands. No invented stats.
+ *
+ * Titles (Nov 2026): the zone pages drew 4.2K impressions in 14 days at
+ * positions 6–9 but only 0.2–0.4% CTR, so the title now sells the outcome
+ * (first offer in seconds, median 14–15 s) instead of listing districts. The
+ * districts stay in the description and the page body.
  */
 
-export const ZONES_UPDATED = "2026-10-22";
+export const ZONES_UPDATED = "2026-11-01";
 
 export const RIYADH_ZONE_SLUGS = ["north", "east", "south", "west"] as const;
 export type RiyadhZoneSlug = (typeof RIYADH_ZONE_SLUGS)[number];
@@ -91,7 +96,7 @@ export const riyadhZones: RiyadhZone[] = [
     content: {
       ar: {
         name: "شمال الرياض",
-        metaTitle: "سطحة شمال الرياض ٢٤ ساعة — النرجس والملقا والياسمين والعارض",
+        metaTitle: "سطحة شمال الرياض ٢٤ ساعة — أول عرض خلال ثواني، قارن واختر",
         description:
           "تبي سطحة في شمال الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في النرجس والملقا والياسمين والعارض، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
@@ -251,7 +256,7 @@ export const riyadhZones: RiyadhZone[] = [
     content: {
       ar: {
         name: "شرق الرياض",
-        metaTitle: "سطحة شرق الرياض ٢٤ ساعة — النسيم والروضة والخليج والرمال",
+        metaTitle: "سطحة شرق الرياض ٢٤ ساعة — أول عرض خلال ثواني، قارن واختر",
         description:
           "تبي سطحة في شرق الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في النسيم والروضة والخليج والرمال، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
@@ -453,7 +458,7 @@ export const riyadhZones: RiyadhZone[] = [
     content: {
       ar: {
         name: "جنوب الرياض",
-        metaTitle: "سطحة جنوب الرياض ٢٤ ساعة — الشفا والعزيزية والدار البيضاء",
+        metaTitle: "سطحة جنوب الرياض ٢٤ ساعة — أول عرض خلال ثواني، قارن واختر",
         description:
           "تبي سطحة في جنوب الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في الشفا والعزيزية والدار البيضاء والمصانع، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
@@ -671,7 +676,7 @@ export const riyadhZones: RiyadhZone[] = [
     content: {
       ar: {
         name: "غرب الرياض",
-        metaTitle: "سطحة غرب الرياض ٢٤ ساعة — السويدي وظهرة لبن وطويق وعرقة",
+        metaTitle: "سطحة غرب الرياض ٢٤ ساعة — أول عرض خلال ثواني، قارن واختر",
         description:
           "تبي سطحة في غرب الرياض؟ طلبك في واير يوصل لكل الكباتن القريبين في السويدي وظهرة لبن وطويق وعرقة، وأول عرض يجيك خلال ثواني. قارن واختر — ٢٤ ساعة.",
         answer:
