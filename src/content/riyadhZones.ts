@@ -420,7 +420,7 @@ export const riyadhZones: RiyadhZone[] = [
             name: "Al Naseem West",
             body: "Between Abdulrahman Bin Awf Street and Hassan Bin Thabit Street, crossed by Saad Bin Abi Waqqas Street. Al Naseem metro station sits on its southern edge (Prince Saad Bin Abdulrahman Al Awal Road) and Othaim Mall on Khurais Road at its northern tip — landmarks that save the driver a long description.",
             tips: [
-              "To Al Sinaiyah: a medium trip (10–20 km in a straight line), a distance where most Wire prices are 105–150 SAR.",
+              "To Al Sinaiyah: a medium trip (10–20 km in a straight line), a distance where most Wire prices are 110–135 SAR.",
               "Broken down on Khurais Road? It is a highway — get onto the shoulder away from traffic and write your direction in the notes.",
             ],
           },

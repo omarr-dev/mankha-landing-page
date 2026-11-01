@@ -28,7 +28,7 @@ import type { Locale } from "@/lib/seo";
  * the supply facts (offers per request). Refresh them together and bump
  * PRICES_UPDATED.
  */
-export const PRICES_UPDATED = "2026-10-22";
+export const PRICES_UPDATED = "2026-11-01";
 
 export type PriceRow = {
   trip: string;
@@ -83,7 +83,7 @@ export const prices: Record<Locale, PricesContent> = {
       {
         trip: "مشوار متوسط",
         detail: "١٠ إلى ٢٠ كم · ٨٧ عرض مقبول",
-        range: "١٠٥–١٥٠ ريال",
+        range: "١١٠–١٣٥ ريال",
         median: "١٢٠ ريال",
       },
       {
@@ -194,7 +194,7 @@ export const prices: Record<Locale, PricesContent> = {
       {
         trip: "Medium tow",
         detail: "10 to 20 km · 87 accepted offers",
-        range: "105–150 SAR",
+        range: "110–135 SAR",
         median: "120 SAR",
       },
       {

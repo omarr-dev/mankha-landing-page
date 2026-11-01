@@ -250,7 +250,7 @@ export const nearest: Record<Locale, NearestContent> = {
       },
       {
         q: "How much does the nearest tow truck cost?",
-        a: "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference, from prices Wire customers accepted in the last 90 days: a short tow (under 10 km) is mostly 100–120 SAR and a medium one (10–20 km) 105–150 SAR. You see the price before accepting, so there is no roadside haggling.",
+        a: "There is no fixed rate — each nearby driver quotes your trip and you choose. For reference, from prices Wire customers accepted in the last 90 days: a short tow (under 10 km) is mostly 100–120 SAR and a medium one (10–20 km) 110–135 SAR. You see the price before accepting, so there is no roadside haggling.",
       },
       {
         q: "What should I have ready before requesting a tow?",
